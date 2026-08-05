@@ -1,0 +1,97 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Blog — ACIDIC STUDIOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#201f1f","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["VintagePropagandistRegular","sans-serif"],"body-lg":["Inter"],"label-sm":["JetBrains Mono"],"headline-lg":["VintagePropagandistRegular","sans-serif"],"headline-lg-mobile":["VintagePropagandistRegular","sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
+</script>
+<style>
+  body{background-color:#0A0A0A;color:#e5e2e1;overflow-x:hidden}
+  .stencil-text{-webkit-text-stroke:1.5px #8bfe00;color:transparent}
+  @keyframes pulse-red{0%{transform:scale(0.95);box-shadow:0 0 0 0 rgba(255,0,0,0.7)}70%{transform:scale(1);box-shadow:0 0 0 6px rgba(255,0,0,0)}100%{transform:scale(0.95);box-shadow:0 0 0 0 rgba(255,0,0,0)}}
+  .rec-pulse{animation:pulse-red 2s infinite}
+  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0A0A0A}::-webkit-scrollbar-thumb{background:#262626}::-webkit-scrollbar-thumb:hover{background:#8bfe00}
+  .condensed-header{transform:scaleY(1.15);transform-origin:top left;display:inline-block;margin-bottom:0.12em}
+  .btn-tag{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 28px 17px 22px;font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);transition:background-color .2s,color .2s,box-shadow .2s}
+  .btn-tag-fill{background-color:#8bfe00;color:#0d2000}
+  .btn-tag-fill:hover{background-color:#0A0A0A;color:#8bfe00;box-shadow:inset 0 0 0 1px #8bfe00,0 0 20px rgba(139,254,0,0.35)}
+  .icon-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #262626;color:#becbae;transition:border-color .2s,color .2s,box-shadow .2s}
+  .icon-btn:hover{border-color:rgba(139,254,0,0.4);color:#8bfe00;box-shadow:0 0 12px rgba(139,254,0,0.15)}
+  .post-card{display:block;background:#0e0e0e;border:1px solid #262626;text-decoration:none;transition:border-color .2s,box-shadow .2s;overflow:hidden}
+  .post-card:hover{border-color:#8bfe00;box-shadow:0 0 20px rgba(139,254,0,0.1)}
+</style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
+<div id="navbar-placeholder"></div>
+<main class="relative">
+<section class="relative pt-40 pb-20 md:pt-48 md:pb-28 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
+  <div class="relative z-10 flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest mb-8 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
+    <div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
+    TRANSMISSION_LOG // BLOG_V1
+  </div>
+  <h1 class="relative z-10 font-headline-xl text-[64px] sm:text-[88px] md:text-headline-xl text-primary uppercase tracking-tight leading-[0.85] mb-8">
+    <span class="condensed-header">Signal</span><br>
+    <span class="stencil-text condensed-header">Dispatch</span>
+  </h1>
+  <p class="relative z-10 font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-2 border-primary-fixed pl-6">Thoughts, experiments, and field notes from the lab.</p>
+</section>
+
+<section class="py-16 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop pb-32">
+  <div id="featuredPost" class="mb-12"></div>
+  <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest col-span-3">Loading posts...</p>
+  </div>
+</section>
+</main>
+<footer class="bg-surface-lowest border-t border-border-muted w-full py-16 md:py-24">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="lg:col-span-1"><div class="font-headline-lg text-[32px] text-primary tracking-tighter flex items-center gap-3 mb-8"><img alt="Acidic Studios" class="w-10 h-10 border border-border-muted rounded-full" src="assets/images/Acidic studios header logo.png">ACIDIC</div></div>
+<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Navigation</h4><ul class="space-y-4"><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="case-studies.html">Work</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="services.html">Services</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="agency.html">Agency</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="blog.html">Blog</a></li></ul></div>
+<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Technical</h4><ul class="space-y-4"><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="careers.html">Careers</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="faqs.html">FAQs</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="privacy-policy.html">Legal Protocols</a></li></ul></div>
+<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Connect</h4><div class="flex gap-3"><a href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Instagram"><span class="material-symbols-outlined text-[16px]">photo_camera</span></a><a href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Facebook"><span class="material-symbols-outlined text-[16px]">thumb_up</span></a><a href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="LinkedIn"><span class="material-symbols-outlined text-[16px]">hub</span></a></div><p class="font-body text-sm text-on-surface-variant mt-4"><a class="hover:text-primary-fixed transition-colors" href="mailto:team@acidicstudios.com">team@acidicstudios.com</a></p></div>
+</div>
+<div class="pt-8 border-t border-border-muted flex flex-col md:flex-row justify-between items-center gap-4"><p class="font-label-sm text-[10px] text-on-surface-variant/40 uppercase tracking-[0.2em]">©2024 ACIDIC STUDIOS. ALL RIGHTS RESERVED. DIGITAL ALCHEMY IN PROGRESS.</p><div class="flex gap-6"><span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">V.4.2.0_STABLE</span><span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">LATENCY: 0.02MS</span></div></div>
+</div>
+</footer>
+<script>
+const sb = supabase.createClient('https://npunrjejzvbjsxpsouuq.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wdW5yamVqenZianN4cHNvdXVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0Njg4NzEsImV4cCI6MjEwMDA0NDg3MX0.bFUZRI5se1mSD1bMwmh-kFN70gNk6gI-Ov3ysbFxCfc');
+(async()=>{
+  const{data,error}=await sb.from('posts').select('*').order('created_at',{ascending:false});
+  if(error||!data||!data.length){
+    document.getElementById('postsGrid').innerHTML='<p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest col-span-3">No posts yet.</p>';
+    return;
+  }
+  const[featured,...rest]=data;
+  document.getElementById('featuredPost').innerHTML=`
+    <a href="blog-post.html?slug=${featured.slug}" class="post-card block md:grid md:grid-cols-2 gap-0">
+      ${featured.image?`<div class="h-64 md:h-auto bg-cover bg-center" style="background-image:url('${featured.image}')"></div>`:'<div class="h-64 md:h-auto bg-surface-deep"></div>'}
+      <div class="p-8 md:p-12 flex flex-col justify-center">
+        ${featured.category?`<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest mb-4">${featured.category}</span>`:''}
+        <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase tracking-tight leading-tight mb-4">${featured.title}</h2>
+        <p class="font-body-md text-on-surface-variant/80 text-[14px] mb-6">${featured.description||''}</p>
+        <span class="font-label-sm text-primary-fixed text-[11px] uppercase tracking-widest">Read More →</span>
+      </div>
+    </a>`;
+  document.getElementById('postsGrid').innerHTML=rest.map(p=>`
+    <a href="blog-post.html?slug=${p.slug}" class="post-card">
+      ${p.image?`<div class="h-48 bg-cover bg-center" style="background-image:url('${p.image}')"></div>`:'<div class="h-48 bg-surface-deep"></div>'}
+      <div class="p-6">
+        ${p.category?`<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest mb-3 block">${p.category}</span>`:''}
+        <h3 class="font-headline-lg-mobile text-[20px] text-primary uppercase tracking-tight leading-tight mb-3">${p.title}</h3>
+        <p class="font-body-md text-on-surface-variant/80 text-[13px] mb-4">${(p.description||'').substring(0,100)}${p.description&&p.description.length>100?'...':''}</p>
+        <span class="font-label-sm text-primary-fixed text-[10px] uppercase tracking-widest">Read →</span>
+      </div>
+    </a>`).join('');
+})();
+</script>
+<script src="assets/js/main.js"></script>
+</body></html>

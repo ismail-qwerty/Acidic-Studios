@@ -1,0 +1,114 @@
+<style>
+  .nav-shell { background-color: rgba(18,18,18,0.15); transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .nav-shell.nav-solid { background-color: rgba(10,10,10,0.75); border-color: rgba(139,254,0,0.3); box-shadow: 0 4px 30px rgba(139,254,0,0.1); }
+  .nav-link { position: relative; }
+  .nav-link::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0; background: #8bfe00; transition: width .25s ease; }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-link.active { color: #8bfe00; }
+  .nav-dropdown { position: relative; }
+  .dropdown-panel { position: absolute; top: calc(100% + 20px); left: 50%; transform: translateX(-50%) translateY(-6px); min-width: 220px; background: rgba(10,10,10,0.95); border: 1px solid #262626; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; z-index: 100; }
+  .dropdown-panel::before { content: ""; position: absolute; top: -20px; left: 0; right: 0; height: 20px; }
+  .dropdown-panel::after { content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #8bfe00, transparent); }
+  .nav-dropdown:hover .dropdown-panel { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+  .dropdown-item { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 18px; font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #becbae; border-bottom: 1px solid #1a1a1a; transition: color .15s ease, background .15s ease; white-space: nowrap; cursor: pointer; }
+  .dropdown-item:last-child { border-bottom: none; }
+  .dropdown-item:hover { color: #8bfe00; background: rgba(139,254,0,0.05); }
+  .dropdown-item .chevron { font-size: 14px; opacity: 0.5; transition: opacity .15s ease; }
+  .dropdown-item:hover .chevron { opacity: 1; }
+  .sub-panel { position: absolute; top: 0; left: 100%; min-width: 200px; background: rgba(10,10,10,0.97); border: 1px solid #262626; border-left: 1px solid #8bfe0033; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); opacity: 0; pointer-events: none; transition: opacity .15s ease, transform .15s ease; transform: translateX(-6px); z-index: 101; }
+  .dropdown-item:hover .sub-panel { opacity: 1; pointer-events: auto; transform: translateX(0); }
+  .sub-item { display: block; padding: 10px 18px; font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #7a8a6a; border-bottom: 1px solid #1a1a1a; transition: color .15s ease, background .15s ease; white-space: nowrap; }
+  .sub-item:last-child { border-bottom: none; }
+  .sub-item:hover { color: #8bfe00; background: rgba(139,254,0,0.05); }
+  .btn-tag { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 28px 17px 22px; font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); transition: background-color .2s ease, color .2s ease, box-shadow .2s ease; }
+  .btn-tag-fill { background-color: #8bfe00; color: #0d2000; }
+  .btn-tag-fill:hover { background-color: #0A0A0A; color: #8bfe00; box-shadow: inset 0 0 0 1px #8bfe00, 0 0 20px rgba(139,254,0,0.35); }
+  @keyframes pulse-red { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255,0,0,0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255,0,0,0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255,0,0,0); } }
+  .rec-pulse { animation: pulse-red 2s infinite; }
+  #mobileMenu { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(10,10,10,0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; padding-top: 5rem; }
+  #mobileMenu.open { display: flex; }
+  #mobileMenu a { font-family: 'VintagePropagandistRegular', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: #e5e2e1; letter-spacing: 0.05em; transition: color .2s; text-decoration: none; }
+  #mobileMenu a:hover { color: #8bfe00; }
+  #mobileMenu .close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #e5e2e1; cursor: pointer; font-size: 2rem; }
+</style>
+
+<nav id="siteNav" class="nav-shell fixed top-0 w-full z-50 backdrop-blur-xl border-b border-transparent h-24 flex items-center pt-[env(safe-area-inset-top)]">
+  <div class="max-w-[1280px] w-full mx-auto px-4 md:px-16 flex items-center justify-between">
+    <a class="flex items-center group" href="index.html" data-nav-href="index.html">
+      <img src="assets/images/Acidic studios header logo.png" alt="Acidic Studios" style="height:48px;width:auto;" data-nav-src="assets/images/Acidic studios header logo.png">
+    </a>
+    <div class="hidden lg:flex items-center gap-7" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#becbae;">
+      <a class="nav-link hover:text-[#8bfe00] transition-colors" href="index.html" data-nav-href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a class="nav-link hover:text-[#8bfe00] transition-colors flex items-center gap-1" href="services/ai-agents.html" data-nav-href="services/ai-agents.html">Services <span class="material-symbols-outlined" style="font-size:14px">keyboard_arrow_down</span></a>
+        <div class="dropdown-panel">
+          <div class="dropdown-item">
+            <a class="flex-1" href="services/ai-video-production.html" data-nav-href="services/ai-video-production.html">AI Video Production</a>
+            <span class="material-symbols-outlined chevron" style="font-size:14px">chevron_right</span>
+            <div class="sub-panel">
+              <a class="sub-item" href="services/ai-video-production/ai-short-films.html" data-nav-href="services/ai-video-production/ai-short-films.html">AI Short Films</a>
+              <a class="sub-item" href="services/ai-video-production/ai-advertisement.html" data-nav-href="services/ai-video-production/ai-advertisement.html">AI Advertisement</a>
+              <a class="sub-item" href="services/ai-video-production/ai-short-videos.html" data-nav-href="services/ai-video-production/ai-short-videos.html">AI Short Videos</a>
+              <a class="sub-item" href="services/ai-video-production/ai-ugc-content.html" data-nav-href="services/ai-video-production/ai-ugc-content.html">AI UGC Content</a>
+            </div>
+          </div>
+          <div class="dropdown-item">
+            <a class="flex-1" href="services/ai-agents.html" data-nav-href="services/ai-agents.html">AI Agents</a>
+            <span class="material-symbols-outlined chevron" style="font-size:14px">chevron_right</span>
+            <div class="sub-panel">
+              <a class="sub-item" href="services/ai-agents/ai-chatbots.html" data-nav-href="services/ai-agents/ai-chatbots.html">AI Chatbots</a>
+              <a class="sub-item" href="services/ai-agents/ai-caller-voice-agents.html" data-nav-href="services/ai-agents/ai-caller-voice-agents.html">AI Caller / Voice Agents</a>
+              <a class="sub-item" href="services/ai-agents/ai-automation.html" data-nav-href="services/ai-agents/ai-automation.html">AI Automation</a>
+              <a class="sub-item" href="services/ai-agents/custom-ai-agents.html" data-nav-href="services/ai-agents/custom-ai-agents.html">Custom AI Agents</a>
+            </div>
+          </div>
+          <div class="dropdown-item">
+            <a class="flex-1" href="websites.html" data-nav-href="websites.html">Website Dev / Design</a>
+            <span class="material-symbols-outlined chevron" style="font-size:14px;opacity:0">chevron_right</span>
+          </div>
+          <div class="dropdown-item">
+            <a class="flex-1" href="services/branding.html" data-nav-href="services/branding.html">Branding</a>
+            <span class="material-symbols-outlined chevron" style="font-size:14px;opacity:0">chevron_right</span>
+          </div>
+          <div class="dropdown-item">
+            <a class="flex-1" href="services/video-editing.html" data-nav-href="services/video-editing.html">Video Editing</a>
+            <span class="material-symbols-outlined chevron" style="font-size:14px">chevron_right</span>
+            <div class="sub-panel">
+              <a class="sub-item" href="services/video-editing/ad-videos.html" data-nav-href="services/video-editing/ad-videos.html">Ad Videos</a>
+              <a class="sub-item" href="services/video-editing/ugc-videos.html" data-nav-href="services/video-editing/ugc-videos.html">UGC Videos</a>
+              <a class="sub-item" href="services/video-editing/short-form-videos.html" data-nav-href="services/video-editing/short-form-videos.html">Short-form Videos</a>
+              <a class="sub-item" href="services/video-editing/long-form-videos.html" data-nav-href="services/video-editing/long-form-videos.html">Long-form Videos</a>
+              <a class="sub-item" href="services/video-editing/youtube-automation.html" data-nav-href="services/video-editing/youtube-automation.html">YouTube Automation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link hover:text-[#8bfe00] transition-colors" href="websites.html" data-nav-href="websites.html">Websites</a>
+      <a class="nav-link hover:text-[#8bfe00] transition-colors" href="blog.html" data-nav-href="blog.html">Blog</a>
+      <a class="nav-link hover:text-[#8bfe00] transition-colors" href="team.html" data-nav-href="team.html">Team</a>
+      <a class="nav-link hover:text-[#8bfe00] transition-colors" href="careers.html" data-nav-href="careers.html">Careers</a>
+      <a class="nav-link hover:text-[#8bfe00] transition-colors" href="contact.html" data-nav-href="contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a class="btn-tag btn-tag-fill hidden sm:inline-flex" href="contact.html" data-nav-href="contact.html">Start a Project</a>
+      <button id="menuBtn" class="flex h-11 w-11 items-center justify-center text-white hover:text-[#8bfe00] transition-colors lg:hidden" aria-label="Toggle menu">
+        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobileMenu">
+  <button class="close-btn" onclick="closeMenu()">&#x2715;</button>
+  <a href="index.html" data-nav-href="index.html" onclick="closeMenu()">Home</a>
+  <a href="services/ai-video-production.html" data-nav-href="services/ai-video-production.html" onclick="closeMenu()">AI Video</a>
+  <a href="services/ai-agents.html" data-nav-href="services/ai-agents.html" onclick="closeMenu()">AI Agents</a>
+  <a href="websites.html" data-nav-href="websites.html" onclick="closeMenu()">Websites</a>
+  <a href="services/branding.html" data-nav-href="services/branding.html" onclick="closeMenu()">Branding</a>
+  <a href="services/video-editing.html" data-nav-href="services/video-editing.html" onclick="closeMenu()">Video Editing</a>
+  <a href="blog.html" data-nav-href="blog.html" onclick="closeMenu()">Blog</a>
+  <a href="team.html" data-nav-href="team.html" onclick="closeMenu()">Team</a>
+  <a href="careers.html" data-nav-href="careers.html" onclick="closeMenu()">Careers</a>
+  <a href="contact.html" data-nav-href="contact.html" onclick="closeMenu()">Contact</a>
+  <a href="contact.html" data-nav-href="contact.html" class="btn-tag btn-tag-fill mt-4" onclick="closeMenu()">Start a Project</a>
+</div>

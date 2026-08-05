@@ -1,0 +1,252 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact - ACIDIC STUDIOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#353534", "surface-bright": "#3a3939", "on-secondary-fixed-variant": "#454747",
+                      "error-container": "#93000a", "surface-container-high": "#2a2a2a", "tertiary": "#ffffff",
+                      "surface-container-low": "#1c1b1b", "on-surface": "#e5e2e1", "on-secondary-container": "#b4b5b5",
+                      "surface-deep": "#121212", "primary-fixed": "#8bfe00", "secondary-fixed": "#e2e2e2",
+                      "on-primary": "#1a3700", "surface-dim": "#131313", "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary": "#2f3131", "outline": "#89957a", "on-tertiary-fixed": "#1a1c1c",
+                      "on-primary-fixed": "#0d2000", "on-secondary-fixed": "#1a1c1c", "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#7adf00", "background": "#131313", "tertiary-container": "#e3e2e2",
+                      "primary-container": "#8bfe00", "on-surface-variant": "#becbae", "on-secondary": "#2f3131",
+                      "on-primary-fixed-variant": "#285000", "border-muted": "#262626", "on-tertiary-fixed-variant": "#464747",
+                      "acid-glow": "#8CFF00CC", "inverse-primary": "#376b00", "surface-container-highest": "#353534",
+                      "outline-variant": "#3f4a34", "inverse-on-surface": "#313030", "on-primary-container": "#3b7100",
+                      "surface-container": "#201f1f", "secondary-container": "#454747", "secondary": "#c6c6c7",
+                      "surface": "#131313", "inverse-surface": "#e5e2e1", "tertiary-fixed": "#e3e2e2",
+                      "on-error": "#690005", "on-tertiary-container": "#636465", "surface-container-lowest": "#0e0e0e",
+                      "on-error-container": "#ffdad6", "primary": "#ffffff", "secondary-fixed-dim": "#c6c6c7",
+                      "error": "#ffb4ab", "surface-tint": "#7adf00"
+              },
+              "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+              "spacing": { "stack-sm": "8px", "gutter": "24px", "stack-md": "16px", "margin-mobile": "16px", "margin-desktop": "64px", "stack-lg": "32px" },
+              "fontFamily": {
+                      "body-md": ["Inter"], "headline-xl": ["VintagePropagandistRegular", "sans-serif"],
+                      "body-lg": ["Inter"], "label-sm": ["JetBrains Mono"],
+                      "headline-lg": ["VintagePropagandistRegular", "sans-serif"], "headline-lg-mobile": ["VintagePropagandistRegular", "sans-serif"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "headline-xl": ["112px", { "lineHeight": "0.9", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                      "headline-lg": ["80px", { "lineHeight": "0.9", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                      "headline-lg-mobile": ["64px", { "lineHeight": "0.9", "fontWeight": "400" }]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body { background-color: #0A0A0A; color: #e5e2e1; overflow-x: hidden; }
+        .acid-glow { box-shadow: 0 0 15px rgba(139, 254, 0, 0.8); }
+        .acid-text-glow { text-shadow: 0 0 15px rgba(139, 254, 0, 0.6); }
+        .acid-border-glow:hover { border-color: #8bfe00; box-shadow: 0 0 15px rgba(139, 254, 0, 0.4); }
+        .stencil-text { -webkit-text-stroke: 1.5px #8bfe00; color: transparent; }
+        .stencil-text-white { -webkit-text-stroke: 1px #e5e2e1; color: transparent; }
+        .glass-panel { background: rgba(18, 18, 18, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid #262626; }
+        @keyframes pulse-red { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 0, 0, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); } }
+        .rec-pulse { animation: pulse-red 2s infinite; }
+        @keyframes chemical-flow { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+        .chemical-bar { background: linear-gradient(90deg, #8bfe00, #aaff00, #8bfe00); background-size: 200% 100%; animation: chemical-flow 3s linear infinite; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 0; }
+        ::-webkit-scrollbar-thumb:hover { background: #8bfe00; }
+        .condensed-header { transform: scaleY(1.15); transform-origin: top left; display: inline-block; margin-bottom: 0.12em; }
+        .btn-tag { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 28px 17px 22px; font-family: "JetBrains Mono", monospace; font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px); transition: background-color .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease; }
+        .btn-tag .btn-tag-index { opacity: 0.5; font-weight: 400; }
+        .btn-tag-fill { background-color: #8bfe00; color: #0d2000; }
+        .btn-tag-fill:hover { background-color: #0A0A0A; color: #8bfe00; box-shadow: inset 0 0 0 1px #8bfe00, 0 0 20px rgba(139,254,0,0.35); }
+        .btn-tag-fill:hover .btn-tag-dot { background-color: #8bfe00; }
+        .btn-tag-outline { background-color: rgba(18,18,18,0.4); color: #e5e2e1; box-shadow: inset 0 0 0 1px #3f4a34; }
+        .btn-tag-outline:hover { color: #8bfe00; box-shadow: inset 0 0 0 1px #8bfe00, 0 0 20px rgba(139,254,0,0.2); }
+        .btn-tag-dot { width: 6px; height: 6px; border-radius: 999px; background-color: currentColor; flex-shrink: 0; }
+        .btn-tag-ghost { background-color: transparent; color: #8bfe00; box-shadow: inset 0 0 0 1px rgba(139,254,0,0.5); padding: 20px 32px; }
+        .btn-tag-ghost:hover { background-color: #8bfe00; color: #0d2000; box-shadow: 0 0 30px rgba(139,254,0,0.5); }
+        .nav-shell { background-color: rgba(18,18,18,0.15); transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease; }
+        .nav-shell.nav-solid { background-color: rgba(10,10,10,0.75); border-color: rgba(139,254,0,0.3); box-shadow: 0 4px 30px rgba(139,254,0,0.1); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0; background: #8bfe00; transition: width .25s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #8bfe00; }
+        .icon-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #262626; color: #becbae; transition: border-color .2s ease, color .2s ease, box-shadow .2s ease; }
+        .icon-btn:hover { border-color: rgba(139,254,0,0.4); color: #8bfe00; box-shadow: 0 0 12px rgba(139,254,0,0.15); }
+        .field-input { background-color: rgba(18,18,18,0.6); border: 1px solid #262626; color: #e5e2e1; padding: 16px 18px; font-family: "Inter"; transition: border-color .2s ease, box-shadow .2s ease; width: 100%; }
+        .field-input:focus { outline: none; border-color: #8bfe00; box-shadow: 0 0 0 1px #8bfe00; }
+        .field-input::placeholder { color: #6b6b6b; }
+</style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
+<div class="fixed inset-0 z-[-1] pointer-events-none opacity-40 mix-blend-screen"></div>
+<div id="navbar-placeholder"></div>
+<main class="relative">
+<section class="relative pt-40 pb-20 md:pt-32 md:pb-28 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+<div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+<div class="lg:col-span-5">
+<div class="flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest mb-8 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
+                UPLINK // CONTACT_V1
+            </div>
+<h1 class="font-headline-xl text-[38px] sm:text-[56px] md:text-[80px] text-primary uppercase tracking-tight leading-[0.85] mb-8">
+<span class="condensed-header">Start a</span><br>
+<span class="stencil-text condensed-header">Project</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-12 border-l-2 border-primary-fixed pl-6">
+Tell us what you're building. A founder reads every message personally — expect a reply within 48 hours.
+</p>
+<div class="space-y-6 border-t border-border-muted pt-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed">mail</span>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest text-[13px]">team@acidicstudios.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed">calendar_month</span>
+<a class="font-label-sm text-primary-fixed uppercase tracking-widest text-[13px] hover:underline" href="book-a-call.html">Or book a 30-minute call →</a>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-7">
+<div class="glass-panel p-8 md:p-12">
+<form class="space-y-6" id="contactForm" action="https://formspree.io/f/xeeybqvo" method="POST">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Name</label>
+<input class="field-input" placeholder="Your name" type="text" name="name" required>
+</div>
+<div>
+<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Email</label>
+<input class="field-input" placeholder="you@company.com" type="email" name="email" required>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Company</label>
+<input class="field-input" placeholder="Company name" type="text" name="company">
+</div>
+<div>
+<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">What are you building?</label>
+<textarea class="field-input" placeholder="A few lines about the project, timeline, and budget range" rows="5" name="message" required></textarea>
+</div>
+<div>
+<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Budget Range</label>
+<select class="field-input" name="budget">
+<option>Under $10K</option>
+<option>$10K – $50K</option>
+<option>$50K – $150K</option>
+<option>$150K+</option>
+</select>
+</div>
+<button class="btn-tag btn-tag-fill w-full md:w-auto" type="submit" id="submitBtn">
+<span class="btn-tag-index">A/</span><span id="btnText">Send Transmission</span>
+</button>
+<p id="successMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-primary-fixed">✓ Message sent — we'll reply within 48 hours.</p>
+<p id="errorMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-red-400">Something went wrong — try emailing us directly.</p>
+</form>
+</div>
+</div>
+
+</div>
+</section>
+</main>
+<footer class="bg-surface-lowest border-t border-border-muted w-full py-16 md:py-24">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="lg:col-span-1">
+<div class="font-headline-lg text-[32px] text-primary tracking-tighter flex items-center gap-3 mb-8">
+<img alt="Acidic Studios Logo Mark" class="w-10 h-10 border border-border-muted rounded-full" src="assets/images/Acidic studios header logo.png">
+          ACIDIC
+        </div>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="case-studies.html">Work</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="services.html">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="agency.html">Agency</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Technical</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="careers.html">Careers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="faqs.html">FAQs</a></li>
+<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="privacy-policy.html">Legal Protocols</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Connect</h4>
+<div class="grid grid-cols-2 gap-4">
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">photo_camera</span> Instagram
+          </a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">thumb_up</span> Facebook
+          </a>
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">hub</span> LinkedIn
+          </a>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-border-muted flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-[10px] text-on-surface-variant/40 uppercase tracking-[0.2em]">
+        ©2024 ACIDIC STUDIOS. ALL RIGHTS RESERVED. DIGITAL ALCHEMY IN PROGRESS.
+      </p>
+<div class="flex gap-6">
+<span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">V.4.2.0_STABLE</span>
+<span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">LATENCY: 0.02MS</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn     = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const success = document.getElementById('successMsg');
+      const error   = document.getElementById('errorMsg');
+      btnText.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          this.reset();
+          success.classList.remove('hidden');
+          error.classList.add('hidden');
+          btnText.textContent = 'Sent';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        error.classList.remove('hidden');
+        success.classList.add('hidden');
+        btnText.textContent = 'Send Transmission';
+        btn.disabled = false;
+      }
+    });
+</script>
+<script src="assets/js/main.js"></script>
+</body></html>
