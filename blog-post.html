@@ -1,0 +1,190 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Dispatch — ACIDIC STUDIOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="assets/css/main.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#201f1f","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["VintagePropagandistRegular","sans-serif"],"body-lg":["Inter"],"label-sm":["JetBrains Mono"],"headline-lg":["VintagePropagandistRegular","sans-serif"],"headline-lg-mobile":["VintagePropagandistRegular","sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
+</script>
+<style>
+  #postContent p { margin-bottom: 1.75em; }
+  #postContent h2 { font-family: "VintagePropagandistRegular", sans-serif; font-size: 32px; color: #ffffff; text-transform: uppercase; letter-spacing: -0.01em; margin: 2em 0 0.75em; }
+  #postContent h3 { font-family: "JetBrains Mono", monospace; font-size: 14px; color: #8bfe00; text-transform: uppercase; letter-spacing: 0.08em; margin: 1.75em 0 0.75em; }
+  #postContent a { color: #8bfe00; text-decoration: underline; text-underline-offset: 3px; }
+  #postContent ul, #postContent ol { margin: 0 0 1.75em 1.25em; }
+  #postContent li { margin-bottom: 0.5em; }
+  #postContent blockquote { border-left: 2px solid #8bfe00; padding-left: 1.5em; margin: 2em 0; color: #becbae; font-style: italic; }
+  #postContent img { width: 100%; border: 1px solid #262626; margin: 2em 0; }
+  #postContent code { font-family: "JetBrains Mono", monospace; font-size: 0.9em; color: #8bfe00; background: rgba(139,254,0,0.08); padding: 2px 6px; }
+</style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
+<div id="navbar-placeholder"></div>
+
+<main class="relative">
+
+<!-- Header / meta -->
+<section class="relative pt-40 pb-16 md:pt-48 px-margin-mobile md:px-margin-desktop max-w-[860px] mx-auto">
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
+
+  <a href="blog.html" class="relative z-10 inline-flex items-center gap-2 font-label-sm text-[11px] text-on-surface-variant hover:text-primary-fixed uppercase tracking-widest transition-colors mb-10">
+    <span class="material-symbols-outlined text-[16px]">arrow_back</span> All Dispatches
+  </a>
+
+  <div id="postMeta" class="relative z-10">
+    <p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Loading transmission...</p>
+  </div>
+</section>
+
+<!-- Hero image -->
+<section id="postHeroWrap" class="max-w-[1100px] mx-auto px-margin-mobile md:px-margin-desktop mb-16 hidden">
+  <div id="postHero" class="w-full h-[260px] md:h-[460px] bg-cover bg-center border border-border-muted"></div>
+</section>
+
+<!-- Body -->
+<section class="max-w-[760px] mx-auto px-margin-mobile md:px-margin-desktop pb-20">
+  <div id="postContent" class="font-body-lg text-body-lg text-on-surface-variant">
+  </div>
+
+  <!-- Share / footer meta -->
+  <div id="postFooterMeta" class="hidden mt-16 pt-8 border-t border-border-muted flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+    <span class="font-label-sm text-[10px] text-on-surface-variant/60 uppercase tracking-widest">End of Transmission</span>
+    <div class="flex gap-3">
+      <a id="shareX" href="#" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Share on X"><span class="material-symbols-outlined text-[16px]">tag</span></a>
+      <a id="shareLinkedIn" href="#" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Share on LinkedIn"><span class="material-symbols-outlined text-[16px]">hub</span></a>
+      <button id="copyLink" class="icon-btn rounded-full" aria-label="Copy link"><span class="material-symbols-outlined text-[16px]">link</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 404 state -->
+<section id="notFound" class="hidden max-w-[760px] mx-auto px-margin-mobile md:px-margin-desktop pb-32 text-center">
+  <span class="stencil-text acid-glow font-headline-xl text-[72px]">404</span>
+  <h2 class="font-headline-lg text-[28px] text-primary uppercase tracking-tight mt-4 mb-6">Transmission Lost</h2>
+  <p class="font-body-md text-on-surface-variant mb-10">This dispatch doesn't exist, or the signal has decayed.</p>
+  <a href="blog.html" class="btn-tag btn-tag-outline"><span class="btn-tag-dot"></span>Back To The Feed</a>
+</section>
+
+<!-- More dispatches -->
+<section class="py-16 md:py-24 border-t border-border-muted max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-10">More Dispatches</h3>
+  <div id="morePosts" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+</section>
+
+</main>
+
+<footer class="bg-surface-lowest border-t border-border-muted w-full py-16 md:py-24">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="lg:col-span-1"><div class="font-headline-lg text-[32px] text-primary tracking-tighter flex items-center gap-3 mb-8"><img alt="Acidic Studios" class="w-10 h-10 border border-border-muted rounded-full" src="assets/images/Acidic studios header logo.png">ACIDIC</div></div>
+<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Navigation</h4><ul class="space-y-4"><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="case-studies.html">Work</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="services.html">Services</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="agency.html">Agency</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="blog.html">Blog</a></li></ul></div>
+<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Technical</h4><ul class="space-y-4"><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="careers.html">Careers</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="faqs.html">FAQs</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="privacy-policy.html">Legal Protocols</a></li></ul></div>
+<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Connect</h4><div class="flex gap-3"><a href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Instagram"><span class="material-symbols-outlined text-[16px]">photo_camera</span></a><a href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Facebook"><span class="material-symbols-outlined text-[16px]">thumb_up</span></a><a href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="LinkedIn"><span class="material-symbols-outlined text-[16px]">hub</span></a></div><p class="font-body text-sm text-on-surface-variant mt-4"><a class="hover:text-primary-fixed transition-colors" href="mailto:team@acidicstudios.com">team@acidicstudios.com</a></p></div>
+</div>
+<div class="pt-8 border-t border-border-muted flex flex-col md:flex-row justify-between items-center gap-4"><p class="font-label-sm text-[10px] text-on-surface-variant/40 uppercase tracking-[0.2em]">©2024 ACIDIC STUDIOS. ALL RIGHTS RESERVED. DIGITAL ALCHEMY IN PROGRESS.</p><div class="flex gap-6"><span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">V.4.2.0_STABLE</span><span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">LATENCY: 0.02MS</span></div></div>
+</div>
+</footer>
+
+<script>
+const sb = supabase.createClient('https://npunrjejzvbjsxpsouuq.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wdW5yamVqenZianN4cHNvdXVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0Njg4NzEsImV4cCI6MjEwMDA0NDg3MX0.bFUZRI5se1mSD1bMwmh-kFN70gNk6gI-Ov3ysbFxCfc');
+
+function escapeHtml(str){
+  return (str||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function renderContent(raw){
+  if(!raw) return '<p>No content yet.</p>';
+  // If it already looks like HTML, trust it as-is (assumed to come from a rich text editor).
+  if(/<\/?[a-z][\s\S]*>/i.test(raw)) return raw;
+  // Otherwise treat as plain text, split into paragraphs on blank lines.
+  return raw.split(/\n\s*\n/).map(p => `<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`).join('');
+}
+
+function formatDate(d){
+  if(!d) return '';
+  try {
+    return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  } catch(e){ return ''; }
+}
+
+(async()=>{
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+
+  if(!slug){
+    document.getElementById('notFound').classList.remove('hidden');
+    document.getElementById('postMeta').innerHTML = '';
+    return;
+  }
+
+  const { data: post, error } = await sb.from('posts').select('*').eq('slug', slug).single();
+
+  if(error || !post){
+    document.getElementById('postMeta').innerHTML = '';
+    document.getElementById('notFound').classList.remove('hidden');
+  } else {
+    document.title = `${post.title} — ACIDIC STUDIOS`;
+
+    document.getElementById('postMeta').innerHTML = `
+      <div class="flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest mb-8 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
+        <div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
+        TRANSMISSION_LOG // ${post.category ? escapeHtml(post.category).toUpperCase() : 'GENERAL'}
+      </div>
+      <h1 class="font-headline-lg text-primary uppercase tracking-tight leading-[1.05] mb-6 text-[36px] sm:text-[48px] md:text-[60px]">${escapeHtml(post.title)}</h1>
+      ${post.description ? `<p class="font-body-lg text-body-lg text-on-surface-variant/80 mb-8 max-w-2xl">${escapeHtml(post.description)}</p>` : ''}
+      <div class="flex flex-wrap items-center gap-4 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest border-t border-border-muted pt-6">
+        ${post.created_at ? `<span>${formatDate(post.created_at)}</span>` : ''}
+        ${post.category ? `<span class="text-primary-fixed">${escapeHtml(post.category)}</span>` : ''}
+        ${post.author ? `<span>By ${escapeHtml(post.author)}</span>` : ''}
+      </div>
+    `;
+
+    if(post.image){
+      document.getElementById('postHero').style.backgroundImage = `url('${post.image}')`;
+      document.getElementById('postHeroWrap').classList.remove('hidden');
+    }
+
+    document.getElementById('postContent').innerHTML = renderContent(post.content);
+    document.getElementById('postFooterMeta').classList.remove('hidden');
+
+    const shareUrl = encodeURIComponent(window.location.href);
+    const shareTitle = encodeURIComponent(post.title);
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`;
+    document.getElementById('shareLinkedIn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+    document.getElementById('copyLink').addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href);
+      const icon = document.querySelector('#copyLink .material-symbols-outlined');
+      const original = icon.textContent;
+      icon.textContent = 'check';
+      setTimeout(() => { icon.textContent = original; }, 1500);
+    });
+  }
+
+  // Related / more posts
+  const { data: more } = await sb.from('posts').select('*').neq('slug', slug).order('created_at', {ascending:false}).limit(3);
+  const grid = document.getElementById('morePosts');
+  if(!more || !more.length){
+    grid.innerHTML = '<p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest col-span-3">No other dispatches yet.</p>';
+  } else {
+    grid.innerHTML = more.map(p => `
+      <a href="blog-post.html?slug=${p.slug}" class="post-card">
+        ${p.image ? `<div class="h-48 bg-cover bg-center" style="background-image:url('${p.image}')"></div>` : '<div class="h-48 bg-surface-deep"></div>'}
+        <div class="p-6">
+          ${p.category ? `<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest mb-3 block">${escapeHtml(p.category)}</span>` : ''}
+          <h3 class="font-headline-lg-mobile text-[20px] text-primary uppercase tracking-tight leading-tight mb-3">${escapeHtml(p.title)}</h3>
+          <p class="font-body-md text-on-surface-variant/80 text-[13px] mb-4">${escapeHtml((p.description||'').substring(0,100))}${p.description && p.description.length>100 ? '...' : ''}</p>
+          <span class="font-label-sm text-primary-fixed text-[10px] uppercase tracking-widest">Read →</span>
+        </div>
+      </a>`).join('');
+  }
+})();
+</script>
+<script src="assets/js/main.js"></script>
+</body></html>

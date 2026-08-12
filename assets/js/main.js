@@ -21,7 +21,7 @@
   .nav-dropdown{position:relative}
   .dropdown-panel{position:absolute;top:calc(100% + 20px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:220px;background:rgba(10,10,10,0.95);border:1px solid #262626;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:100}
   .dropdown-panel::before{content:"";position:absolute;top:-20px;left:0;right:0;height:20px}
-  .dropdown-panel::after{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#8bfe00,transparent)}
+  .dropdown-panel::after{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:#262626}
   .nav-dropdown:hover .dropdown-panel{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
   .dropdown-item{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 18px;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#becbae;border-bottom:1px solid #1a1a1a;transition:color .15s ease,background .15s ease;white-space:nowrap;cursor:pointer}
   .dropdown-item:last-child{border-bottom:none}
@@ -44,10 +44,10 @@
   #mobileMenu .nav-close-btn{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#e5e2e1;cursor:pointer;font-size:2rem}
 </style>
 
-<nav id="siteNav" class="nav-shell fixed top-0 w-full z-50 backdrop-blur-xl border-b border-transparent h-24 flex items-center pt-[env(safe-area-inset-top)]">
+<nav id="siteNav" class="nav-shell fixed top-0 w-full z-50 backdrop-blur-xl border-b border-transparent h-20 flex items-center pt-[env(safe-area-inset-top)]">
   <div class="max-w-[1280px] w-full mx-auto px-4 md:px-16 flex items-center justify-between">
-    <a class="flex items-center gap-3 group" href="${p}index.html">
-      <img src="${p}assets/images/Acidic studios header logo.png" alt="Acidic Studios" style="height:64px;width:420px;object-fit:contain;object-position:left center;">
+    <a class="flex items-center group" href="${p}index.html">
+      <img src="${p}assets/images/acidic-header-logo-cropped.png" alt="Acidic Studios" style="height:46px;width:auto;max-height:46px;min-width:calc(46px * 1.85 + 4px);display:block;object-fit:contain;">
     </a>
     <div class="hidden lg:flex items-center gap-7" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#becbae;">
       <a class="nav-link hover:text-[#8bfe00] transition-colors" href="${p}index.html">Home</a>

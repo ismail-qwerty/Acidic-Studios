@@ -1,5 +1,5 @@
 <style>
-  .nav-shell { background-color: rgba(18,18,18,0.15); transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease; }
+  .nav-shell { background-color: rgba(18,18,18,0.15); transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease; border-top: none; }
   .nav-shell.nav-solid { background-color: rgba(10,10,10,0.75); border-color: rgba(139,254,0,0.3); box-shadow: 0 4px 30px rgba(139,254,0,0.1); }
   .nav-link { position: relative; }
   .nav-link::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0; background: #8bfe00; transition: width .25s ease; }
@@ -32,10 +32,14 @@
   #mobileMenu .close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #e5e2e1; cursor: pointer; font-size: 2rem; }
 </style>
 
-<nav id="siteNav" class="nav-shell fixed top-0 w-full z-50 backdrop-blur-xl border-b border-transparent h-24 flex items-center pt-[env(safe-area-inset-top)]">
+<nav id="siteNav" class="nav-shell fixed top-0 w-full z-50 backdrop-blur-xl border-b border-transparent flex items-center" style="height:88px;">
   <div class="max-w-[1280px] w-full mx-auto px-4 md:px-16 flex items-center justify-between">
     <a class="flex items-center group" href="index.html" data-nav-href="index.html">
-      <img src="assets/images/Acidic studios header logo.png" alt="Acidic Studios" style="height:48px;width:auto;" data-nav-src="assets/images/Acidic studios header logo.png">
+      <img 
+    src="assets/images/acidic-header-logo-cropped.png" 
+    alt="Acidic Studios" 
+    style="height:44px;width:auto;max-height:44px;display:block;object-fit:contain;" 
+    data-nav-src="assets/images/acidic-header-logo-cropped.png">
     </a>
     <div class="hidden lg:flex items-center gap-7" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#becbae;">
       <a class="nav-link hover:text-[#8bfe00] transition-colors" href="index.html" data-nav-href="index.html">Home</a>

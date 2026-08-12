@@ -8,14 +8,14 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/main.css">
 <script id="tailwind-config">
 tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#ffffff","surface-deep":"#0a0a0a","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#ffffff","primary-fixed-dim":"#7adf00","background":"#000000","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#141414","surface":"#000000","surface-container-lowest":"#000000","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["VintagePropagandistRegular","sans-serif"],"body-lg":["Inter"],"label-sm":["JetBrains Mono"],"headline-lg":["VintagePropagandistRegular","sans-serif"],"headline-lg-mobile":["VintagePropagandistRegular","sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
 <div id="navbar-placeholder"></div>
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
 
 <main class="relative">
 
@@ -23,8 +23,27 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 <section class="relative min-h-[85vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto pb-stack-lg pt-40 overflow-hidden">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
 
+  <!-- REC Indicator -->
+  <div class="absolute top-32 left-margin-mobile md:left-margin-desktop flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest z-10 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
+    <div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
+    REC 00:00:03 // SERVICE_FEED
+  </div>
+  <div class="absolute top-32 right-margin-mobile md:right-margin-desktop font-label-sm text-[10px] text-primary-fixed/40 uppercase tracking-[0.3em] z-10 hidden md:block">
+    SPEC_ID: SVC_001
+  </div>
 
-  <div class="relative z-10 max-w-4xl">
+  <div class="relative z-10 max-w-4xl pt-16">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest mb-8">
+      <a href="../index.html" class="hover:text-primary-fixed transition-colors">Home</a>
+      <span class="text-border-muted">/</span>
+      <span>Services</span>
+      <span class="text-border-muted">/</span>
+      <span class="text-primary-fixed">AI Video Production</span>
+    </div>
+
+    <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-6 inline-block border-l-2 border-primary-fixed pl-4">Service 01 / Video</span>
+
     <h1 class="font-headline-xl text-[48px] sm:text-[72px] md:text-[100px] text-primary uppercase tracking-tight leading-[0.85] mb-8 drop-shadow-lg">
       Footage That<br>
       <span class="stencil-text acid-glow condensed-header">Was Never Filmed.</span>
@@ -35,7 +54,7 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
     </p>
 
     <div class="flex flex-col sm:flex-row gap-5">
-      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
+      <a class="btn-tag btn-tag-fill" href="../contact.html">Start a Project</a>
       <a class="btn-tag btn-tag-outline" href="#reel"><span class="btn-tag-dot"></span>View Showreel</a>
     </div>
   </div>
@@ -74,7 +93,8 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <!-- Short Films -->
-    <a href="ai-short-films.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+    <a href="ai-video-production/ai-short-films.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div class="flex justify-between items-start mb-8">
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">theaters</span>
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
@@ -83,7 +103,8 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
       <p class="font-body-md text-on-surface-variant flex-grow">Narrative-driven pieces built for festivals, brand storytelling, and anything that needs a real emotional arc.</p>
     </a>
     <!-- Advertisement -->
-    <a href="ai-advertisement.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+    <a href="ai-video-production/ai-advertisement.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div class="flex justify-between items-start mb-8">
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">campaign</span>
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
@@ -92,7 +113,8 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
       <p class="font-body-md text-on-surface-variant flex-grow">Broadcast and paid-social spots that hit deadline without the location scouting, casting, or crew.</p>
     </a>
     <!-- Short Videos -->
-    <a href="ai-short-videos.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+    <a href="ai-video-production/ai-short-videos.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div class="flex justify-between items-start mb-8">
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">smartphone</span>
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
@@ -101,7 +123,8 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
       <p class="font-body-md text-on-surface-variant flex-grow">Vertical-first content engineered for retention on Reels, TikTok, and Shorts — hooks in the first second.</p>
     </a>
     <!-- UGC -->
-    <a href="ai-ugc-content.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+    <a href="ai-video-production/ai-ugc-content.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       <div class="flex justify-between items-start mb-8">
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">record_voice_over</span>
         <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
@@ -229,16 +252,42 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
   </div>
 </section>
 
+<!-- Other Services -->
+<section class="py-stack-lg md:py-[120px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12">
+    <h2 class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Explore Other Services</h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <a href="ai-agents.html" class="feature-card group flex items-center justify-between">
+      <span class="font-headline-lg-mobile text-[18px] text-primary uppercase group-hover:text-primary-fixed transition-colors">AI Agents</span>
+      <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors">arrow_outward</span>
+    </a>
+    <a href="../websites.html" class="feature-card group flex items-center justify-between">
+      <span class="font-headline-lg-mobile text-[18px] text-primary uppercase group-hover:text-primary-fixed transition-colors">Websites</span>
+      <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors">arrow_outward</span>
+    </a>
+    <a href="branding.html" class="feature-card group flex items-center justify-between">
+      <span class="font-headline-lg-mobile text-[18px] text-primary uppercase group-hover:text-primary-fixed transition-colors">Branding</span>
+      <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors">arrow_outward</span>
+    </a>
+    <a href="video-editing.html" class="feature-card group flex items-center justify-between">
+      <span class="font-headline-lg-mobile text-[18px] text-primary uppercase group-hover:text-primary-fixed transition-colors">Video Editing</span>
+      <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors">arrow_outward</span>
+    </a>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="pb-stack-lg md:pb-[160px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
   <div class="group relative bg-[rgba(139,254,0,0.03)] border border-border-muted p-10 md:p-16 hover:border-primary-fixed transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-10 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     <div class="max-w-xl">
       <span class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-primary-fixed/60">Not sure which format fits?</span>
       <h3 class="font-headline-lg text-[32px] md:text-[44px] text-primary uppercase mt-4 leading-tight">Let's script the brief together.</h3>
       <p class="font-body-md text-on-surface-variant mt-4">Tell us what you're trying to say and who it's for — we'll recommend the right format and timeline.</p>
     </div>
     <div class="flex flex-col sm:flex-row gap-5 shrink-0">
-      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
+      <a class="btn-tag btn-tag-fill" href="../contact.html">Start a Project</a>
     </div>
   </div>
 </section>

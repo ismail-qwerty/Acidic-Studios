@@ -6,8 +6,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700;800&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="assets/css/main.css">
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -84,7 +85,7 @@
                               "Inter"
                       ],
                       "headline-xl": [
-                              "VintagePropagandistRegular", "sans-serif"
+                              "Montserrat", "sans-serif"
                       ],
                       "body-lg": [
                               "Inter"
@@ -93,10 +94,10 @@
                               "JetBrains Mono"
                       ],
                       "headline-lg": [
-                              "VintagePropagandistRegular", "sans-serif"
+                              "Montserrat", "sans-serif"
                       ],
                       "headline-lg-mobile": [
-                              "VintagePropagandistRegular", "sans-serif"
+                              "Montserrat", "sans-serif"
                       ]
               },
               "fontSize": {
@@ -150,322 +151,6 @@
           },
         }
       </script>
-<style>
-        body {
-            background-color: #0A0A0A;
-            color: #e5e2e1;
-            overflow-x: hidden;
-        }
-        
-        .acid-glow {
-            box-shadow: 0 0 15px rgba(139, 254, 0, 0.8);
-        }
-
-        .acid-text-glow {
-            text-shadow: 0 0 15px rgba(139, 254, 0, 0.6);
-        }
-
-        .acid-border-glow:hover {
-            border-color: #8bfe00;
-            box-shadow: 0 0 15px rgba(139, 254, 0, 0.4);
-        }
-
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-        }
-
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 30s linear infinite;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .stencil-text {
-            -webkit-text-stroke: 1.5px #8bfe00;
-            color: transparent;
-        }
-
-        .stencil-text-white {
-            -webkit-text-stroke: 1px #e5e2e1;
-            color: transparent;
-        }
-        
-        .glass-panel {
-            background: rgba(18, 18, 18, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid #262626;
-        }
-
-        /* Pulse animation for REC indicator */
-        @keyframes pulse-red {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 0, 0, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
-        }
-
-        .rec-pulse {
-            animation: pulse-red 2s infinite;
-        }
-
-        .chemical-bar {
-            background: linear-gradient(90deg, #8bfe00, #aaff00, #8bfe00);
-            background-size: 200% 100%;
-            animation: chemical-flow 3s linear infinite;
-        }
-
-        @keyframes chemical-flow {
-            0% { background-position: 100% 0; }
-            100% { background-position: -100% 0; }
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #262626;
-            border-radius: 0;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8bfe00;
-        }
-
-        .mask-image-gradient {
-            mask-image: linear-gradient(to top, transparent 0%, black 20%, black 100%);
-            -webkit-mask-image: linear-gradient(to top, transparent 0%, black 20%, black 100%);
-        }
-
-        /* FIX: previously applied per-word, which desynced spacing/baseline between
-           sibling spans. Now applied once to a single wrapping element per line so
-           inner words keep normal, correct spacing. */
-        .condensed-header {
-            transform: scaleY(1.15);
-            transform-origin: top left;
-            display: inline-block;
-            margin-bottom: 0.12em;
-        }
-
-        /* --- Signature button system: "specimen tag" ---
-           Notched corners instead of the generic rounded/pill button, mono
-           index-code labels, and an inline status dot to match the REC / Spec_ID
-           / Load% instrumentation language already used across the page. */
-        .btn-tag {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 17px 28px 17px 22px;
-            font-family: "JetBrains Mono", monospace;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            white-space: nowrap;
-            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
-            transition: background-color .2s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
-        }
-        .btn-tag .btn-tag-index {
-            opacity: 0.5;
-            font-weight: 400;
-        }
-        .btn-tag-fill {
-            background-color: #8bfe00;
-            color: #0d2000;
-        }
-        .btn-tag-fill:hover {
-            background-color: #0A0A0A;
-            color: #8bfe00;
-            box-shadow: inset 0 0 0 1px #8bfe00, 0 0 20px rgba(139,254,0,0.35);
-        }
-        .btn-tag-fill:hover .btn-tag-dot {
-            background-color: #8bfe00;
-        }
-        .btn-tag-outline {
-            background-color: rgba(18,18,18,0.4);
-            color: #e5e2e1;
-            box-shadow: inset 0 0 0 1px #3f4a34;
-        }
-        .btn-tag-outline:hover {
-            color: #8bfe00;
-            box-shadow: inset 0 0 0 1px #8bfe00, 0 0 20px rgba(139,254,0,0.2);
-        }
-        .btn-tag-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 999px;
-            background-color: currentColor;
-            flex-shrink: 0;
-        }
-        .btn-tag-ghost {
-            background-color: transparent;
-            color: #8bfe00;
-            box-shadow: inset 0 0 0 1px rgba(139,254,0,0.5);
-            padding: 20px 32px;
-        }
-        .btn-tag-ghost:hover {
-            background-color: #8bfe00;
-            color: #0d2000;
-            box-shadow: 0 0 30px rgba(139,254,0,0.5);
-        }
-
-        /* Mobile menu */
-        #mobileMenu {
-            display: none;
-            position: fixed;
-            inset: 0;
-            top: 0;
-            z-index: 49;
-            background: rgba(10,10,10,0.98);
-            backdrop-filter: blur(20px);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            padding-top: 6rem;
-        }
-        #mobileMenu.open { display: flex; }
-        #mobileMenu a {
-            font-family: 'VintagePropagandistRegular', sans-serif;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            color: #e5e2e1;
-            letter-spacing: 0.05em;
-            transition: color .2s;
-        }
-        #mobileMenu a:hover { color: #8bfe00; }
-
-        /* Transparent -> solid nav on scroll */
-        .nav-shell {
-            background-color: rgba(18,18,18,0.15);
-            transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
-        }
-        .nav-shell.nav-solid {
-            background-color: rgba(10,10,10,0.75);
-            border-color: rgba(139,254,0,0.3);
-            box-shadow: 0 4px 30px rgba(139,254,0,0.1);
-        }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 0; background: #8bfe00; transition: width .25s ease; }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-        .nav-link.active { color: #8bfe00; }
-        .icon-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #262626; color: #becbae; transition: border-color .2s ease, color .2s ease, box-shadow .2s ease; }
-        .icon-btn:hover { border-color: rgba(139,254,0,0.4); color: #8bfe00; box-shadow: 0 0 12px rgba(139,254,0,0.15); }
-
-        /* Mega dropdown */
-        .nav-dropdown { position: relative; }
-        .nav-dropdown > .nav-link::after { bottom: -4px; }
-        .dropdown-panel {
-            position: absolute;
-            top: calc(100% + 20px);
-            left: 50%;
-            transform: translateX(-50%);
-            min-width: 200px;
-            background: rgba(10,10,10,0.95);
-            border: 1px solid #262626;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity .2s ease, transform .2s ease;
-            transform: translateX(-50%) translateY(-6px);
-            z-index: 100;
-        }
-        .nav-dropdown:hover .dropdown-panel {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
-        }
-        /* bridge gap so mouse can travel from link to panel */
-        .dropdown-panel::before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            left: 0;
-            right: 0;
-            height: 20px;
-        }
-        .dropdown-item {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 11px 18px;
-            font-family: "JetBrains Mono", monospace;
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #becbae;
-            border-bottom: 1px solid #1a1a1a;
-            transition: color .15s ease, background .15s ease;
-            white-space: nowrap;
-            cursor: pointer;
-        }
-        .dropdown-item:last-child { border-bottom: none; }
-        .dropdown-item:hover { color: #8bfe00; background: rgba(139,254,0,0.05); }
-        .dropdown-item .chevron { font-size: 14px; opacity: 0.5; transition: opacity .15s ease; }
-        .dropdown-item:hover .chevron { opacity: 1; }
-
-        /* Sub-menu */
-        .sub-panel {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            min-width: 200px;
-            background: rgba(10,10,10,0.97);
-            border: 1px solid #262626;
-            border-left: 1px solid #8bfe0033;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity .15s ease, transform .15s ease;
-            transform: translateX(-6px);
-            z-index: 101;
-        }
-        .dropdown-item:hover .sub-panel {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateX(0);
-        }
-        .sub-item {
-            display: block;
-            padding: 10px 18px;
-            font-family: "JetBrains Mono", monospace;
-            font-size: 10px;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #7a8a6a;
-            border-bottom: 1px solid #1a1a1a;
-            transition: color .15s ease, background .15s ease;
-            white-space: nowrap;
-        }
-        .sub-item:last-child { border-bottom: none; }
-        .sub-item:hover { color: #8bfe00; background: rgba(139,254,0,0.05); }
-        /* top accent line on dropdown */
-        .dropdown-panel::after {
-            content: "";
-            position: absolute;
-            top: -1px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #8bfe00, transparent);
-        }
-    </style>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
 <div id="navbar-placeholder"></div>
@@ -473,61 +158,60 @@
 
 <main class="relative">
 <!-- Hero Section -->
-<section class="relative min-h-[90vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto pb-stack-lg pt-32">
-<!-- REC Indicator -->
-<div class="absolute top-32 left-margin-mobile md:left-margin-desktop flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest z-10 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
-<div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
-                REC 00:00:01
-            </div>
-<div class="relative z-10 max-w-4xl pt-16">
-<h1 class="font-headline-xl text-[56px] sm:text-[80px] md:text-headline-xl text-primary uppercase tracking-tight leading-[0.85] mb-8 drop-shadow-lg">
-                    We Turn<br>
-<span class="stencil-text">Imagination</span><br>
-                    Into Reality
-                </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12 border-l-2 border-primary-fixed pl-6 drop-shadow-md">
-                    Acidic Studios is a high-end production laboratory fusing AI-powered video generation, hyper-real animation, and cinematic storytelling. We engineer digital alchemy for brands that refuse to blend in.
-                </p>
-<div class="flex flex-col sm:flex-row gap-5">
-<a class="btn-tag btn-tag-fill" href="#">
-Work With Us
-</a>
-<a class="btn-tag btn-tag-outline" href="#">
-<span class="btn-tag-dot"></span>View Showreel
-</a>
+<section class="relative min-h-[90vh] flex items-center overflow-hidden">
+<!-- Background image right side -->
+<div class="absolute inset-y-0 right-0 w-full md:w-1/2 z-0">
+  <img alt="Hero Background" class="w-full h-full object-cover opacity-60" src="assets/images/bg.jfif">
+  <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
 </div>
+<!-- Content -->
+<div class="relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-32">
+  <div class="max-w-2xl">
+    <span class="inline-flex items-center gap-2 font-label-sm text-[11px] text-primary-fixed uppercase tracking-[0.3em] mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>Digital Alchemy
+    </span>
+    <h1 class="font-headline-xl text-[52px] sm:text-[72px] md:text-[96px] text-primary uppercase font-black leading-[0.9] mb-8 tracking-tight">
+      We Turn<br>
+      <span class="stencil-text">Imagination</span><br>
+      Into Reality
+    </h1>
+    <p class="font-body-lg text-[16px] md:text-[18px] text-on-surface-variant max-w-xl mb-10 border-l-2 border-primary-fixed pl-5">
+      Acidic Studios is a high-end production laboratory fusing AI-powered video generation, hyper-real animation, and cinematic storytelling. We engineer digital alchemy for brands that refuse to blend in.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a class="btn-tag btn-tag-fill" href="#">Work With Us</a>
+      <a class="btn-tag btn-tag-outline" href="#"><span class="btn-tag-dot"></span>View Showreel</a>
+    </div>
+  </div>
 </div>
-<!-- Decorative Elements -->
-<div class="absolute inset-y-0 right-0 w-full md:w-3/5 opacity-50 mix-blend-screen z-0 hidden md:block">
-<img alt="AI Animation Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX8iuR5p7XCJailo5Nh9iB8w2SloH1E4qe9rkKN6JV79qnmg2JX_RYTJq6TLUlVVU7gHMCgufQ1IoOYm1MXfpsLSeJLGseiD5p8aNnfGdcZ-jQp0KrZor65XtEX8JpuZfFeLcNC9pOKw3n7n0iJiTjiA6P8OwQ3q0NfOfnv_wY1-0FdqazbyfcHStwVq4pdIYClzKI4yAEAoCkP99uHOf_tCe6Bw3o8s35eokrVy6vD1DyAU7slgDcHnxWiY6RlXdX2wOAqABNEb4">
-</div>
-<div class="absolute inset-y-0 right-0 w-full md:w-3/5 hidden md:block bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent z-[1]"></div>
-<div class="absolute inset-y-0 right-0 w-full md:w-3/5 hidden md:block bg-gradient-to-l from-transparent to-[#0A0A0A] z-[1]"></div>
-<div class="absolute inset-x-0 top-0 h-32 hidden md:block bg-gradient-to-b from-[#0A0A0A] to-transparent z-[1]"></div>
 </section>
 <!-- Trusted By Marquee -->
-<section class="py-16 border-y border-border-muted bg-surface-deep/50 backdrop-blur-sm overflow-hidden">
-<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop mb-8">
-<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Trusted By The Rebellious</h3>
-</div>
+<section class="py-8 border-y border-border-muted bg-black overflow-hidden">
 <div class="marquee-container w-full">
-<div class="marquee-content flex items-center gap-16 md:gap-32 px-8">
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">SYNTHETIC</div>
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">NEUROMANCER</div>
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">OMNI-CORP</div>
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">VOID LOGIC</div>
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">CYBERDYNE</div>
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">SYNTHETIC</div>
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">NEUROMANCER</div>
-<div class="text-2xl font-bold font-label-sm text-border-muted hover:text-primary-fixed transition-colors duration-300 cursor-default grayscale hover:grayscale-0">OMNI-CORP</div>
+<div class="marquee-content flex items-center gap-12 md:gap-20 px-12">
+<img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="Spotify" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/nike/8bfe00" alt="Nike" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="Tesla" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="Spotify" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/nike/8bfe00" alt="Nike" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="Tesla" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
 </div>
 </div>
 </section>
 <!-- Selected Work -->
 
 <!-- Services Section -->
-<section class="py-stack-lg md:py-[160px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="mb-16 border-b border-border-muted pb-8 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<section class="py-stack-lg md:py-12 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-8 border-b border-border-muted pb-6 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
 <div>
 <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">OUR <span class="text-primary-fixed">SERVICES</span></span></h2>
 <p class="font-body-md text-on-surface-variant max-w-md">Proprietary workflows engineered for the next generation of digital presence.</p>
@@ -536,285 +220,214 @@ Work With Us
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Service 01 -->
-<a href="ai-video-production.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,254,0,0.15)] flex flex-col min-h-[400px] overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div class="flex justify-between items-start mb-10">
-<span class="font-headline-xl text-[60px] md:text-[120px] stencil-text opacity-40 group-hover:opacity-100 transition-opacity duration-300">01</span>
-<span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">videocam</span>
-</div>
-<h3 class="font-headline-lg text-[32px] text-primary uppercase mb-4 group-hover:text-primary-fixed transition-colors">AI Video Production</h3>
-<p class="font-body-md text-on-surface-variant mb-12 flex-grow">Cinematic films, ads, and social content generated and finished in-house — at a fraction of traditional production cost.</p>
-<div class="grid grid-cols-3 gap-4 border-t border-border-muted/50 pt-6">
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Output</span><span class="block font-label-sm text-primary uppercase">4K</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Speed</span><span class="block font-label-sm text-primary uppercase">10×</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Direction</span><span class="block font-label-sm text-primary uppercase">Human</span></div>
-</div>
+<a href="ai-video-production.html" class="group relative bg-[#0a0a0a] border border-[#262626] p-7 hover:border-[#8bfe00] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
+  <span class="absolute top-[-18px] right-[-6px] font-headline-xl text-[110px] leading-none select-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.18); color:transparent; transition: -webkit-text-stroke-color .25s ease;" onmouseover="this.style.webkitTextStrokeColor='rgba(139,254,0,0.4)'" onmouseout="this.style.webkitTextStrokeColor='rgba(139,254,0,0.18)'">01</span>
+  <div class="relative z-10">
+    <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] mb-5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M15 8l5-3v14l-5-3M4 6h9a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg>
+    </div>
+    <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">AI Video Production</h3>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Cinematic films, ads, and social content generated and finished in-house — at a fraction of traditional production cost.</p>
+    <div class="flex justify-end">
+      <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+  </div>
 </a>
 <!-- Service 02 -->
-<a href="ai-agents.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,254,0,0.15)] flex flex-col min-h-[400px] overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div class="flex justify-between items-start mb-10">
-<span class="font-headline-xl text-[60px] md:text-[120px] stencil-text opacity-40 group-hover:opacity-100 transition-opacity duration-300">02</span>
-<span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">smart_toy</span>
-</div>
-<h3 class="font-headline-lg text-[32px] text-primary uppercase mb-4 group-hover:text-primary-fixed transition-colors">AI Agents</h3>
-<p class="font-body-md text-on-surface-variant mb-12 flex-grow">Autonomous agents that talk, qualify, book, and follow up — chatbots, voice callers, automations, and custom builds.</p>
-<div class="grid grid-cols-3 gap-4 border-t border-border-muted/50 pt-6">
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Uptime</span><span class="block font-label-sm text-primary uppercase">24/7</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Response</span><span class="block font-label-sm text-primary uppercase">Sub-1s</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Models</span><span class="block font-label-sm text-primary uppercase">Agnostic</span></div>
-</div>
+<a href="ai-agents.html" class="group relative bg-[#0a0a0a] border border-[#262626] p-7 hover:border-[#8bfe00] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
+  <span class="absolute top-[-18px] right-[-6px] font-headline-xl text-[110px] leading-none select-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.18); color:transparent;">02</span>
+  <div class="relative z-10">
+    <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] mb-5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4Zm-6 8h12l1 10H5L6 10Zm4 4h4"/></svg>
+    </div>
+    <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">AI Agents</h3>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Autonomous agents that talk, qualify, book, and follow up — chatbots, voice callers, automations, and custom builds.</p>
+    <div class="flex justify-end">
+      <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+  </div>
 </a>
 <!-- Service 03 -->
-<a href="websites.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,254,0,0.15)] flex flex-col min-h-[400px] overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div class="flex justify-between items-start mb-10">
-<span class="font-headline-xl text-[60px] md:text-[120px] stencil-text opacity-40 group-hover:opacity-100 transition-opacity duration-300">03</span>
-<span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">web</span>
-</div>
-<h3 class="font-headline-lg text-[32px] text-primary uppercase mb-4 group-hover:text-primary-fixed transition-colors">Website Dev / Design</h3>
-<p class="font-body-md text-on-surface-variant mb-12 flex-grow">Design-led websites built to load fast, rank, and convert — brand, copy, and a modern headless front end, end to end.</p>
-<div class="grid grid-cols-3 gap-4 border-t border-border-muted/50 pt-6">
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Stack</span><span class="block font-label-sm text-primary uppercase">Next.js</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Load</span><span class="block font-label-sm text-primary uppercase">Sub-1s</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Delivery</span><span class="block font-label-sm text-primary uppercase">Full</span></div>
-</div>
+<a href="websites.html" class="group relative bg-[#0a0a0a] border border-[#262626] p-7 hover:border-[#8bfe00] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
+  <span class="absolute top-[-18px] right-[-6px] font-headline-xl text-[110px] leading-none select-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.18); color:transparent;">03</span>
+  <div class="relative z-10">
+    <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] mb-5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
+    </div>
+    <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">Website Dev / Design</h3>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Design-led websites built to load fast, rank, and convert — brand, copy, and a modern headless front end, end to end.</p>
+    <div class="flex justify-end">
+      <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+  </div>
 </a>
 <!-- Service 04 -->
-<a href="branding.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,254,0,0.15)] flex flex-col min-h-[400px] overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div class="flex justify-between items-start mb-10">
-<span class="font-headline-xl text-[60px] md:text-[120px] stencil-text opacity-40 group-hover:opacity-100 transition-opacity duration-300">04</span>
-<span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">palette</span>
-</div>
-<h3 class="font-headline-lg text-[32px] text-primary uppercase mb-4 group-hover:text-primary-fixed transition-colors">Branding</h3>
-<p class="font-body-md text-on-surface-variant mb-12 flex-grow">Identity systems built to last — logo, type, color, motion, and the full brand language that makes everything coherent.</p>
-<div class="grid grid-cols-3 gap-4 border-t border-border-muted/50 pt-6">
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Scope</span><span class="block font-label-sm text-primary uppercase">Full</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Motion</span><span class="block font-label-sm text-primary uppercase">Included</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Rights</span><span class="block font-label-sm text-primary uppercase">Yours</span></div>
-</div>
+<a href="branding.html" class="group relative bg-[#0a0a0a] border border-[#262626] p-7 hover:border-[#8bfe00] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
+  <span class="absolute top-[-18px] right-[-6px] font-headline-xl text-[110px] leading-none select-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.18); color:transparent;">04</span>
+  <div class="relative z-10">
+    <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] mb-5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+    </div>
+    <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">Branding</h3>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Identity systems built to last — logo, type, color, motion, and the full brand language that makes everything coherent.</p>
+    <div class="flex justify-end">
+      <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+  </div>
 </a>
 <!-- Service 05 -->
-<a href="video-editing.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,254,0,0.15)] flex flex-col min-h-[400px] overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div class="flex justify-between items-start mb-10">
-<span class="font-headline-xl text-[60px] md:text-[120px] stencil-text opacity-40 group-hover:opacity-100 transition-opacity duration-300">05</span>
-<span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">movie_edit</span>
-</div>
-<h3 class="font-headline-lg text-[32px] text-primary uppercase mb-4 group-hover:text-primary-fixed transition-colors">Video Editing</h3>
-<p class="font-body-md text-on-surface-variant mb-12 flex-grow">Post-production for existing footage — ads, UGC, short-form, long-form, and YouTube automation pipelines.</p>
-<div class="grid grid-cols-3 gap-4 border-t border-border-muted/50 pt-6">
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Formats</span><span class="block font-label-sm text-primary uppercase">5+</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Platform</span><span class="block font-label-sm text-primary uppercase">Any</span></div>
-<div><span class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Scale</span><span class="block font-label-sm text-primary uppercase">Volume</span></div>
-</div>
+<a href="video-editing.html" class="group relative bg-[#0a0a0a] border border-[#262626] p-7 hover:border-[#8bfe00] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
+  <span class="absolute top-[-18px] right-[-6px] font-headline-xl text-[110px] leading-none select-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.18); color:transparent;">05</span>
+  <div class="relative z-10">
+    <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] mb-5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M15 8l5-3v14l-5-3M4 6h9a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg>
+    </div>
+    <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">Video Editing</h3>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Post-production for existing footage — ads, UGC, short-form, long-form, and YouTube automation pipelines.</p>
+    <div class="flex justify-end">
+      <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+  </div>
 </a>
 <!-- CTA Card -->
-<div class="group relative bg-[rgba(139,254,0,0.03)] border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,254,0,0.15)] flex flex-col min-h-[400px] overflow-hidden justify-between">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-fixed to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-<div>
-<span class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-primary-fixed/60">Not sure where to start?</span>
-<h3 class="font-headline-lg text-[32px] text-primary uppercase mt-4 leading-tight">Let's figure it out together.</h3>
-<p class="font-body-md text-on-surface-variant mt-4">Tell us what you're trying to achieve — we'll recommend the right service mix.</p>
-</div>
-<a href="contact.html" class="btn-tag btn-tag-fill self-start mt-8">Start a Project</a>
-</div>
-</div>
-</section>
-<section class="py-stack-lg md:py-[160px] bg-[#0A0A0A] relative border-y border-border-muted overflow-hidden">
-<!-- Technical Grid Background -->
-<div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:64px_64px] opacity-20 z-0 pointer-events-none"></div>
-<!-- High-Fidelity Lab Image -->
-<div class="absolute inset-y-0 right-0 w-full md:w-1/2 z-0 opacity-30 mix-blend-luminosity" style="mask-image: linear-gradient(to right, transparent, black); -webkit-mask-image: linear-gradient(to right, transparent, black);">
-<img alt="High-fidelity technical laboratory environment" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBExeGXKvgbKEYi0vtPsMjydNLd1S6sfq-48GtRAW9lDFBKkbzMlJuAbWtMSZ7v9E4It0gTzdWeaDGtGNQHN05D3BarVd6uCbR892YplxtyGklNJ4q60FlVewpDc-ETefG1qzVjW2ncbgktyKjffbTWt8W9Y7T0uJO5kmTfTV1-grif8aJN1s4_SvSU1QdiVhD12-Gl0pXM9Cz8ZyMII-cBNCSkUNr3B4r-jqWEXdm1RFHSHvIvZQ4slETBSDoEgHnhzHX20pjtbL8">
-</div>
-<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-<!-- Header -->
-<div class="mb-20 border-b border-border-muted pb-8 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
-<div class="max-w-4xl">
-<h2 class="font-headline-lg text-primary font-normal uppercase tracking-tight leading-[1.2] text-[32px] sm:text-[48px] md:text-[64px]"><span class="condensed-header">WE REJECT THE</span><br><span class="stencil-text acid-glow border-b-4 border-primary-fixed pb-2 inline-block condensed-header mt-2">ORDINARY.</span></h2>
-</div>
-</div>
-<!-- Specs Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-muted border border-border-muted">
-<!-- Capability 01 -->
-<div class="group bg-[#0A0A0A] p-10 hover:bg-[#111111] transition-all duration-300 flex flex-col justify-between min-h-[380px] border-r border-b border-border-muted/30">
-<div>
-<div class="flex justify-between items-start mb-8">
-<div class="flex items-center gap-4">
-<div class="font-headline-lg text-[40px] text-primary font-bold">01</div>
-<div class="h-8 w-px bg-primary-fixed/30"></div>
-<span class="material-symbols-outlined text-primary-fixed">videocam</span>
-</div>
-<div class="flex flex-col items-end">
-<div class="px-2 py-0.5 bg-primary-fixed/10 border border-primary-fixed/30 font-label-sm text-[9px] text-primary-fixed uppercase tracking-widest mb-1">Active</div>
-<div class="text-[9px] text-on-surface-variant uppercase">Load: 87%</div>
-</div>
-</div>
-<h3 class="font-headline-lg-mobile text-[32px] text-primary font-bold uppercase tracking-tight mb-4 group-hover:text-primary-fixed transition-colors">AI Video Synthesis</h3>
-<p class="font-body-md text-body-md text-on-surface-variant/80 mb-8">Harnessing advanced generative models to create impossible visuals and hyper-real cinematic sequences.</p>
-</div>
-<div class="grid grid-cols-2 gap-6 border-t border-border-muted/50 pt-6">
-<div class="flex flex-col">
-<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Latency</span>
-<span class="font-label-sm text-primary uppercase">SUB-1MS</span>
-</div>
-<div class="flex flex-col">
-<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">GPU</span>
-<span class="font-label-sm text-primary uppercase">H100 CLUSTER</span>
-</div>
-</div>
-</div>
-<!-- Capability 02 -->
-<div class="group bg-[#0A0A0A] p-10 hover:bg-[#111111] transition-all duration-300 flex flex-col justify-between min-h-[380px] border-b border-border-muted/30">
-<div>
-<div class="flex justify-between items-start mb-8">
-<div class="flex items-center gap-4">
-<div class="font-headline-lg text-[40px] text-primary font-bold">02</div>
-<div class="h-8 w-px bg-primary-fixed/30"></div>
-<span class="material-symbols-outlined text-primary-fixed">3d_rotation</span>
-</div>
-<div class="flex flex-col items-end">
-<div class="px-2 py-0.5 bg-primary-fixed/10 border border-primary-fixed/30 font-label-sm text-[9px] text-primary-fixed uppercase tracking-widest mb-1">Active</div>
-<div class="text-[9px] text-on-surface-variant uppercase">Load: 42%</div>
-</div>
-</div>
-<h3 class="font-headline-lg-mobile text-[32px] text-primary font-bold uppercase tracking-tight mb-4 group-hover:text-primary-fixed transition-colors">Motion Architecture</h3>
-<p class="font-body-md text-body-md text-on-surface-variant/80 mb-8">Precision-engineered 3D animation and motion graphics that defy gravity and conventional logic.</p>
-</div>
-<div class="grid grid-cols-2 gap-6 border-t border-border-muted/50 pt-6">
-<div class="flex flex-col">
-<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Compute</span>
-<span class="font-label-sm text-primary uppercase">A100 NODE</span>
-</div>
-<div class="flex flex-col">
-<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Physics</span>
-<span class="font-label-sm text-primary uppercase">NON-EUCLIDEAN</span>
-</div>
-</div>
-</div>
+<div class="group relative bg-[rgba(139,254,0,0.03)] border border-[#262626] p-7 hover:border-[#8bfe00] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+  <div>
+    <span class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-[#8bfe00]/60">Not sure where to start?</span>
+    <h3 class="font-headline-lg text-[22px] text-primary uppercase mt-3 leading-tight">Let's figure it out together.</h3>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] mt-2 leading-relaxed">Tell us what you're trying to achieve — we'll recommend the right service mix.</p>
+  </div>
+  <a href="contact.html" class="btn-tag btn-tag-fill self-start mt-6">Start a Project</a>
 </div>
 </div>
 </section>
+
 <!-- Our Philosophy Section -->
-<section class="relative py-stack-lg md:py-[200px] border-y border-border-muted overflow-hidden flex items-center justify-center min-h-[90vh] bg-surface-deep">
-<div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:32px_32px] opacity-10 z-0"></div>
-<div class="absolute inset-0 bg-gradient-to-b from-surface-deep via-transparent to-surface-deep z-0"></div>
-<div class="absolute top-12 left-12 font-label-sm text-[10px] text-primary-fixed/40 uppercase tracking-[0.3em] z-10 hidden md:block">
-    SYS_STATUS: ACTIVE // MANIFESTO_LOG_V4.2
-  </div>
-<div class="absolute bottom-12 right-12 font-label-sm text-[10px] text-primary-fixed/40 uppercase tracking-[0.3em] z-10 hidden md:block">
-    COORD: 34.0522° N, 118.2437° W
-  </div>
+<section class="relative py-stack-lg md:py-[160px] border-y border-border-muted overflow-hidden">
+<div class="absolute inset-0 z-0" style="background-color:#000000;"></div>
+
 <div class="relative z-10 max-w-[1280px] w-full mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-<div class="lg:col-span-7 text-left">
-<span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-6 inline-block border-l-2 border-primary-fixed pl-4">Our Philosophy</span>
-<h2 class="font-headline-lg text-primary uppercase tracking-tight mb-12 leading-[1.2] font-normal text-[36px] sm:text-[52px] md:text-[72px]">
+
+<!-- Header row -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 md:mb-20">
+<div class="lg:col-span-8">
+<span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-6 inline-block border-l-2 border-primary-fixed pl-4">§ 01 — Our Philosophy</span>
+<h2 class="font-headline-lg text-primary uppercase tracking-tight leading-[1.05] font-normal text-[36px] sm:text-[52px] md:text-[72px]">
 <span class="condensed-header">WE REJECT THE</span><br>
 <span class="stencil-text acid-glow condensed-header mt-2">ORDINARY</span>
 </h2>
-<div class="space-y-8 max-w-2xl">
-<p class="font-body-lg text-body-lg text-on-surface-variant border-t border-border-muted pt-8">
-            In a digital landscape saturated with safe choices and templated outputs, Acidic Studios acts as a catalyst. We are scientists of sight and sound, constantly experimenting with new AI models.
-          </p>
-<p class="font-body-md text-body-md text-on-surface-variant/70">
-            Our process is volatile, iterative, and intensely collaborative. We don't just execute briefs; we break them down to their atomic components and rebuild them into something undeniable.
+</div>
+<div class="lg:col-span-4 lg:text-right">
+<p class="font-body-md text-body-md text-on-surface-variant/70 max-w-sm lg:ml-auto">
+            In a landscape saturated with safe choices and templated outputs, Acidic Studios acts as a catalyst — scientists of sight and sound, constantly experimenting with new AI models.
           </p>
 </div>
-<div class="mt-12">
-<a class="btn-tag btn-tag-ghost" href="#">
-<span class="btn-tag-index">◆</span>Read Full Doctrine
-</a>
 </div>
+
+<!-- Body: process grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-px bg-border-muted border border-border-muted">
+
+<!-- Principle 01 -->
+<div class="lg:col-span-4 bg-surface-deep p-8 md:p-10 group hover:bg-black transition-colors duration-300">
+<div class="flex items-start justify-between mb-10">
+<span class="font-label-sm text-[11px] text-primary-fixed/50 tracking-widest">01 / 03</span>
+<span class="material-symbols-outlined text-primary-fixed/60 group-hover:text-primary-fixed transition-colors">experiment</span>
 </div>
-<div class="lg:col-span-5 relative hidden lg:block">
-<div class="aspect-square border border-border-muted bg-surface-container-lowest/50 backdrop-blur-xl p-8 relative overflow-hidden">
-<div class="absolute inset-0 opacity-20 mix-blend-screen">
-<img alt="Technical Spec Visual" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuyl8_auu_x7AslW97oFh1uL3JMmFB-W8AzayLyrsyDkzAH2vN9-L0SaVBSO00fSzhBtdTZPHHQ1WzOhXVJK5LcnhGWrpU7QSWJJK66zof9fjZaL-hZctTRHaTFnnHxrhgIx602gc9WIquvzPWnoT04HY_RqrWn5lokNYmULyrMXs3YSj3VJL6jQakhdYSp_Hpm3WP2WmycFXNkivfYD_IDNPbZw-P6IDPzypLMg5qEdSMtNZG4Wy1rXZQ">
+<h3 class="font-headline-lg text-[24px] text-primary uppercase mb-4 leading-tight">Volatile by Design</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed">
+            Our process is volatile and iterative on purpose. Comfortable methods produce comfortable, forgettable work — we'd rather stay unstable.
+          </p>
 </div>
-<div class="relative z-10 h-full flex flex-col justify-between">
-<div class="flex justify-between items-start">
-<div class="w-12 h-12 border border-primary-fixed/30 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-fixed text-xl">biotech</span>
+
+<!-- Principle 02 -->
+<div class="lg:col-span-4 bg-surface-deep p-8 md:p-10 group hover:bg-black transition-colors duration-300">
+<div class="flex items-start justify-between mb-10">
+<span class="font-label-sm text-[11px] text-primary-fixed/50 tracking-widest">02 / 03</span>
+<span class="material-symbols-outlined text-primary-fixed/60 group-hover:text-primary-fixed transition-colors">biotech</span>
 </div>
-<div class="text-right">
-<div class="text-[10px] text-primary-fixed uppercase tracking-widest">Spec_ID</div>
-<div class="text-sm font-bold">ACID_099X</div>
+<h3 class="font-headline-lg text-[24px] text-primary uppercase mb-4 leading-tight">Break to Rebuild</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed">
+            We don't just execute briefs. We break them down to their atomic components, then rebuild them into something undeniable.
+          </p>
 </div>
+
+<!-- Principle 03 -->
+<div class="lg:col-span-4 bg-surface-deep p-8 md:p-10 group hover:bg-black transition-colors duration-300">
+<div class="flex items-start justify-between mb-10">
+<span class="font-label-sm text-[11px] text-primary-fixed/50 tracking-widest">03 / 03</span>
+<span class="material-symbols-outlined text-primary-fixed/60 group-hover:text-primary-fixed transition-colors">bolt</span>
 </div>
-<div class="space-y-2">
-<div class="h-1 w-full bg-border-muted overflow-hidden">
-<div class="h-full bg-primary-fixed w-3/4 chemical-bar"></div>
+<h3 class="font-headline-lg text-[24px] text-primary uppercase mb-4 leading-tight">Intensely Collaborative</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed">
+            Every experiment runs alongside the client, not behind a wall. Fast loops, open lab notes, no black boxes.
+          </p>
 </div>
-<div class="flex justify-between text-[10px] text-on-surface-variant uppercase tracking-widest">
-<span class="">Processing Core</span>
-<span class="">75%</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+
 </div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-lowest border-t border-border-muted w-full py-16 md:py-24">
-<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-<!-- Brand & Telemetry -->
+<footer class="bg-black border-t border-[#262626] w-full py-16 md:py-20">
+<div class="max-w-[1280px] mx-auto px-4 md:px-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand -->
 <div class="lg:col-span-1">
-<div class="font-headline-lg text-[32px] text-primary tracking-tighter flex items-center gap-3 mb-8">
-<img alt="Acidic Studios Logo Mark" class="w-10 h-10 grayscale border border-border-muted rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4FvpdccoLx1RMnr7ENYgNRBP-nZlA7uUL89GCE3SZ7NjE5TGWJQS0sJvZ_A6dM1w5ZaqPDlBQoh-NM5pJQGqXHXSWPdiY04Mk2LqlTuDvaopCmOIzJwtclUuJROo3zaxwr16Np5LJnouLbPRCkNmHk1TebVi20WA1cf9CfVvkswdLHg-b79orOU6Ta5MRBMuMvN6hYOyZft2sPQELDDv-LN5BDBYN0WSR4rGYpWiLanFOLpIOxkZ2G3CiTW9ygsn-1l-iNAPbR-A">
-          ACIDIC
-        </div>
-
+<img src="assets/images/acidic-header-logo-cropped.png" alt="Acidic Studios" class="h-10 w-auto mb-6 opacity-90">
+<p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed max-w-[220px]">Digital alchemy for brands that refuse to blend in.</p>
 </div>
 <!-- Navigation -->
 <div>
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Navigation</h4>
-<ul class="space-y-4">
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">Work</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">Labs</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">Method</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">Agency</a></li>
+<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Navigation</h4>
+<ul class="space-y-3">
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="index.html">Home</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="services.html">Services</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="blog.html">Blog</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="team.html">Team</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="careers.html">Careers</a></li>
 </ul>
 </div>
-<!-- Technical -->
+<!-- Services -->
 <div>
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Technical</h4>
-<ul class="space-y-4">
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">API Docs</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">System Status</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">Legal Protocols</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="#">Security</a></li>
+<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Services</h4>
+<ul class="space-y-3">
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-video-production.html">AI Video</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-agents.html">AI Agents</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="websites.html">Websites</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="branding.html">Branding</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="video-editing.html">Video Editing</a></li>
 </ul>
 </div>
-<!-- Social -->
+<!-- Connect -->
 <div>
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Connect</h4>
-<div class="grid grid-cols-2 gap-4">
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-sm">photo_camera</span> Instagram
-          </a>
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-sm">thumb_up</span> Facebook
-          </a>
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-sm">hub</span> LinkedIn
-          </a>
+<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Connect</h4>
+<div class="flex flex-col gap-3">
+<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span> Instagram
+</a>
+<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span> Facebook
+</a>
+<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[16px]">hub</span> LinkedIn
+</a>
 </div>
 </div>
 </div>
-<div class="pt-8 border-t border-border-muted flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-label-sm text-[10px] text-on-surface-variant/40 uppercase tracking-[0.2em]">
-        ©2024 ACIDIC STUDIOS. ALL RIGHTS RESERVED. DIGITAL ALCHEMY IN PROGRESS.
-      </p>
+<div class="pt-8 border-t border-[#262626] flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-[11px] text-[#9a9a9a]/50 uppercase tracking-[0.2em]">©2024 Acidic Studios. All rights reserved.</p>
 <div class="flex gap-6">
-<span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">V.4.2.0_STABLE</span>
-<span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">LATENCY: 0.02MS</span>
+<a href="privacy-policy.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Privacy Policy</a>
+<a href="contact.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Contact</a>
 </div>
 </div>
 </div>
