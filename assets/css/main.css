@@ -242,7 +242,7 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 .faq-open .faq-answer { max-height: 200px; }
 
 /* ── Form fields (contact / book-a-call) ── */
-.field-input { background-color: rgba(0,0,0,0.8); border: 1px solid #262626; color: #ffffff; padding: 16px 18px; font-family: "Inter"; transition: border-color .2s ease, box-shadow .2s ease; width: 100%; }
+.field-input { background-color: #f5f5f5 !important; border: 1px solid #262626; color: #000000 !important; padding: 16px 18px; font-family: "Inter"; transition: border-color .2s ease, box-shadow .2s ease; width: 100%; }
 .field-input:focus { outline: none; border-color: #8bfe00; box-shadow: 0 0 0 1px #8bfe00; }
 .field-input::placeholder { color: #6b6b6b; }
 

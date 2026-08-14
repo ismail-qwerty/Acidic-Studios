@@ -3,10 +3,10 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Contact - ACIDIC STUDIOS</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="assets/css/main.css">
 <script id="tailwind-config">
@@ -15,38 +15,137 @@
           theme: {
             extend: {
               "colors": {
-                      "surface-variant": "#353534", "surface-bright": "#3a3939", "on-secondary-fixed-variant": "#454747",
-                      "error-container": "#93000a", "surface-container-high": "#2a2a2a", "tertiary": "#ffffff",
-                      "surface-container-low": "#1c1b1b", "on-surface": "#e5e2e1", "on-secondary-container": "#b4b5b5",
-                      "surface-deep": "#121212", "primary-fixed": "#8bfe00", "secondary-fixed": "#e2e2e2",
-                      "on-primary": "#1a3700", "surface-dim": "#131313", "tertiary-fixed-dim": "#c6c6c6",
-                      "on-tertiary": "#2f3131", "outline": "#89957a", "on-tertiary-fixed": "#1a1c1c",
-                      "on-primary-fixed": "#0d2000", "on-secondary-fixed": "#1a1c1c", "on-background": "#e5e2e1",
-                      "primary-fixed-dim": "#7adf00", "background": "#131313", "tertiary-container": "#e3e2e2",
-                      "primary-container": "#8bfe00", "on-surface-variant": "#becbae", "on-secondary": "#2f3131",
-                      "on-primary-fixed-variant": "#285000", "border-muted": "#262626", "on-tertiary-fixed-variant": "#464747",
-                      "acid-glow": "#8CFF00CC", "inverse-primary": "#376b00", "surface-container-highest": "#353534",
-                      "outline-variant": "#3f4a34", "inverse-on-surface": "#313030", "on-primary-container": "#3b7100",
-                      "surface-container": "#201f1f", "secondary-container": "#454747", "secondary": "#c6c6c7",
-                      "surface": "#131313", "inverse-surface": "#e5e2e1", "tertiary-fixed": "#e3e2e2",
-                      "on-error": "#690005", "on-tertiary-container": "#636465", "surface-container-lowest": "#0e0e0e",
-                      "on-error-container": "#ffdad6", "primary": "#ffffff", "secondary-fixed-dim": "#c6c6c7",
-                      "error": "#ffb4ab", "surface-tint": "#7adf00"
+                      "surface-variant": "#353534",
+                      "surface-bright": "#3a3939",
+                      "on-secondary-fixed-variant": "#454747",
+                      "error-container": "#93000a",
+                      "surface-container-high": "#2a2a2a",
+                      "tertiary": "#ffffff",
+                      "surface-container-low": "#1c1b1b",
+                      "on-surface": "#e5e2e1",
+                      "on-secondary-container": "#b4b5b5",
+                      "surface-deep": "#121212",
+                      "primary-fixed": "#8bfe00",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-primary": "#1a3700",
+                      "surface-dim": "#131313",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary": "#2f3131",
+                      "outline": "#89957a",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-primary-fixed": "#0d2000",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#7adf00",
+                      "background": "#131313",
+                      "tertiary-container": "#e3e2e2",
+                      "primary-container": "#8bfe00",
+                      "on-surface-variant": "#becbae",
+                      "on-secondary": "#2f3131",
+                      "on-primary-fixed-variant": "#285000",
+                      "border-muted": "#262626",
+                      "on-tertiary-fixed-variant": "#464747",
+                      "acid-glow": "#8CFF00CC",
+                      "inverse-primary": "#376b00",
+                      "surface-container-highest": "#353534",
+                      "outline-variant": "#3f4a34",
+                      "inverse-on-surface": "#313030",
+                      "on-primary-container": "#3b7100",
+                      "surface-container": "#201f1f",
+                      "secondary-container": "#454747",
+                      "secondary": "#c6c6c7",
+                      "surface": "#131313",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-fixed": "#e3e2e2",
+                      "on-error": "#690005",
+                      "on-tertiary-container": "#636465",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#ffffff",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "error": "#ffb4ab",
+                      "surface-tint": "#7adf00"
               },
-              "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-              "spacing": { "stack-sm": "8px", "gutter": "24px", "stack-md": "16px", "margin-mobile": "16px", "margin-desktop": "64px", "stack-lg": "32px" },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "gutter": "24px",
+                      "stack-md": "16px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "64px",
+                      "stack-lg": "32px"
+              },
               "fontFamily": {
-                      "body-md": ["Inter"], "headline-xl": ["VintagePropagandistRegular", "sans-serif"],
-                      "body-lg": ["Inter"], "label-sm": ["JetBrains Mono"],
-                      "headline-lg": ["VintagePropagandistRegular", "sans-serif"], "headline-lg-mobile": ["VintagePropagandistRegular", "sans-serif"]
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Montserrat", "sans-serif"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Montserrat", "sans-serif"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat", "sans-serif"
+                      ]
               },
               "fontSize": {
-                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                      "headline-xl": ["112px", { "lineHeight": "0.9", "letterSpacing": "-0.02em", "fontWeight": "400" }],
-                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                      "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500" }],
-                      "headline-lg": ["80px", { "lineHeight": "0.9", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-                      "headline-lg-mobile": ["64px", { "lineHeight": "0.9", "fontWeight": "400" }]
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "112px",
+                              {
+                                      "lineHeight": "0.9",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "80px",
+                              {
+                                      "lineHeight": "0.9",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "64px",
+                              {
+                                      "lineHeight": "0.9",
+                                      "fontWeight": "400"
+                              }
+                      ]
               }
       },
           },
@@ -54,23 +153,25 @@
       </script>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
-<div class="fixed inset-0 z-[-1] pointer-events-none opacity-40 mix-blend-screen"></div>
 <div id="navbar-placeholder"></div>
+<script src="assets/js/main.js"></script>
+
 <main class="relative">
-<section class="relative pt-40 pb-20 md:pt-32 md:pb-28 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+
+<!-- Hero + Form Section -->
+<section class="relative pt-40 pb-20 md:pt-48 md:pb-28 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
 <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
 <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
 
 <div class="lg:col-span-5">
-<div class="flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest mb-8 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
-<div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
-                UPLINK // CONTACT_V1
-            </div>
-<h1 class="font-headline-xl text-[38px] sm:text-[56px] md:text-[80px] text-primary uppercase tracking-tight leading-[0.85] mb-8">
+<span class="inline-flex items-center gap-2 font-label-sm text-[11px] text-primary-fixed uppercase tracking-[0.3em] mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>Get In Touch
+</span>
+<h1 class="font-headline-lg text-[42px] sm:text-[60px] md:text-[80px] text-primary uppercase font-normal leading-[0.95] mb-8 tracking-tight">
 <span class="condensed-header">Start a</span><br>
-<span class="stencil-text condensed-header">Project</span>
+<span class="stencil-text acid-glow condensed-header">Project</span>
 </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-12 border-l-2 border-primary-fixed pl-6">
+<p class="font-body-lg text-[16px] md:text-[18px] text-on-surface-variant max-w-md mb-12 border-l-2 border-primary-fixed pl-5">
 Tell us what you're building. A founder reads every message personally — expect a reply within 48 hours.
 </p>
 <div class="space-y-6 border-t border-border-muted pt-8">
@@ -87,128 +188,209 @@ Tell us what you're building. A founder reads every message personally — expec
 
 <div class="lg:col-span-7">
 <div class="glass-panel p-8 md:p-12">
-<form class="space-y-6" id="contactForm" action="https://formspree.io/f/xeeybqvo" method="POST">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Name</label>
-<input class="field-input" placeholder="Your name" type="text" name="name" required>
-</div>
-<div>
-<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Email</label>
-<input class="field-input" placeholder="you@company.com" type="email" name="email" required>
-</div>
-</div>
-<div>
-<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Company</label>
-<input class="field-input" placeholder="Company name" type="text" name="company">
-</div>
-<div>
-<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">What are you building?</label>
-<textarea class="field-input" placeholder="A few lines about the project, timeline, and budget range" rows="5" name="message" required></textarea>
-</div>
-<div>
-<label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Budget Range</label>
-<select class="field-input" name="budget">
-<option>Under $10K</option>
-<option>$10K – $50K</option>
-<option>$50K – $150K</option>
-<option>$150K+</option>
-</select>
-</div>
-<button class="btn-tag btn-tag-fill w-full md:w-auto" type="submit" id="submitBtn">
-<span class="btn-tag-index">A/</span><span id="btnText">Send Transmission</span>
-</button>
-<p id="successMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-primary-fixed">✓ Message sent — we'll reply within 48 hours.</p>
-<p id="errorMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-red-400">Something went wrong — try emailing us directly.</p>
-</form>
+
+  <!-- Step Indicators -->
+  <div class="flex items-center gap-0 mb-10" id="stepIndicators">
+    <button type="button" onclick="goToStep(1)" class="step-tab active" id="tab1">
+      <span class="font-label-sm text-[11px] tracking-widest"><span class="text-[#00cfff] mr-1">01</span> You</span>
+      <div class="step-underline"></div>
+    </button>
+    <button type="button" onclick="goToStep(2)" class="step-tab" id="tab2">
+      <span class="font-label-sm text-[11px] tracking-widest"><span class="step-num mr-1">02</span> The work</span>
+      <div class="step-underline"></div>
+    </button>
+    <button type="button" onclick="goToStep(3)" class="step-tab" id="tab3">
+      <span class="font-label-sm text-[11px] tracking-widest"><span class="step-num mr-1">03</span> When</span>
+      <div class="step-underline"></div>
+    </button>
+  </div>
+
+  <form id="contactForm" action="https://formspree.io/f/xeeybqvo" method="POST">
+
+    <!-- Step 1: You -->
+    <div class="form-step" id="step1">
+      <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary font-bold mb-8">Tell us who you are.</h2>
+      <div class="space-y-6">
+        <div>
+          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Your Name <span class="text-[#00cfff]">*</span></label>
+          <input class="field-input" placeholder="Cameron Self" type="text" name="name" required id="inp_name">
+        </div>
+        <div>
+          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Work Email <span class="text-[#00cfff]">*</span></label>
+          <input class="field-input" placeholder="you@studio.com" type="email" name="email" required id="inp_email">
+        </div>
+        <div>
+          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Company (Optional)</label>
+          <input class="field-input" placeholder="Brand or agency" type="text" name="company" id="inp_company">
+        </div>
+      </div>
+      <div class="flex items-center justify-between mt-10">
+        <span class="font-label-sm text-[10px] text-[#6b6b6b] uppercase tracking-widest">← Reply within 24 hrs →</span>
+        <button type="button" onclick="nextStep(1)" class="btn-tag btn-tag-fill"><span class="btn-tag-dot"></span>Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 2: The work -->
+    <div class="form-step hidden" id="step2">
+      <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary font-bold mb-8">Tell us about the work.</h2>
+      <div class="space-y-6">
+        <div>
+          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">What are you building? <span class="text-[#00cfff]">*</span></label>
+          <textarea class="field-input" placeholder="A few lines about the project, scope, and goals" rows="5" name="message" required id="inp_message"></textarea>
+        </div>
+        <div>
+          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Budget Range</label>
+          <select class="field-input" name="budget">
+            <option value="">Select a range…</option>
+            <option>Under $10K</option>
+            <option>$10K – $50K</option>
+            <option>$50K – $150K</option>
+            <option>$150K+</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex items-center justify-between mt-10">
+        <button type="button" onclick="prevStep(2)" class="font-label-sm text-[11px] uppercase tracking-widest text-[#6b6b6b] hover:text-primary transition-colors">← Back</button>
+        <button type="button" onclick="nextStep(2)" class="btn-tag btn-tag-fill"><span class="btn-tag-dot"></span>Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 3: When -->
+    <div class="form-step hidden" id="step3">
+      <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary font-bold mb-8">When can you start?</h2>
+      <div class="space-y-6">
+        <div>
+          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Ideal Start Date</label>
+          <input class="field-input" placeholder="e.g. ASAP, Q3 2025, flexible…" type="text" name="start_date">
+        </div>
+        <div>
+          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Anything else?</label>
+          <textarea class="field-input" placeholder="Deadlines, constraints, or anything we should know" rows="4" name="notes"></textarea>
+        </div>
+      </div>
+      <div class="flex items-center justify-between mt-10">
+        <button type="button" onclick="prevStep(3)" class="font-label-sm text-[11px] uppercase tracking-widest text-[#6b6b6b] hover:text-primary transition-colors">← Back</button>
+        <button type="submit" class="btn-tag btn-tag-fill" id="submitBtn"><span class="btn-tag-dot"></span><span id="btnText">Send Transmission</span></button>
+      </div>
+      <p id="successMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-primary-fixed mt-4">✓ Message sent — we'll reply within 24 hours.</p>
+      <p id="errorMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-red-400 mt-4">Something went wrong — try emailing us directly.</p>
+    </div>
+
+  </form>
 </div>
 </div>
 
 </div>
 </section>
+
 </main>
-<footer class="bg-surface-lowest border-t border-border-muted w-full py-16 md:py-24">
-<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+<!-- Footer -->
+<footer class="bg-black border-t border-[#262626] w-full py-16 md:py-20">
+<div class="max-w-[1280px] mx-auto px-4 md:px-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand -->
 <div class="lg:col-span-1">
-<div class="font-headline-lg text-[32px] text-primary tracking-tighter flex items-center gap-3 mb-8">
-<img alt="Acidic Studios Logo Mark" class="w-10 h-10 border border-border-muted rounded-full" src="assets/images/Acidic studios header logo.png">
-          ACIDIC
-        </div>
+<img src="assets/images/acidic-header-logo-cropped.png" alt="Acidic Studios" class="h-10 w-auto mb-6 opacity-90">
+<p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed max-w-[220px]">Digital alchemy for brands that refuse to blend in.</p>
 </div>
+<!-- Navigation -->
 <div>
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Navigation</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="case-studies.html">Work</a></li>
-<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="services.html">Services</a></li>
-<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="agency.html">Agency</a></li>
-<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="blog.html">Blog</a></li>
+<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Navigation</h4>
+<ul class="space-y-3">
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="index.html">Home</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="services.html">Services</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="blog.html">Blog</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="team.html">Team</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="careers.html">Careers</a></li>
 </ul>
 </div>
+<!-- Services -->
 <div>
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Technical</h4>
-<ul class="space-y-4">
-<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="careers.html">Careers</a></li>
-<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="faqs.html">FAQs</a></li>
-<li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="privacy-policy.html">Legal Protocols</a></li>
+<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Services</h4>
+<ul class="space-y-3">
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-video-production.html">AI Video</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-agents.html">AI Agents</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="websites.html">Websites</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="branding.html">Branding</a></li>
+<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="video-editing.html">Video Editing</a></li>
 </ul>
 </div>
+<!-- Connect -->
 <div>
-<h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Connect</h4>
-<div class="grid grid-cols-2 gap-4">
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-sm">photo_camera</span> Instagram
-          </a>
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-sm">thumb_up</span> Facebook
-          </a>
-<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[10px] tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-sm">hub</span> LinkedIn
-          </a>
+<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Connect</h4>
+<div class="flex flex-col gap-3">
+<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span> Instagram
+</a>
+<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span> Facebook
+</a>
+<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[16px]">hub</span> LinkedIn
+</a>
 </div>
 </div>
 </div>
-<div class="pt-8 border-t border-border-muted flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-label-sm text-[10px] text-on-surface-variant/40 uppercase tracking-[0.2em]">
-        ©2024 ACIDIC STUDIOS. ALL RIGHTS RESERVED. DIGITAL ALCHEMY IN PROGRESS.
-      </p>
+<div class="pt-8 border-t border-[#262626] flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-[11px] text-[#9a9a9a]/50 uppercase tracking-[0.2em]">©2024 Acidic Studios. All rights reserved.</p>
 <div class="flex gap-6">
-<span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">V.4.2.0_STABLE</span>
-<span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">LATENCY: 0.02MS</span>
+<a href="privacy-policy.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Privacy Policy</a>
+<a href="contact.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Contact</a>
 </div>
 </div>
 </div>
 </footer>
+
+<style>
+  .step-tab { display:flex; flex-direction:column; padding: 0 20px 12px 0; cursor:pointer; background:none; border:none; text-align:left; }
+  .step-tab .step-num { color:#6b6b6b; }
+  .step-tab .step-underline { height:2px; background:#262626; margin-top:8px; width:100%; }
+  .step-tab.active span { color:#fff; }
+  .step-tab.active .step-num { color:#00cfff; }
+  .step-tab.active .step-underline { background:#00cfff; }
+  .step-tab.done .step-num { color:#8bfe00; }
+  .step-tab.done .step-underline { background:#8bfe00; }
+</style>
 <script>
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn     = document.getElementById('submitBtn');
-      const btnText = document.getElementById('btnText');
-      const success = document.getElementById('successMsg');
-      const error   = document.getElementById('errorMsg');
-      btnText.textContent = 'Sending...';
-      btn.disabled = true;
-      try {
-        const res = await fetch(this.action, {
-          method: 'POST',
-          body: new FormData(this),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          this.reset();
-          success.classList.remove('hidden');
-          error.classList.add('hidden');
-          btnText.textContent = 'Sent';
-        } else {
-          throw new Error();
-        }
-      } catch {
-        error.classList.remove('hidden');
-        success.classList.add('hidden');
-        btnText.textContent = 'Send Transmission';
-        btn.disabled = false;
-      }
+  function goToStep(n) {
+    [1,2,3].forEach(i => {
+      document.getElementById('step'+i).classList.toggle('hidden', i !== n);
+      const tab = document.getElementById('tab'+i);
+      tab.classList.remove('active','done');
+      if (i === n) tab.classList.add('active');
+      else if (i < n) tab.classList.add('done');
     });
+  }
+  function nextStep(current) {
+    // basic validation for step 1
+    if (current === 1) {
+      const name = document.getElementById('inp_name');
+      const email = document.getElementById('inp_email');
+      if (!name.value.trim() || !email.value.trim()) { name.reportValidity(); email.reportValidity(); return; }
+    }
+    if (current === 2) {
+      const msg = document.getElementById('inp_message');
+      if (!msg.value.trim()) { msg.reportValidity(); return; }
+    }
+    goToStep(current + 1);
+  }
+  function prevStep(current) { goToStep(current - 1); }
+
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const success = document.getElementById('successMsg');
+    const error = document.getElementById('errorMsg');
+    btnText.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(this.action, { method:'POST', body: new FormData(this), headers:{'Accept':'application/json'} });
+      if (res.ok) { this.reset(); goToStep(1); success.classList.remove('hidden'); error.classList.add('hidden'); btnText.textContent = 'Sent'; }
+      else throw new Error();
+    } catch { error.classList.remove('hidden'); success.classList.add('hidden'); btnText.textContent = 'Send Transmission'; btn.disabled = false; }
+  });
 </script>
-<script src="assets/js/main.js"></script>
+
 </body></html>
