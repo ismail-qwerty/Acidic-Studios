@@ -153,6 +153,14 @@
       </script>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
+<script>
+  // Netlify Identity invite/recovery/confirmation links point at the site
+  // root by default. The widget that actually handles those tokens only
+  // lives on admin.html, so forward any such link straight there.
+  if (/invite_token|recovery_token|confirmation_token|access_token/.test(window.location.hash)) {
+    window.location.replace('/admin.html' + window.location.hash);
+  }
+</script>
 <div id="navbar-placeholder"></div>
 <script src="assets/js/main.js"></script>
 
