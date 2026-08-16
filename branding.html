@@ -1,4 +1,6 @@
-<!DOCTYPE html><html class="dark" lang="en"><head>
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Branding — ACIDIC STUDIOS</title>
@@ -10,7 +12,7 @@
 <link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="assets/css/main.css">
 <script id="tailwind-config">
-tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#ffffff","surface-deep":"#0a0a0a","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#ffffff","primary-fixed-dim":"#7adf00","background":"#000000","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#141414","surface":"#000000","surface-container-lowest":"#000000","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat", "sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
+tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-bright":"#3a3939","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","surface-dim":"#131313","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","on-primary-fixed-variant":"#285000","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","on-primary-container":"#3b7100","surface-container":"#201f1f","secondary-container":"#454747","secondary":"#c6c6c7","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","error":"#ffb4ab","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat","sans-serif"],"body-lg":["Inter"],"label-sm":["JetBrains Mono"],"headline-lg":["Montserrat","sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
@@ -19,220 +21,592 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 
 <main class="relative">
 
-<!-- Hero -->
-<section class="relative min-h-[85vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto pb-stack-lg pt-40 overflow-hidden">
+<!-- HERO -->
+<section class="relative min-h-[92vh] flex items-center overflow-hidden pt-28 pb-16 md:pt-32">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
+  <div class="absolute -top-1/4 -right-1/4 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(139,254,0,0.1),transparent_65%)] z-0"></div>
+  <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-0 pointer-events-none"></div>
 
-  <div class="relative z-10 max-w-4xl">
-    <h1 class="font-headline-xl text-[48px] sm:text-[72px] md:text-[100px] text-primary uppercase tracking-tight leading-[0.85] mb-8 drop-shadow-lg">
-      Identity That<br>
-      <span class="stencil-text acid-glow condensed-header">Holds Under Pressure.</span>
-    </h1>
+  <div class="relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <div class="flex items-center gap-2 font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-8">
+          <a class="hover:text-primary-fixed transition-colors" href="services.html">Services</a>
+          <span class="text-border-muted">/</span>
+          <span class="text-primary-fixed">Branding</span>
+        </div>
+        <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-6 inline-block border-l-2 border-primary-fixed pl-4">Discipline 02 — Identity Systems</span>
+        <h1 class="font-headline-xl text-[44px] sm:text-[60px] md:text-[76px] text-primary uppercase font-black leading-[0.92] mb-8 tracking-tight">
+          Identity That<br>
+          <span class="stencil-text acid-glow condensed-header">Holds Under Pressure</span>
+        </h1>
+        <p class="font-body-lg text-[16px] md:text-[18px] text-on-surface-variant max-w-xl mb-10 border-l-2 border-border-muted pl-5">
+          Logo, type, color, and motion systems built to survive contact with the real world — every platform, every application, still unmistakably you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a class="btn-tag btn-tag-fill" href="contact.html"><span class="btn-tag-index">A/</span>Start a Project</a>
+          <a class="btn-tag btn-tag-outline" href="#work"><span class="btn-tag-dot"></span>View Our Work</a>
+        </div>
+      </div>
 
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12 border-l-2 border-primary-fixed pl-6 drop-shadow-md">
-      Logo, type, color, and motion systems built to survive contact with the real world — every platform, every application, still unmistakably you.
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-5">
-      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
-      <a class="btn-tag btn-tag-outline" href="#reel"><span class="btn-tag-dot"></span>View Our Work</a>
+      <div class="lg:col-span-5 relative">
+        <div class="relative border border-[#262626] bg-[#0a0a0a] shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-[#262626] bg-[#0e0e0e]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+            <span class="ml-3 font-label-sm text-[10px] text-[#6b6b6b] uppercase tracking-widest">identity_system.acidic</span>
+          </div>
+          <div class="p-5">
+            <div class="grid grid-cols-3 gap-2 mb-3">
+              <div class="aspect-square bg-[#141414] border border-[#8bfe00]/60 relative overflow-hidden flex items-center justify-center">
+                <span class="font-headline-lg text-[22px] text-primary-fixed">A</span>
+              </div>
+              <div class="aspect-square bg-[#141414] border border-[#262626] relative overflow-hidden flex items-center justify-center">
+                <div class="w-5 h-5 rounded-full bg-[#8bfe00]"></div>
+              </div>
+              <div class="aspect-square bg-[#141414] border border-[#262626] relative overflow-hidden flex items-center justify-center">
+                <div class="w-5 h-5 bg-[#0d2000] border border-[#8bfe00]/50"></div>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-3">
+                <span class="font-label-sm text-[9px] text-[#6b6b6b] uppercase w-14">Type</span>
+                <div class="flex-1 h-5 bg-[#141414] border border-[#262626] flex items-center px-2">
+                  <span class="font-label-sm text-[8px] text-[#8bfe00] uppercase tracking-widest">Montserrat / JetBrains Mono</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="font-label-sm text-[9px] text-[#6b6b6b] uppercase w-14">Palette</span>
+                <div class="flex-1 h-5 flex gap-1">
+                  <div class="flex-1 bg-black border border-[#262626]"></div>
+                  <div class="flex-1 bg-[#8bfe00]"></div>
+                  <div class="flex-1 bg-[#262626]"></div>
+                  <div class="flex-1 bg-[#0d2000] border border-[#262626]"></div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="font-label-sm text-[9px] text-[#6b6b6b] uppercase w-14">Status</span>
+                <div class="flex-1 h-3 bg-[#141414] border border-[#262626] relative overflow-hidden">
+                  <div class="absolute left-0 top-0 h-full w-full chemical-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-black border border-[#262626] px-5 py-4 hidden sm:flex items-center gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+          <span class="material-symbols-outlined text-primary-fixed text-2xl">verified</span>
+          <div>
+            <div class="font-headline-lg text-[20px] text-primary leading-none mb-1">Full</div>
+            <div class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest">Rights Are Yours</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="absolute inset-y-0 right-0 w-full md:w-1/2 opacity-40 mix-blend-screen z-0 hidden md:block">
-    <div class="specimen-media relative w-full h-full"></div>
-  </div>
-  <div class="absolute inset-y-0 right-0 w-full md:w-1/2 hidden md:block bg-gradient-to-l from-transparent to-black z-[1]"></div>
 </section>
 
-<!-- Trust strip -->
-<section class="py-10 border-y border-border-muted bg-surface-deep/50 backdrop-blur-sm overflow-hidden">
+<!-- TRUSTED BY MARQUEE -->
+<section class="py-8 border-y border-border-muted bg-black overflow-hidden">
   <div class="marquee-container w-full">
-    <div class="marquee-content flex items-center gap-16 md:gap-32 px-8">
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Full Identity Systems</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Motion Included</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Print &amp; Digital Ready</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Rights Are Yours</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Full Identity Systems</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Motion Included</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Print &amp; Digital Ready</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Rights Are Yours</span>
+    <div class="marquee-content flex items-center gap-12 md:gap-20 px-12">
+      <img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="Spotify" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/nike/8bfe00" alt="Nike" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="Tesla" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/adobe/8bfe00" alt="Adobe" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
     </div>
   </div>
 </section>
 
-<!-- What We Deliver -->
-<section class="py-stack-lg md:py-[140px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-  <div class="mb-16 border-b border-border-muted pb-8 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<!-- STATS STRIP -->
+<section class="py-16 md:py-20 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-muted border border-border-muted">
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">Full System</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Scope</span>
+    </div>
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">Print+Digital</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Formats</span>
+    </div>
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">Included</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Revisions</span>
+    </div>
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">Full Yours</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Rights</span>
+    </div>
+  </div>
+</section>
+
+<!-- SUB-SERVICES -->
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12 border-b border-border-muted pb-6 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
     <div>
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">What We Deliver</span>
       <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">WHAT WE <span class="text-primary-fixed">DELIVER</span></span></h2>
       <p class="font-body-md text-on-surface-variant max-w-md">Four pieces of the system, delivered together so nothing feels bolted on.</p>
     </div>
   </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">draw</span>
+    <div class="spec-card">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">draw</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest">01</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">Logo &amp; Identity</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">A mark built to work at any size, on any background, across any medium.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">Logo &amp; Identity</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">A mark built to work at any size, on any background, across any medium.</p>
     </div>
-    <div class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">menu_book</span>
+
+    <div class="spec-card">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">menu_book</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest">02</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">Brand Guidelines</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">The rulebook that keeps every designer, vendor, and team member on-brand without asking.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">Brand Guidelines</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">The rulebook that keeps every designer, vendor, and team member on-brand without asking.</p>
     </div>
-    <div class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">inventory_2</span>
+
+    <div class="spec-card">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">inventory_2</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest">03</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">Packaging &amp; Print</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">Physical touchpoints — packaging, business cards, signage — designed to match the digital system.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">Packaging &amp; Print</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Physical touchpoints — packaging, business cards, signage — designed to match the digital system.</p>
     </div>
-    <div class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">animation</span>
+
+    <div class="spec-card">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">animation</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest">04</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">Motion Branding</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">Logo animations and motion rules so the brand moves the same way everywhere it shows up.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">Motion Branding</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Logo animations and motion rules so the brand moves the same way everywhere it shows up.</p>
+    </div>
+
+    <div class="group relative bg-[rgba(139,254,0,0.03)] border border-[#262626] p-8 hover:border-[#8bfe00] transition-all duration-300 flex flex-col justify-between">
+      <div>
+        <span class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-[#8bfe00]/60">Custom</span>
+        <h3 class="font-headline-lg text-[22px] text-primary uppercase mt-3 leading-tight">Rebranding an existing company?</h3>
+        <p class="font-body-md text-[14px] text-[#9a9a9a] mt-2 leading-relaxed">We audit what's working before deciding what to keep and what to replace.</p>
+      </div>
+      <a href="contact.html" class="btn-tag btn-tag-fill self-start mt-6">Talk to Us</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SHOWCASE / PORTFOLIO -->
+<section id="work" class="py-16 md:py-24 border-y border-border-muted bg-surface-deep">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">Selected Work</span>
+        <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">Recent</span> <span class="text-primary-fixed condensed-header">Identities</span></h2>
+      </div>
+      <a href="case-studies.html" class="btn-tag btn-tag-outline hidden md:inline-flex"><span class="btn-tag-dot"></span>View All Work</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="showcase-card aspect-[4/3]">
+        <div class="absolute inset-0 bg-[#0e0e0e] p-5 flex flex-col items-center justify-center">
+          <span class="font-headline-lg text-[56px] text-primary-fixed/30">N</span>
+          <div class="h-2 w-1/2 bg-[#262626] mt-3"></div>
+        </div>
+        <div class="showcase-overlay"></div>
+        <div class="showcase-content">
+          <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">Full System</span>
+          <h3 class="font-headline-lg text-[18px] text-primary uppercase mt-1 mb-1">Nova Skincare</h3>
+          <p class="font-body-md text-[13px] text-[#9a9a9a]">Logo, packaging, and motion system for a DTC launch.</p>
+        </div>
+      </div>
+
+      <div class="showcase-card aspect-[4/3]">
+        <div class="absolute inset-0 bg-[#0e0e0e] p-5 flex flex-col items-center justify-center">
+          <div class="w-14 h-14 rounded-full bg-[#8bfe00]/10 border border-[#8bfe00]/40 flex items-center justify-center">
+            <div class="w-6 h-6 rounded-full bg-[#8bfe00]"></div>
+          </div>
+          <div class="h-2 w-1/3 bg-[#262626] mt-3"></div>
+        </div>
+        <div class="showcase-overlay"></div>
+        <div class="showcase-content">
+          <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">Rebrand</span>
+          <h3 class="font-headline-lg text-[18px] text-primary uppercase mt-1 mb-1">Aether Sneakers</h3>
+          <p class="font-body-md text-[13px] text-[#9a9a9a]">Full identity refresh across retail and digital.</p>
+        </div>
+      </div>
+
+      <div class="showcase-card aspect-[4/3]">
+        <div class="absolute inset-0 bg-[#0e0e0e] p-5 flex flex-col items-center justify-center">
+          <div class="flex gap-1.5">
+            <div class="w-5 h-5 bg-black border border-[#262626]"></div>
+            <div class="w-5 h-5 bg-[#8bfe00]"></div>
+            <div class="w-5 h-5 bg-[#262626]"></div>
+          </div>
+          <div class="h-2 w-1/2 bg-[#262626] mt-3"></div>
+        </div>
+        <div class="showcase-overlay"></div>
+        <div class="showcase-content">
+          <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">Guidelines</span>
+          <h3 class="font-headline-lg text-[18px] text-primary uppercase mt-1 mb-1">FitBrand</h3>
+          <p class="font-body-md text-[13px] text-[#9a9a9a]">System documentation adopted across 12 vendors.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- Process -->
-<section class="relative py-stack-lg md:py-[160px] bg-surface-deep border-y border-border-muted overflow-hidden">
-  <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:64px_64px] opacity-20 z-0 pointer-events-none"></div>
-  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-    <div class="mb-20 max-w-2xl">
-      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-6 inline-block border-l-2 border-primary-fixed pl-4">The Process</span>
-      <h2 class="font-headline-lg text-primary uppercase tracking-tight leading-[1.1] font-normal text-[32px] sm:text-[48px] md:text-[60px]"><span class="condensed-header">FIVE STAGES.</span><br><span class="stencil-text acid-glow condensed-header">ZERO GUESSWORK.</span></h2>
+<!-- CAPABILITIES -->
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12 border-b border-border-muted pb-6 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+    <div>
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">Capabilities</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">THE <span class="text-primary-fixed">TOOLKIT</span></span></h2>
+      <p class="font-body-md text-on-surface-variant max-w-md">A brand system built to be used, not just admired. Every application considered.</p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">explore</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">01</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Positioning</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">We dig into your market, competitors, and audience to find the angle the brand needs to own.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">palette</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">02</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Visual Direction</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Multiple distinct directions presented up front, stress-tested against positioning before we commit.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">apps</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">03</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Full System Build</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Logo, type, color, imagery, and motion — built out as one cohesive system, not separate pieces.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">menu_book</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">04</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Usable Guidelines</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">A guidelines document that makes the system usable by anyone, not just the people who built it.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">deployed_code</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">05</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Full Rollout</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Full asset handoff and application across your existing touchpoints — site, socials, print, product.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">verified</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">06</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Full Usage Rights</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Editable source files and export-ready formats transfer to you outright, ready for immediate use.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="py-16 border-y border-border-muted bg-surface-deep">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+      <h2 class="font-label-sm text-[12px] text-on-surface-variant uppercase tracking-widest">Design &amp; systems software stack</h2>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <span class="tool-tag">Figma</span>
+      <span class="tool-tag">Illustrator</span>
+      <span class="tool-tag">Photoshop</span>
+      <span class="tool-tag">After Effects</span>
+      <span class="tool-tag">InDesign</span>
+      <span class="tool-tag">Procreate</span>
+      <span class="tool-tag">Cinema 4D</span>
+      <span class="tool-tag">Notion</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">The Process</span>
+      <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none mb-6"><span class="condensed-header">Five Stages,</span><br><span class="text-primary-fixed condensed-header">Zero Guesswork</span></h2>
+      <p class="font-body-md text-on-surface-variant/70 max-w-sm">One dedicated design lead. Transparent timelines, no black boxes, no surprise invoices.</p>
+    </div>
+    <div class="lg:col-span-8 flex flex-col gap-10">
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">01 // Discovery &amp; Positioning</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Find The Angle</h3>
-        <p class="font-body-md text-on-surface-variant/80">We dig into your market, competitors, and audience to find the positioning the brand needs to own.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 01</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Find The Angle</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">We dig into your market, competitors, and audience to find the positioning the brand needs to own.</p>
       </div>
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">02 // Concept &amp; Direction</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Explore Directions</h3>
-        <p class="font-body-md text-on-surface-variant/80">Multiple visual directions presented and stress-tested against the positioning before we commit.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 02</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Explore Directions</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">Multiple visual directions presented and stress-tested against the positioning before we commit.</p>
       </div>
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">03 // Identity System</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Build The System</h3>
-        <p class="font-body-md text-on-surface-variant/80">The chosen direction gets built out into a full system — logo, type, color, imagery, motion.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 03</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Build The System</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">The chosen direction gets built out into a full system — logo, type, color, imagery, motion.</p>
       </div>
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">04 // Guidelines</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Write The Rules</h3>
-        <p class="font-body-md text-on-surface-variant/80">A guidelines document that makes the system usable by anyone, not just the people who built it.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 04</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Write The Rules</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">A guidelines document that makes the system usable by anyone, not just the people who built it.</p>
       </div>
-      <div class="step-line md:col-span-2">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">05 // Rollout</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Apply It Everywhere</h3>
-        <p class="font-body-md text-on-surface-variant/80">Full asset handoff and application across your existing touchpoints — site, socials, print, product.</p>
+      <div class="step-line">
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 05</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Apply It Everywhere</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">Full asset handoff and application across your existing touchpoints — site, socials, print, product.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Specs -->
-<section class="py-stack-lg md:py-[160px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-  <div class="mb-16 border-b border-border-muted pb-8">
-    <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">TECHNICAL <span class="text-primary-fixed">SPECS</span></span></h2>
-    <p class="font-body-md text-on-surface-variant max-w-md">What you can expect on every delivered system, by default.</p>
+<!-- PRICING -->
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12 text-center max-w-xl mx-auto">
+    <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block">Packages</span>
+    <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">Straightforward</span> <span class="text-primary-fixed condensed-header">Pricing</span></h2>
+    <p class="font-body-md text-on-surface-variant mt-4">Fixed scopes with no hidden line items. Need something custom? We'll scope it together.</p>
   </div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-muted border border-border-muted">
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Scope</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">Full System</span>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="pricing-card flex flex-col">
+      <span class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-3">Mark</span>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-headline-lg text-[40px] text-primary leading-none">$1.2k</span>
+        <span class="font-label-sm text-[11px] text-on-surface-variant/50 uppercase mb-2">/project</span>
+      </div>
+      <p class="font-body-md text-[13px] text-on-surface-variant/60 mb-6">Logo and core mark for early-stage brands.</p>
+      <ul class="space-y-3 mb-8 flex-grow">
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>3 logo concepts</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Core color palette</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Primary typography pairing</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>2 revision rounds</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>10-day delivery</li>
+      </ul>
+      <a href="contact.html" class="btn-tag btn-tag-outline justify-center">Get Started</a>
     </div>
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Formats</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">Print + Digital</span>
+
+    <div class="pricing-card popular flex flex-col">
+      <span class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-3">System</span>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-headline-lg text-[40px] text-primary leading-none">$3.8k</span>
+        <span class="font-label-sm text-[11px] text-on-surface-variant/50 uppercase mb-2">/project</span>
+      </div>
+      <p class="font-body-md text-[13px] text-on-surface-variant/60 mb-6">A full identity system, ready to hand to any team.</p>
+      <ul class="space-y-3 mb-8 flex-grow">
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Logo &amp; identity suite</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Full brand guidelines</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Motion logo included</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>3 revision rounds</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>21-day delivery</li>
+      </ul>
+      <a href="contact.html" class="btn-tag btn-tag-fill justify-center">Get Started</a>
     </div>
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Revisions</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">Included</span>
+
+    <div class="pricing-card flex flex-col">
+      <span class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-3">Rollout</span>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-headline-lg text-[40px] text-primary leading-none">Custom</span>
+      </div>
+      <p class="font-body-md text-[13px] text-on-surface-variant/60 mb-6">Full system plus packaging, print, and applied rollout.</p>
+      <ul class="space-y-3 mb-8 flex-grow">
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Everything in System</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Packaging &amp; print design</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Full touchpoint rollout</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Dedicated design lead</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Source files included</li>
+      </ul>
+      <a href="contact.html" class="btn-tag btn-tag-outline justify-center">Book a Call</a>
     </div>
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Rights</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">Full Yours</span>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-16 md:py-24 border-y border-border-muted bg-surface-deep">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="mb-12 text-center max-w-xl mx-auto">
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block">Social Proof</span>
+      <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">Trusted</span> <span class="text-primary-fixed condensed-header">By</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="testimonial-card">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+        </div>
+        <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-6">"The system they built is the first identity our whole team has actually used correctly, without us having to police it."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-[#262626] flex items-center justify-center">
+            <span class="font-label-sm text-[12px] text-primary-fixed">JD</span>
+          </div>
+          <div>
+            <div class="font-label-sm text-[12px] text-primary uppercase tracking-widest">Jordan Dell</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest">CMO, Nova Skincare</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+        </div>
+        <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-6">"Our rebrand kept what customers already recognized while making the whole thing feel a decade more current."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-[#262626] flex items-center justify-center">
+            <span class="font-label-sm text-[12px] text-primary-fixed">MK</span>
+          </div>
+          <div>
+            <div class="font-label-sm text-[12px] text-primary uppercase tracking-widest">Marcus K.</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest">Founder, Aether Sneakers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+        </div>
+        <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-6">"12 vendors, zero off-brand assets since rollout. The guidelines doc alone paid for the whole project."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-[#262626] flex items-center justify-center">
+            <span class="font-label-sm text-[12px] text-primary-fixed">SR</span>
+          </div>
+          <div>
+            <div class="font-label-sm text-[12px] text-primary uppercase tracking-widest">Sarah R.</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest">Head of Brand, FitBrand</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="py-stack-lg md:py-[140px] bg-surface-deep border-y border-border-muted">
-  <div class="max-w-[860px] mx-auto px-margin-mobile md:px-margin-desktop">
-    <div class="mb-16">
-      <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">COMMON <span class="text-primary-fixed">QUESTIONS</span></span></h2>
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">FAQ</span>
+      <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none mb-6"><span class="condensed-header">Common</span><br><span class="text-primary-fixed condensed-header">Questions</span></h2>
+      <p class="font-body-md text-on-surface-variant/70 max-w-sm">Still unsure? <a href="contact.html" class="text-primary-fixed hover:underline">Talk to us directly</a> — no forms, no gatekeeping.</p>
     </div>
-    <div class="space-y-0 border-t border-border-muted" id="faqList">
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">Do we get source files?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">Yes — full editable source files for every asset, plus export-ready formats for immediate use.</p>
-        </div>
-      </div>
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">Can you rebrand an existing company?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">Yes — we start by auditing what's working in your current identity before deciding what to keep and what to replace.</p>
+    <div class="lg:col-span-8 flex flex-col gap-3">
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">Do we get source files?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Yes — full editable source files for every asset, plus export-ready formats for immediate use.</p>
         </div>
       </div>
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">How many logo concepts do we see?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">Multiple distinct directions up front, narrowed to one through feedback rounds — not endless variations of the same idea.</p>
-        </div>
-      </div>
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">What does a project cost?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">Pricing scales with scope — logo only versus a full system. Tell us the brief on a call and we'll come back with a fixed quote.</p>
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">Can you rebrand an existing company?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Yes — we start by auditing what's working in your current identity before deciding what to keep and what to replace.</p>
         </div>
       </div>
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">How many logo concepts do we see?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Multiple distinct directions up front, narrowed to one through feedback rounds — not endless variations of the same idea.</p>
+        </div>
+      </div>
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">What does a project cost?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Pricing scales with scope — logo only versus a full system. Tell us the brief on a call and we'll come back with a fixed quote.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="pb-stack-lg md:pb-[160px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-  <div class="group relative bg-[rgba(139,254,0,0.03)] border border-border-muted p-10 md:p-16 hover:border-primary-fixed transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-10 overflow-hidden">
-    <div class="max-w-xl">
-      <span class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-primary-fixed/60">Not sure where to start?</span>
-      <h3 class="font-headline-lg text-[32px] md:text-[44px] text-primary uppercase mt-4 leading-tight">Let's define the brand together.</h3>
-      <p class="font-body-md text-on-surface-variant mt-4">Tell us who you're trying to reach — we'll recommend the right scope and timeline.</p>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-5 shrink-0">
-      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
+<!-- FINAL CTA -->
+<section class="relative py-24 md:py-32 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop text-center overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,254,0,0.08),transparent_60%)] z-0"></div>
+  <div class="relative z-10">
+    <h2 class="font-headline-lg text-[40px] sm:text-[56px] md:text-[64px] text-primary uppercase tracking-tight mb-8 leading-none">
+      <span class="condensed-header">Let's Define</span> <span class="stencil-text acid-glow condensed-header">The Brand.</span>
+    </h2>
+    <p class="font-body-md text-on-surface-variant max-w-lg mx-auto mb-10">Tell us who you're trying to reach — we'll recommend the right scope, timeline, and price within 48 hours.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a class="btn-tag btn-tag-fill" href="contact.html"><span class="btn-tag-index">A/</span>Start a Project</a>
+      <a class="btn-tag btn-tag-outline" href="book-a-call.html"><span class="btn-tag-dot"></span>Book a Call</a>
     </div>
   </div>
 </section>
 
 </main>
 
-</body></html>
+<div id="footer-placeholder"></div>
+
+</body>
+</html>

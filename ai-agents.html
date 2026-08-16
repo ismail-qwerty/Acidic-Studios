@@ -1,4 +1,6 @@
-<!DOCTYPE html><html class="dark" lang="en"><head>
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>AI Agents — ACIDIC STUDIOS</title>
@@ -10,7 +12,7 @@
 <link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="assets/css/main.css">
 <script id="tailwind-config">
-tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#ffffff","surface-deep":"#0a0a0a","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#ffffff","primary-fixed-dim":"#7adf00","background":"#000000","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#141414","surface":"#000000","surface-container-lowest":"#000000","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat", "sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
+tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-bright":"#3a3939","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","surface-dim":"#131313","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","on-primary-fixed-variant":"#285000","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","on-primary-container":"#3b7100","surface-container":"#201f1f","secondary-container":"#454747","secondary":"#c6c6c7","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","error":"#ffb4ab","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat","sans-serif"],"body-lg":["Inter"],"label-sm":["JetBrains Mono"],"headline-lg":["Montserrat","sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
@@ -19,224 +21,607 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 
 <main class="relative">
 
-<!-- Hero -->
-<section class="relative min-h-[85vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto pb-stack-lg pt-40 overflow-hidden">
+<!-- HERO -->
+<section class="relative min-h-[92vh] flex items-center overflow-hidden pt-28 pb-16 md:pt-32">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
+  <div class="absolute -top-1/4 -right-1/4 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(139,254,0,0.1),transparent_65%)] z-0"></div>
+  <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent z-0 pointer-events-none"></div>
 
-  <div class="relative z-10 max-w-4xl">
-    <h1 class="font-headline-xl text-[48px] sm:text-[72px] md:text-[100px] text-primary uppercase tracking-tight leading-[0.85] mb-8 drop-shadow-lg">
-      Workflows That<br>
-      <span class="stencil-text acid-glow condensed-header">Never Sleep.</span>
-    </h1>
+  <div class="relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <div class="flex items-center gap-2 font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-8">
+          <a class="hover:text-primary-fixed transition-colors" href="services.html">Services</a>
+          <span class="text-border-muted">/</span>
+          <span class="text-primary-fixed">AI Agents</span>
+        </div>
+        <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-6 inline-block border-l-2 border-primary-fixed pl-4">Discipline 07 — Autonomous Systems</span>
+        <h1 class="font-headline-xl text-[44px] sm:text-[60px] md:text-[76px] text-primary uppercase font-black leading-[0.92] mb-8 tracking-tight">
+          Workflows That<br>
+          <span class="stencil-text acid-glow condensed-header">Never Sleep</span>
+        </h1>
+        <p class="font-body-lg text-[16px] md:text-[18px] text-on-surface-variant max-w-xl mb-10 border-l-2 border-border-muted pl-5">
+          Custom AI agents that handle support, sales, and operations around the clock — built on your data, wired into your stack, and trained to sound like you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a class="btn-tag btn-tag-fill" href="contact.html"><span class="btn-tag-index">A/</span>Start a Project</a>
+          <a class="btn-tag btn-tag-outline" href="#work"><span class="btn-tag-dot"></span>See It In Action</a>
+        </div>
+      </div>
 
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12 border-l-2 border-primary-fixed pl-6 drop-shadow-md">
-      Custom AI agents that handle support, sales, and operations around the clock — built on your data, wired into your stack, and trained to sound like you.
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-5">
-      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
-      <a class="btn-tag btn-tag-outline" href="#reel"><span class="btn-tag-dot"></span>See It In Action</a>
+      <div class="lg:col-span-5 relative">
+        <div class="relative border border-[#262626] bg-[#0a0a0a] shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-[#262626] bg-[#0e0e0e]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+            <span class="ml-3 font-label-sm text-[10px] text-[#6b6b6b] uppercase tracking-widest">agent_session.acidic</span>
+          </div>
+          <div class="p-5">
+            <div class="space-y-3">
+              <div class="flex items-start gap-2">
+                <span class="font-label-sm text-[9px] text-[#6b6b6b] uppercase w-14 pt-1">User</span>
+                <div class="flex-1 h-8 bg-[#141414] border border-[#262626] flex items-center px-3">
+                  <span class="font-label-sm text-[8px] text-on-surface-variant uppercase tracking-widest truncate">Where's my order #4482?</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="font-label-sm text-[9px] text-primary-fixed uppercase w-14 pt-1">Agent</span>
+                <div class="flex-1 bg-[#141414] border border-[#8bfe00]/50 px-3 py-2 space-y-1.5">
+                  <span class="font-label-sm text-[8px] text-[#8bfe00] uppercase tracking-widest block">Checking order status...</span>
+                  <div class="h-1.5 w-full bg-[#0e0e0e] border border-[#262626] relative overflow-hidden">
+                    <div class="absolute left-0 top-0 h-full w-full chemical-bar"></div>
+                  </div>
+                  <span class="font-label-sm text-[8px] text-on-surface-variant uppercase tracking-widest block">Shipped — arrives Thursday.</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#8bfe00] pulse-dot-green"></span>
+              <span class="font-label-sm text-[9px] text-primary-fixed uppercase tracking-widest">Live · CRM Connected · 0.8s Response</span>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-black border border-[#262626] px-5 py-4 hidden sm:flex items-center gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+          <span class="material-symbols-outlined text-primary-fixed text-2xl">smart_toy</span>
+          <div>
+            <div class="font-headline-lg text-[20px] text-primary leading-none mb-1">24/7</div>
+            <div class="font-label-sm text-[9px] text-on-surface-variant uppercase tracking-widest">Autonomous Operation</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="absolute inset-y-0 right-0 w-full md:w-1/2 opacity-40 mix-blend-screen z-0 hidden md:block">
-    <div class="specimen-media relative w-full h-full"></div>
-  </div>
-  <div class="absolute inset-y-0 right-0 w-full md:w-1/2 hidden md:block bg-gradient-to-l from-transparent to-black z-[1]"></div>
 </section>
 
-<!-- Trust strip -->
-<section class="py-10 border-y border-border-muted bg-surface-deep/50 backdrop-blur-sm overflow-hidden">
+<!-- TRUSTED BY MARQUEE -->
+<section class="py-8 border-y border-border-muted bg-black overflow-hidden">
   <div class="marquee-container w-full">
-    <div class="marquee-content flex items-center gap-16 md:gap-32 px-8">
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">24/7 Autonomous Operation</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Multi-Channel Deployment</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Enterprise-Grade Security</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Human Handoff Built In</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">24/7 Autonomous Operation</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Multi-Channel Deployment</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Enterprise-Grade Security</span>
-      <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest">Human Handoff Built In</span>
+    <div class="marquee-content flex items-center gap-12 md:gap-20 px-12">
+      <img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="Spotify" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/nike/8bfe00" alt="Nike" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="Tesla" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/adobe/8bfe00" alt="Adobe" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
     </div>
   </div>
 </section>
 
-<!-- What We Deliver -->
-<section class="py-stack-lg md:py-[140px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-  <div class="mb-16 border-b border-border-muted pb-8 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<!-- STATS STRIP -->
+<section class="py-16 md:py-20 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-muted border border-border-muted">
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">99.9%</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Uptime</span>
+    </div>
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">Sub-2s</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Response Time</span>
+    </div>
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">Any API</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Integrations</span>
+    </div>
+    <div class="bg-black/40 p-6 md:p-8">
+      <span class="font-headline-lg text-[36px] md:text-[44px] text-primary-fixed block leading-none mb-2">24/7</span>
+      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Autonomous Operation</span>
+    </div>
+  </div>
+</section>
+
+<!-- SUB-SERVICES -->
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12 border-b border-border-muted pb-6 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
     <div>
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">What We Deliver</span>
       <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">WHAT WE <span class="text-primary-fixed">DELIVER</span></span></h2>
       <p class="font-body-md text-on-surface-variant max-w-md">Four agent types, one platform. Deploy one or stack them into a full automation layer.</p>
     </div>
   </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <a href="ai-chatbots.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">smart_toy</span>
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+    <a class="spec-card block no-underline group" href="ai-chatbots.html">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">smart_toy</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest group-hover:text-primary-fixed transition-colors">01</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">AI Chatbots</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">Support and sales agents embedded on your site or app, trained on your docs and tone.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">AI Chatbots</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed mb-4">Support and sales agents embedded on your site or app, trained on your docs and tone.</p>
+      <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest inline-flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
     </a>
-    <a href="ai-caller-voice-agents.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">call</span>
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+
+    <a class="spec-card block no-underline group" href="ai-caller-voice-agents.html">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">call</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest group-hover:text-primary-fixed transition-colors">02</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">AI Caller / Voice Agents</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">Inbound and outbound voice agents that book, qualify, and follow up without a call center.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">AI Caller / Voice Agents</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed mb-4">Inbound and outbound voice agents that book, qualify, and follow up without a call center.</p>
+      <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest inline-flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
     </a>
-    <a href="ai-automation.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">bolt</span>
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+
+    <a class="spec-card block no-underline group" href="ai-automation.html">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">bolt</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest group-hover:text-primary-fixed transition-colors">03</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">AI Automation</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">Backend agents that move data between your tools, trigger workflows, and kill manual busywork.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">AI Automation</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed mb-4">Backend agents that move data between your tools, trigger workflows, and kill manual busywork.</p>
+      <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest inline-flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
     </a>
-    <a href="custom-ai-agents.html" class="group relative bg-surface-deep border border-border-muted p-8 hover:border-primary-fixed transition-all duration-300 flex flex-col min-h-[280px] overflow-hidden">
-      <div class="flex justify-between items-start mb-8">
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[32px]">tune</span>
-        <span class="material-symbols-outlined text-border-muted group-hover:text-primary-fixed transition-colors duration-300 text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+
+    <a class="spec-card block no-underline group" href="custom-ai-agents.html">
+      <div class="flex items-center justify-between mb-5">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">tune</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/50 uppercase tracking-widest group-hover:text-primary-fixed transition-colors">04</span>
       </div>
-      <h3 class="font-headline-lg text-[28px] text-primary uppercase mb-3 group-hover:text-primary-fixed transition-colors">Custom AI Agents</h3>
-      <p class="font-body-md text-on-surface-variant flex-grow">Purpose-built agents for whatever your workflow needs that the templates above don't cover.</p>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-3">Custom AI Agents</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed mb-4">Purpose-built agents for whatever your workflow needs that the templates above don't cover.</p>
+      <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest inline-flex items-center gap-1 group-hover:gap-2 transition-all">Explore <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
     </a>
+
+    <div class="group relative bg-[rgba(139,254,0,0.03)] border border-[#262626] p-8 hover:border-[#8bfe00] transition-all duration-300 flex flex-col justify-between">
+      <div>
+        <span class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-[#8bfe00]/60">Custom</span>
+        <h3 class="font-headline-lg text-[22px] text-primary uppercase mt-3 leading-tight">Need a full stack?</h3>
+        <p class="font-body-md text-[14px] text-[#9a9a9a] mt-2 leading-relaxed">We'll chain chat, voice, and automation agents into one coordinated system.</p>
+      </div>
+      <a href="contact.html" class="btn-tag btn-tag-fill self-start mt-6">Talk to Us</a>
+    </div>
+
   </div>
 </section>
 
-<!-- Process -->
-<section class="relative py-stack-lg md:py-[160px] bg-surface-deep border-y border-border-muted overflow-hidden">
-  <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:64px_64px] opacity-20 z-0 pointer-events-none"></div>
-  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
-    <div class="mb-20 max-w-2xl">
-      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-6 inline-block border-l-2 border-primary-fixed pl-4">The Process</span>
-      <h2 class="font-headline-lg text-primary uppercase tracking-tight leading-[1.1] font-normal text-[32px] sm:text-[48px] md:text-[60px]"><span class="condensed-header">FIVE STAGES.</span><br><span class="stencil-text acid-glow condensed-header">ZERO GUESSWORK.</span></h2>
+<!-- SHOWCASE / PORTFOLIO -->
+<section id="work" class="py-16 md:py-24 border-y border-border-muted bg-surface-deep">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">Selected Work</span>
+        <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">Recent</span> <span class="text-primary-fixed condensed-header">Deployments</span></h2>
+      </div>
+      <a href="case-studies.html" class="btn-tag btn-tag-outline hidden md:inline-flex"><span class="btn-tag-dot"></span>View All Work</a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-14">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="showcase-card aspect-[4/3]">
+        <div class="absolute inset-0 bg-[#0e0e0e] p-5 flex flex-col">
+          <div class="flex items-center gap-1.5 mb-4">
+            <span class="w-2 h-2 rounded-full bg-[#ff5f56]"></span>
+            <span class="w-2 h-2 rounded-full bg-[#ffbd2e]"></span>
+            <span class="w-2 h-2 rounded-full bg-[#27c93f]"></span>
+          </div>
+          <div class="h-2 w-1/2 bg-[#262626] mb-3"></div>
+          <div class="flex-1 grid grid-cols-2 gap-2">
+            <div class="bg-[#141414] border border-[#262626] relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-[#8bfe00]/10 to-transparent"></div>
+            </div>
+            <div class="bg-[#141414] border border-[#262626] relative overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-bl from-[#8bfe00]/10 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+        <div class="showcase-overlay"></div>
+        <div class="showcase-content">
+          <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">Support</span>
+          <h3 class="font-headline-lg text-[18px] text-primary uppercase mt-1 mb-1">Nova Skincare Chatbot</h3>
+          <p class="font-body-md text-[13px] text-[#9a9a9a]">Deflects 68% of tickets before a human sees them.</p>
+        </div>
+      </div>
+
+      <div class="showcase-card aspect-[4/3]">
+        <div class="absolute inset-0 bg-[#0e0e0e] p-5 flex flex-col">
+          <div class="flex items-center gap-1.5 mb-4">
+            <span class="w-2 h-2 rounded-full bg-[#ff5f56]"></span>
+            <span class="w-2 h-2 rounded-full bg-[#ffbd2e]"></span>
+            <span class="w-2 h-2 rounded-full bg-[#27c93f]"></span>
+          </div>
+          <div class="h-2 w-2/3 bg-[#262626] mb-3"></div>
+          <div class="flex-1 bg-[#141414] border border-[#262626] relative overflow-hidden flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#8bfe00]/20" style="font-size:48px">call</span>
+          </div>
+        </div>
+        <div class="showcase-overlay"></div>
+        <div class="showcase-content">
+          <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">Voice</span>
+          <h3 class="font-headline-lg text-[18px] text-primary uppercase mt-1 mb-1">FitBrand Booking Line</h3>
+          <p class="font-body-md text-[13px] text-[#9a9a9a]">Qualifies and books leads 24/7, no call center.</p>
+        </div>
+      </div>
+
+      <div class="showcase-card aspect-[4/3]">
+        <div class="absolute inset-0 bg-[#0e0e0e] p-5 flex flex-col">
+          <div class="flex items-center gap-1.5 mb-4">
+            <span class="w-2 h-2 rounded-full bg-[#ff5f56]"></span>
+            <span class="w-2 h-2 rounded-full bg-[#ffbd2e]"></span>
+            <span class="w-2 h-2 rounded-full bg-[#27c93f]"></span>
+          </div>
+          <div class="h-2 w-1/3 bg-[#262626] mb-3"></div>
+          <div class="flex-1 grid grid-cols-3 gap-2">
+            <div class="bg-[#141414] border border-[#262626]"></div>
+            <div class="bg-[#141414] border border-[#262626]"></div>
+            <div class="bg-[#141414] border border-[#262626]"></div>
+          </div>
+        </div>
+        <div class="showcase-overlay"></div>
+        <div class="showcase-content">
+          <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">Automation</span>
+          <h3 class="font-headline-lg text-[18px] text-primary uppercase mt-1 mb-1">Ops Backend for DTC Brand</h3>
+          <p class="font-body-md text-[13px] text-[#9a9a9a]">Syncs CRM, inventory, and fulfillment. 30+ hrs saved/week.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12 border-b border-border-muted pb-6 flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+    <div>
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">Capabilities</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">THE <span class="text-primary-fixed">TOOLKIT</span></span></h2>
+      <p class="font-body-md text-on-surface-variant max-w-md">Production-grade agent infrastructure. Every workflow considered, every edge case handled.</p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">smart_toy</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">01</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Custom Training</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Trained on your docs, data, and tone — with guardrails set for exactly what it can and can't do.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">hub</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">02</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Any API Integration</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">CRMs, helpdesks, calendars, payment platforms, and internal tools — if it has an API, we connect it.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">support_agent</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">03</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Human Handoff</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Defined escalation rules — when confidence drops or scope is exceeded, your team gets full context.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">speed</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">04</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Sub-2s Response</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Optimized for real-time conversation — no long waits, no dead air on voice calls.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">shield</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">05</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Data Security</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">Your data trains and informs your agent only — never shared across clients, always in approved integrations.</p>
+    </div>
+
+    <div class="feature-card group">
+      <div class="flex items-center justify-between mb-4">
+        <span class="material-symbols-outlined text-primary-fixed text-[28px]">monitoring</span>
+        <span class="font-label-sm text-[10px] text-primary-fixed/30 uppercase tracking-widest">06</span>
+      </div>
+      <h4 class="font-label-sm text-[13px] text-primary uppercase tracking-widest mb-2">Ongoing Monitoring</h4>
+      <p class="font-body-md text-on-surface-variant text-[14px] leading-relaxed">We track conversations, catch failure points, and retrain the agent as your product or offer changes.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="py-16 border-y border-border-muted bg-surface-deep">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+      <h2 class="font-label-sm text-[12px] text-on-surface-variant uppercase tracking-widest">Agent &amp; integration stack</h2>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <span class="tool-tag">OpenAI</span>
+      <span class="tool-tag">Anthropic Claude</span>
+      <span class="tool-tag">LangChain</span>
+      <span class="tool-tag">Twilio</span>
+      <span class="tool-tag">Zapier</span>
+      <span class="tool-tag">n8n</span>
+      <span class="tool-tag">Supabase</span>
+      <span class="tool-tag">HubSpot</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">The Process</span>
+      <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none mb-6"><span class="condensed-header">Five Stages,</span><br><span class="text-primary-fixed condensed-header">Zero Guesswork</span></h2>
+      <p class="font-body-md text-on-surface-variant/70 max-w-sm">One dedicated build team. Transparent timelines, no black boxes, no surprise invoices.</p>
+    </div>
+    <div class="lg:col-span-8 flex flex-col gap-10">
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">01 // Discovery &amp; Mapping</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Map The Workflow</h3>
-        <p class="font-body-md text-on-surface-variant/80">We audit the process the agent will own — inputs, decisions, tools, and where humans need to stay in the loop.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 01</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Map The Workflow</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">We audit the process the agent will own — inputs, decisions, tools, and where humans need to stay in the loop.</p>
       </div>
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">02 // Agent Design &amp; Training</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Build The Brain</h3>
-        <p class="font-body-md text-on-surface-variant/80">The agent is trained on your data, docs, and tone, with guardrails set for what it can and can't do.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 02</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Build The Brain</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">The agent is trained on your data, docs, and tone, with guardrails set for what it can and can't do.</p>
       </div>
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">03 // Integration &amp; Testing</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Wire It In</h3>
-        <p class="font-body-md text-on-surface-variant/80">Connected to your CRM, calendar, or helpdesk, then stress-tested against real conversations before launch.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 03</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Wire It In</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">Connected to your CRM, calendar, or helpdesk, then stress-tested against real conversations before launch.</p>
       </div>
       <div class="step-line">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">04 // Deployment</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Go Live</h3>
-        <p class="font-body-md text-on-surface-variant/80">Rolled out to your channel of choice — site, WhatsApp, phone line, or all three at once.</p>
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 04</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Go Live</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">Rolled out to your channel of choice — site, WhatsApp, phone line, or all three at once.</p>
       </div>
-      <div class="step-line md:col-span-2">
-        <div class="step-dot"></div>
-        <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">05 // Monitoring &amp; Optimization</span>
-        <h3 class="font-headline-lg-mobile text-[22px] text-primary uppercase mt-2 mb-2">Keep It Sharp</h3>
-        <p class="font-body-md text-on-surface-variant/80">We track conversations, catch failure points, and retrain the agent as your product or offer changes.</p>
+      <div class="step-line">
+        <span class="step-dot"></span>
+        <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Step 05</span>
+        <h3 class="font-headline-lg text-[20px] text-primary uppercase mt-1 mb-2">Keep It Sharp</h3>
+        <p class="font-body-md text-[14px] text-on-surface-variant/70 max-w-xl leading-relaxed">We track conversations, catch failure points, and retrain the agent as your product or offer changes.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Specs -->
-<section class="py-stack-lg md:py-[160px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-  <div class="mb-16 border-b border-border-muted pb-8">
-    <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">TECHNICAL <span class="text-primary-fixed">SPECS</span></span></h2>
-    <p class="font-body-md text-on-surface-variant max-w-md">What you can expect on every deployed agent, by default.</p>
+<!-- PRICING -->
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12 text-center max-w-xl mx-auto">
+    <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block">Packages</span>
+    <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">Straightforward</span> <span class="text-primary-fixed condensed-header">Pricing</span></h2>
+    <p class="font-body-md text-on-surface-variant mt-4">Fixed scopes with no hidden line items. Need something custom? We'll scope it together.</p>
   </div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-muted border border-border-muted">
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Uptime</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">99.9%</span>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="pricing-card flex flex-col">
+      <span class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-3">Starter</span>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-headline-lg text-[40px] text-primary leading-none">$899</span>
+        <span class="font-label-sm text-[11px] text-on-surface-variant/50 uppercase mb-2">/agent</span>
+      </div>
+      <p class="font-body-md text-[13px] text-on-surface-variant/60 mb-6">A single chatbot trained on your docs, live on one channel.</p>
+      <ul class="space-y-3 mb-8 flex-grow">
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>1 channel deployment</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Up to 3 integrations</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Human handoff rules</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>2 revision rounds</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>10-day delivery</li>
+      </ul>
+      <a href="contact.html" class="btn-tag btn-tag-outline justify-center">Get Started</a>
     </div>
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Response</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">Sub-2S</span>
+
+    <div class="pricing-card popular flex flex-col">
+      <span class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-3">Growth</span>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-headline-lg text-[40px] text-primary leading-none">$2.4k</span>
+        <span class="font-label-sm text-[11px] text-on-surface-variant/50 uppercase mb-2">/agent</span>
+      </div>
+      <p class="font-body-md text-[13px] text-on-surface-variant/60 mb-6">A chat or voice agent wired into your full stack.</p>
+      <ul class="space-y-3 mb-8 flex-grow">
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Multi-channel deployment</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Unlimited integrations</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Custom guardrails &amp; tone</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>3 revision rounds</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>14-day delivery</li>
+      </ul>
+      <a href="contact.html" class="btn-tag btn-tag-fill justify-center">Get Started</a>
     </div>
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Integrations</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">Any API</span>
+
+    <div class="pricing-card flex flex-col">
+      <span class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-3">Retainer</span>
+      <div class="flex items-end gap-1 mb-2">
+        <span class="font-headline-lg text-[40px] text-primary leading-none">$3.5k</span>
+        <span class="font-label-sm text-[11px] text-on-surface-variant/50 uppercase mb-2">/mo</span>
+      </div>
+      <p class="font-body-md text-[13px] text-on-surface-variant/60 mb-6">Dedicated build team, unlimited requests, ongoing monitoring.</p>
+      <ul class="space-y-3 mb-8 flex-grow">
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Unlimited agents</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Dedicated build team</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Continuous retraining</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Monthly strategy call</li>
+        <li class="flex items-start gap-2 font-body-md text-[14px] text-[#9a9a9a]"><span class="material-symbols-outlined text-primary-fixed text-[16px] mt-0.5">check</span>Priority support</li>
+      </ul>
+      <a href="contact.html" class="btn-tag btn-tag-outline justify-center">Book a Call</a>
     </div>
-    <div class="spec-card !border-0 flex flex-col justify-center">
-      <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Support</span>
-      <span class="font-headline-lg-mobile text-[26px] text-primary uppercase">Included</span>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-16 md:py-24 border-y border-border-muted bg-surface-deep">
+  <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="mb-12 text-center max-w-xl mx-auto">
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block">Social Proof</span>
+      <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">Trusted</span> <span class="text-primary-fixed condensed-header">By</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="testimonial-card">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+        </div>
+        <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-6">"The support chatbot deflects two-thirds of our tickets and hands off cleanly when it can't help. Our team finally has room to breathe."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-[#262626] flex items-center justify-center">
+            <span class="font-label-sm text-[12px] text-primary-fixed">JD</span>
+          </div>
+          <div>
+            <div class="font-label-sm text-[12px] text-primary uppercase tracking-widest">Jordan Dell</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest">CMO, Nova Skincare</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+        </div>
+        <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-6">"Our voice agent books and qualifies leads around the clock. We stopped losing after-hours calls to voicemail entirely."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-[#262626] flex items-center justify-center">
+            <span class="font-label-sm text-[12px] text-primary-fixed">MK</span>
+          </div>
+          <div>
+            <div class="font-label-sm text-[12px] text-primary uppercase tracking-widest">Marcus K.</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest">Founder, FitBrand</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-[18px]">star</span>
+        </div>
+        <p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed mb-6">"The automation agents sync our CRM, inventory, and fulfillment tools. That's over 30 hours a week we no longer spend on manual data entry."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-[#262626] flex items-center justify-center">
+            <span class="font-label-sm text-[12px] text-primary-fixed">SR</span>
+          </div>
+          <div>
+            <div class="font-label-sm text-[12px] text-primary uppercase tracking-widest">Sarah R.</div>
+            <div class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest">Head of Ops, DTC Brand</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="py-stack-lg md:py-[140px] bg-surface-deep border-y border-border-muted">
-  <div class="max-w-[860px] mx-auto px-margin-mobile md:px-margin-desktop">
-    <div class="mb-16">
-      <h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tight mb-4 leading-none"><span class="condensed-header">COMMON <span class="text-primary-fixed">QUESTIONS</span></span></h2>
+<section class="py-16 md:py-24 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">FAQ</span>
+      <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none mb-6"><span class="condensed-header">Common</span><br><span class="text-primary-fixed condensed-header">Questions</span></h2>
+      <p class="font-body-md text-on-surface-variant/70 max-w-sm">Still unsure? <a href="contact.html" class="text-primary-fixed hover:underline">Talk to us directly</a> — no forms, no gatekeeping.</p>
     </div>
-    <div class="space-y-0 border-t border-border-muted" id="faqList">
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">Will it hand off to a human when needed?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">Yes. Every agent ships with defined escalation rules — when confidence drops or the request falls outside scope, it hands off to your team with full context.</p>
-        </div>
-      </div>
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">What happens to our data?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">Your data trains and informs your agent only. It isn't shared across clients and stays inside the integrations you approve.</p>
+    <div class="lg:col-span-8 flex flex-col gap-3">
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">Will it hand off to a human when needed?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Yes. Every agent ships with defined escalation rules — when confidence drops or the request falls outside scope, it hands off to your team with full context.</p>
         </div>
       </div>
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">Does it work with our existing tools?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">If it has an API, we can connect it — CRMs, helpdesks, calendars, payment platforms, and internal tools included.</p>
-        </div>
-      </div>
-      <div class="faq-item border-b border-border-muted py-6 cursor-pointer">
-        <div class="flex items-center justify-between gap-6" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-          <h3 class="font-headline-lg-mobile text-[18px] text-primary uppercase">What does a project cost?</h3>
-          <span class="material-symbols-outlined faq-chevron text-primary-fixed">expand_more</span>
-        </div>
-        <div class="faq-answer">
-          <p class="font-body-md text-on-surface-variant pt-4 pr-10">Pricing scales with agent complexity and number of integrations. Tell us the workflow on a call and we'll come back with a fixed quote.</p>
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">What happens to our data?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Your data trains and informs your agent only. It isn't shared across clients and stays inside the integrations you approve.</p>
         </div>
       </div>
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">Does it work with our existing tools?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">If it has an API, we can connect it — CRMs, helpdesks, calendars, payment platforms, and internal tools included.</p>
+        </div>
+      </div>
+
+      <div class="faq-item border border-border-muted bg-black/40">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
+          <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">What does a project cost?</span>
+          <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6">
+          <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Pricing scales with agent complexity and number of integrations. Tell us the workflow on a call and we'll come back with a fixed quote.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="pb-stack-lg md:pb-[160px] max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-  <div class="group relative bg-[rgba(139,254,0,0.03)] border border-border-muted p-10 md:p-16 hover:border-primary-fixed transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-10 overflow-hidden">
-    <div class="max-w-xl">
-      <span class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-primary-fixed/60">Not sure which agent fits?</span>
-      <h3 class="font-headline-lg text-[32px] md:text-[44px] text-primary uppercase mt-4 leading-tight">Let's map the workflow together.</h3>
-      <p class="font-body-md text-on-surface-variant mt-4">Tell us what's eating your team's time — we'll recommend the right agent and timeline.</p>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-5 shrink-0">
-      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
+<!-- FINAL CTA -->
+<section class="relative py-24 md:py-32 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop text-center overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,254,0,0.08),transparent_60%)] z-0"></div>
+  <div class="relative z-10">
+    <h2 class="font-headline-lg text-[40px] sm:text-[56px] md:text-[64px] text-primary uppercase tracking-tight mb-8 leading-none">
+      <span class="condensed-header">Let's Map</span> <span class="stencil-text acid-glow condensed-header">The Workflow.</span>
+    </h2>
+    <p class="font-body-md text-on-surface-variant max-w-lg mx-auto mb-10">Tell us what's eating your team's time — we'll recommend the right agent, timeline, and price within 48 hours.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a class="btn-tag btn-tag-fill" href="contact.html"><span class="btn-tag-index">A/</span>Start a Project</a>
+      <a class="btn-tag btn-tag-outline" href="book-a-call.html"><span class="btn-tag-dot"></span>Book a Call</a>
     </div>
   </div>
 </section>
 
 </main>
 
-</body></html>
+<div id="footer-placeholder"></div>
+
+</body>
+</html>
