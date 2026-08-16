@@ -39,6 +39,13 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 }
 .rec-pulse { animation: pulse-red 2s infinite; }
 
+@keyframes pulse-green {
+    0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(139, 254, 0, 0.7); }
+    70%  { transform: scale(1);    box-shadow: 0 0 0 6px rgba(139, 254, 0, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(139, 254, 0, 0); }
+}
+.pulse-dot-green { animation: pulse-green 2s infinite; }
+
 @keyframes marquee {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -86,9 +93,19 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 .btn-tag-ghost { background-color: transparent; color: #8bfe00; box-shadow: inset 0 0 0 1px rgba(139,254,0,0.5); padding: 20px 32px; }
 .btn-tag-ghost:hover { background-color: #8bfe00; color: #0d2000; box-shadow: 0 0 30px rgba(139,254,0,0.5); }
 
+/* ── Nav CTA button (navbar + mobile menu) ── */
+.nav-btn-tag { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 24px 14px 18px; font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); transition: background-color .2s ease, color .2s ease, box-shadow .2s ease; background-color: #8bfe00; color: #0d2000; text-decoration: none; }
+.nav-btn-tag:hover { background-color: #000000; color: #8bfe00; box-shadow: inset 0 0 0 1px #8bfe00, 0 0 20px rgba(139,254,0,0.35); }
+
 /* ── Icon button ── */
 .icon-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #262626; color: #becbae; transition: border-color .2s ease, color .2s ease, box-shadow .2s ease; }
 .icon-btn:hover { border-color: rgba(139,254,0,0.4); color: #8bfe00; box-shadow: 0 0 12px rgba(139,254,0,0.15); }
+
+/* ── Footer icon button (on green background) ── */
+.footer-icon-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(13,32,0,0.3); color: #0d2000; transition: background-color .2s ease, color .2s ease; }
+.footer-icon-btn:hover { background-color: #0d2000; color: #8bfe00; border-color: #0d2000; }
+
+#footerNewsletter input::placeholder { color: rgba(139,254,0,0.5); }
 
 /* ── Navbar ── */
 .nav-shell { background-color: rgba(0,0,0,0.15); transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease; }
@@ -106,7 +123,7 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
     top: calc(100% + 20px);
     left: 50%;
     transform: translateX(-50%) translateY(-6px);
-    min-width: 200px;
+    min-width: 250px;
     background: rgba(0,0,0,0.97);
     border: 1px solid #262626;
     backdrop-filter: blur(20px);
@@ -116,9 +133,23 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
     transition: opacity .2s ease, transform .2s ease;
     z-index: 100;
 }
-.nav-dropdown:hover .dropdown-panel { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-dropdown:hover .dropdown-panel, .dropdown-panel.force-open { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
 .dropdown-panel::before { content: ""; position: absolute; top: -20px; left: 0; right: 0; height: 20px; }
 .dropdown-panel::after { content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #8bfe00, transparent); }
+
+.dropdown-eyebrow {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 18px 10px;
+    font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #8bfe00; opacity: 0.7;
+}
+.dropdown-eyebrow .material-symbols-outlined { font-size: 14px; }
+
+/* Chevron toggle target — bigger hit area for touch, no separate hover color so the row's own :hover still governs */
+.nav-chevron-toggle { display: flex; align-items: center; justify-content: center; padding: 4px; margin: -4px; cursor: pointer; }
+.nav-link:focus-visible, .dropdown-item a:focus-visible, .sub-item:focus-visible, .nav-chevron-toggle:focus-visible {
+    outline: 1px solid #8bfe00; outline-offset: 2px;
+}
 
 .dropdown-item {
     position: relative;
@@ -143,11 +174,24 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 .dropdown-item .chevron { font-size: 14px; opacity: 0.5; transition: opacity .15s ease; }
 .dropdown-item:hover .chevron { opacity: 1; }
 
+/* Green accent bar that grows in from the left on hover / active — matches the
+   underline-grow treatment used on top-level nav links */
+.dropdown-item::before, .sub-item::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+    background: #8bfe00; transform: scaleY(0); transition: transform .2s ease;
+}
+.dropdown-item:hover::before, .dropdown-item.active::before,
+.sub-item:hover::before, .sub-item.active::before { transform: scaleY(1); }
+
+.item-icon { font-size: 17px !important; color: #8bfe00; opacity: 0.75; flex-shrink: 0; transition: opacity .15s ease; }
+.dropdown-item:hover .item-icon, .dropdown-item.active .item-icon,
+.sub-item:hover .item-icon, .sub-item.active .item-icon { opacity: 1; }
+
 .sub-panel {
     position: absolute;
     top: 0;
     left: 100%;
-    min-width: 200px;
+    min-width: 230px;
     background: rgba(0,0,0,0.99);
     border: 1px solid #262626;
     border-left: 1px solid #8bfe0033;
@@ -159,10 +203,20 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
     transform: translateX(-6px);
     z-index: 101;
 }
-.dropdown-item:hover .sub-panel { opacity: 1; pointer-events: auto; transform: translateX(0); }
+.dropdown-item:hover .sub-panel, .dropdown-item.sub-open .sub-panel { opacity: 1; pointer-events: auto; transform: translateX(0); }
+
+.sub-panel-eyebrow {
+    padding: 12px 18px 10px;
+    font-family: "JetBrains Mono", monospace; font-size: 9px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: #5f5f5f;
+    border-bottom: 1px solid #1a1a1a; margin-bottom: 2px;
+}
 
 .sub-item {
-    display: block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px 18px;
     font-family: "JetBrains Mono", monospace;
     font-size: 10px;
@@ -176,6 +230,9 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 }
 .sub-item:last-child { border-bottom: none; }
 .sub-item:hover { color: #8bfe00; background: rgba(139,254,0,0.05); }
+
+/* Current-page indication inside the dropdown */
+.dropdown-item.active > a, .sub-item.active { color: #8bfe00; }
 
 /* ── Mobile menu ── */
 #mobileMenu {
@@ -192,19 +249,55 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
     padding-top: 6rem;
 }
 #mobileMenu.open { display: flex; }
+#mobileMenu { overflow-y: auto; }
+#mobileMenu .mobile-menu-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; padding-bottom: 3rem; width: 100%; }
 #mobileMenu a { font-family: 'VintagePropagandistRegular', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: #ffffff; letter-spacing: 0.05em; transition: color .2s; text-decoration: none; }
 #mobileMenu a:hover { color: #8bfe00; }
-#mobileMenu .close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #ffffff; cursor: pointer; font-size: 2rem; }
+#mobileMenu .close-btn, #mobileMenu .nav-close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #ffffff; cursor: pointer; font-size: 2rem; }
+
+/* Mobile "Services" disclosure — reachable without hover on touch/tablet */
+#mobileMenu .mobile-services { width: 100%; text-align: center; }
+#mobileMenu .mobile-services summary { font-family: 'VintagePropagandistRegular', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: #ffffff; letter-spacing: 0.05em; cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 10px; }
+#mobileMenu .mobile-services summary::-webkit-details-marker { display: none; }
+#mobileMenu .mobile-services summary::after { content: "expand_more"; font-family: "Material Symbols Outlined"; font-size: 1.5rem; transition: transform .2s ease; }
+#mobileMenu .mobile-services[open] summary::after { transform: rotate(180deg); }
+#mobileMenu .mobile-services summary:hover { color: #8bfe00; }
+#mobileMenu .mobile-sub-group { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 20px; }
+#mobileMenu .mobile-sub-heading { font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #8bfe00; opacity: 0.7; }
+#mobileMenu a.mobile-sub-link { font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #becbae; }
+#mobileMenu a.mobile-sub-link:hover { color: #8bfe00; }
 
 /* ── Service / spec / feature cards ── */
-.service-card { display: block; background: #000000; border: 1px solid #262626; padding: 2rem; text-decoration: none; transition: border-color .2s, box-shadow .2s; }
-.service-card:hover { border-color: #8bfe00; }
+.service-card { display: block; background: #000000; border: 1px solid #262626; padding: 2rem; text-decoration: none; transition: border-color .2s, box-shadow .2s, transform .3s ease; }
+.service-card:hover { border-color: #8bfe00; box-shadow: 0 0 20px rgba(139,254,0,0.1); transform: translateY(-4px); }
 
-.spec-card { background: #000000; border: 1px solid #262626; padding: 2rem; transition: border-color .2s, box-shadow .2s; }
-.spec-card:hover { border-color: #8bfe00; }
+.spec-card { background: #000000; border: 1px solid #262626; padding: 2rem; transition: border-color .2s, box-shadow .2s, transform .3s ease; }
+.spec-card:hover { border-color: #8bfe00; box-shadow: 0 0 20px rgba(139,254,0,0.1); transform: translateY(-4px); }
 
-.feature-card { background: #000000; border: 1px solid #262626; padding: 1.5rem; transition: border-color .3s, box-shadow .3s; }
-.feature-card:hover { border-color: rgba(139,254,0,0.4); }
+.feature-card { background: #000000; border: 1px solid #262626; padding: 1.5rem; transition: border-color .3s, box-shadow .3s, transform .3s ease; }
+.feature-card:hover { border-color: rgba(139,254,0,0.4); box-shadow: 0 0 15px rgba(139,254,0,0.08); transform: translateY(-2px); }
+
+/* ── Showcase / portfolio card ── */
+.showcase-card { position: relative; background: #000000; border: 1px solid #262626; overflow: hidden; transition: border-color .3s ease, box-shadow .3s ease; }
+.showcase-card:hover { border-color: #8bfe00; box-shadow: 0 0 30px rgba(139,254,0,0.15); }
+.showcase-card .showcase-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%); opacity: 0; transition: opacity .3s ease; }
+.showcase-card:hover .showcase-overlay { opacity: 1; }
+.showcase-card .showcase-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; transform: translateY(20px); opacity: 0; transition: transform .3s ease, opacity .3s ease; }
+.showcase-card:hover .showcase-content { transform: translateY(0); opacity: 1; }
+
+/* ── Pricing card ── */
+.pricing-card { position: relative; background: #000000; border: 1px solid #262626; padding: 2.5rem; transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease; }
+.pricing-card:hover { border-color: #8bfe00; box-shadow: 0 0 30px rgba(139,254,0,0.1); }
+.pricing-card.popular { border-color: #8bfe00; }
+.pricing-card.popular::before { content: "MOST POPULAR"; position: absolute; top: 0; right: 0; background: #8bfe00; color: #0d2000; font-family: "JetBrains Mono", monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.15em; padding: 6px 14px; clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px); }
+
+/* ── Testimonial card ── */
+.testimonial-card { background: #000000; border: 1px solid #262626; padding: 2rem; transition: border-color .3s ease; }
+.testimonial-card:hover { border-color: rgba(139,254,0,0.3); }
+
+/* ── Tool tag ── */
+.tool-tag { font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #becbae; border: 1px solid #262626; padding: 8px 14px; transition: all .2s ease; }
+.tool-tag:hover { border-color: #8bfe00; color: #8bfe00; box-shadow: 0 0 12px rgba(139,254,0,0.15); }
 
 /* ── Services page: explore button ── */
 .btn-explore {
@@ -239,7 +332,7 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 .faq-chevron { transition: transform .2s ease; }
 .faq-open .faq-chevron { transform: rotate(180deg); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
-.faq-open .faq-answer { max-height: 200px; }
+.faq-open .faq-answer { max-height: 300px; }
 
 /* ── Form fields (contact / book-a-call) ── */
 .field-input { background-color: #f5f5f5 !important; border: 1px solid #262626; color: #000000 !important; padding: 16px 18px; font-family: "Inter"; transition: border-color .2s ease, box-shadow .2s ease; width: 100%; }
@@ -249,3 +342,40 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 /* ── Agency: specimen media ── */
 .specimen-media { background-image: linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px); background-size: 24px 24px; background-color: #000000; }
 .specimen-media::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 20%, rgba(139,254,0,0.18), transparent 60%); }
+
+/* ── Contact page: multi-step brief form ── */
+.grid-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px); background-size: 64px 64px; opacity: 0.08; pointer-events: none; z-index: 0; }
+.minimal-input { background-color: #0a0a0a; border: 1px solid #262626; border-radius: 0; color: #ffffff; padding: 14px 16px; width: 100%; font-family: 'Inter', sans-serif; font-size: 16px; transition: all 0.3s ease; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); }
+.minimal-input:focus { outline: none; border-color: #8bfe00; box-shadow: 0 0 14px -4px rgba(139,254,0,0.35); }
+.minimal-input::placeholder { color: #353534; transition: color 0.3s; }
+.minimal-input:focus::placeholder { color: #becbae; }
+select.minimal-input { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238bfe00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 0 center; background-size: 1.25rem; }
+.form-step { display: none; animation: fadeSlide 0.5s ease; }
+.form-step.active { display: block; }
+@keyframes fadeSlide { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(74%) sepia(86%) saturate(2240%) hue-rotate(46deg) brightness(102%) contrast(105%); cursor: pointer; }
+
+/* ── Site-wide motion ── */
+html { scroll-behavior: smooth; }
+
+/* Scroll-reveal: main.js adds .reveal to cards/components as it finds them,
+   then .in-view once they cross into the viewport. No markup changes needed
+   on any page — this is purely additive and degrades to "just visible" if
+   JS doesn't run (elements never get .reveal, so they're never hidden). */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.16,.8,.24,1), transform .7s cubic-bezier(.16,.8,.24,1); }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+/* Hero: lighter lift, slightly quicker — this is the first thing anyone sees
+   on any page load, so it should read as an entrance, not a slow drift. */
+.reveal-hero { transform: translateY(14px); transition-duration: .8s; }
+.reveal-hero.in-view { transform: translateY(0); }
+.reveal:nth-child(2)  { transition-delay: .06s; }
+.reveal:nth-child(3)  { transition-delay: .12s; }
+.reveal:nth-child(4)  { transition-delay: .18s; }
+.reveal:nth-child(5)  { transition-delay: .24s; }
+.reveal:nth-child(6)  { transition-delay: .30s; }
+.reveal:nth-child(n+7){ transition-delay: .36s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal.in-view { opacity: 1; transform: none; transition: none; }
+}

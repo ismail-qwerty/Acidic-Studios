@@ -1,396 +1,321 @@
-<!DOCTYPE html><html class="dark" lang="en" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Contact - ACIDIC STUDIOS</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
-<link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="assets/css/main.css">
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-variant": "#353534",
-                      "surface-bright": "#3a3939",
-                      "on-secondary-fixed-variant": "#454747",
-                      "error-container": "#93000a",
-                      "surface-container-high": "#2a2a2a",
-                      "tertiary": "#ffffff",
-                      "surface-container-low": "#1c1b1b",
-                      "on-surface": "#e5e2e1",
-                      "on-secondary-container": "#b4b5b5",
-                      "surface-deep": "#121212",
-                      "primary-fixed": "#8bfe00",
-                      "secondary-fixed": "#e2e2e2",
-                      "on-primary": "#1a3700",
-                      "surface-dim": "#131313",
-                      "tertiary-fixed-dim": "#c6c6c6",
-                      "on-tertiary": "#2f3131",
-                      "outline": "#89957a",
-                      "on-tertiary-fixed": "#1a1c1c",
-                      "on-primary-fixed": "#0d2000",
-                      "on-secondary-fixed": "#1a1c1c",
-                      "on-background": "#e5e2e1",
-                      "primary-fixed-dim": "#7adf00",
-                      "background": "#131313",
-                      "tertiary-container": "#e3e2e2",
-                      "primary-container": "#8bfe00",
-                      "on-surface-variant": "#becbae",
-                      "on-secondary": "#2f3131",
-                      "on-primary-fixed-variant": "#285000",
-                      "border-muted": "#262626",
-                      "on-tertiary-fixed-variant": "#464747",
-                      "acid-glow": "#8CFF00CC",
-                      "inverse-primary": "#376b00",
-                      "surface-container-highest": "#353534",
-                      "outline-variant": "#3f4a34",
-                      "inverse-on-surface": "#313030",
-                      "on-primary-container": "#3b7100",
-                      "surface-container": "#201f1f",
-                      "secondary-container": "#454747",
-                      "secondary": "#c6c6c7",
-                      "surface": "#131313",
-                      "inverse-surface": "#e5e2e1",
-                      "tertiary-fixed": "#e3e2e2",
-                      "on-error": "#690005",
-                      "on-tertiary-container": "#636465",
-                      "surface-container-lowest": "#0e0e0e",
-                      "on-error-container": "#ffdad6",
-                      "primary": "#ffffff",
-                      "secondary-fixed-dim": "#c6c6c7",
-                      "error": "#ffb4ab",
-                      "surface-tint": "#7adf00"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "stack-sm": "8px",
-                      "gutter": "24px",
-                      "stack-md": "16px",
-                      "margin-mobile": "16px",
-                      "margin-desktop": "64px",
-                      "stack-lg": "32px"
-              },
-              "fontFamily": {
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "headline-xl": [
-                              "Montserrat", "sans-serif"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "label-sm": [
-                              "JetBrains Mono"
-                      ],
-                      "headline-lg": [
-                              "Montserrat", "sans-serif"
-                      ],
-                      "headline-lg-mobile": [
-                              "Montserrat", "sans-serif"
-                      ]
-              },
-              "fontSize": {
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-xl": [
-                              "112px",
-                              {
-                                      "lineHeight": "0.9",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-sm": [
-                              "12px",
-                              {
-                                      "lineHeight": "1",
-                                      "letterSpacing": "0.1em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "headline-lg": [
-                              "80px",
-                              {
-                                      "lineHeight": "0.9",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "64px",
-                              {
-                                      "lineHeight": "0.9",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-      },
-          },
-        }
-      </script>
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — ACIDIC STUDIOS</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fontlibrary.org//face/vintage-propagandist" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script id="tailwind-config">
+    tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-bright":"#3a3939","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","surface-dim":"#131313","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","on-primary-fixed-variant":"#285000","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","on-primary-container":"#3b7100","surface-container":"#201f1f","secondary-container":"#454747","secondary":"#c6c6c7","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","error":"#ffb4ab","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat","sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
+    </script>
+
 </head>
-<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
-<div id="navbar-placeholder"></div>
-<script src="assets/js/main.js"></script>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black min-h-screen relative">
 
-<main class="relative">
+    <div class="grid-overlay"></div>
+    <div id="navbar-placeholder"></div>
+    <script src="assets/js/main.js"></script>
 
-<!-- Hero + Form Section -->
-<section class="relative pt-40 pb-20 md:pt-48 md:pb-28 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
-<div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
-<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
-
-<div class="lg:col-span-5">
-<span class="inline-flex items-center gap-2 font-label-sm text-[11px] text-primary-fixed uppercase tracking-[0.3em] mb-6">
-<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>Get In Touch
-</span>
-<h1 class="font-headline-lg text-[42px] sm:text-[60px] md:text-[80px] text-primary uppercase font-normal leading-[0.95] mb-8 tracking-tight">
-<span class="condensed-header">Start a</span><br>
-<span class="stencil-text acid-glow condensed-header">Project</span>
-</h1>
-<p class="font-body-lg text-[16px] md:text-[18px] text-on-surface-variant max-w-md mb-12 border-l-2 border-primary-fixed pl-5">
-Tell us what you're building. A founder reads every message personally — expect a reply within 48 hours.
-</p>
-<div class="space-y-6 border-t border-border-muted pt-8">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary-fixed">mail</span>
-<span class="font-label-sm text-on-surface-variant uppercase tracking-widest text-[13px]">team@acidicstudios.com</span>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary-fixed">calendar_month</span>
-<a class="font-label-sm text-primary-fixed uppercase tracking-widest text-[13px] hover:underline" href="book-a-call.html">Or book a 30-minute call →</a>
-</div>
-</div>
-</div>
-
-<div class="lg:col-span-7">
-<div class="glass-panel p-8 md:p-12">
-
-  <!-- Step Indicators -->
-  <div class="flex items-center gap-0 mb-10" id="stepIndicators">
-    <button type="button" onclick="goToStep(1)" class="step-tab active" id="tab1">
-      <span class="font-label-sm text-[11px] tracking-widest"><span class="text-[#00cfff] mr-1">01</span> You</span>
-      <div class="step-underline"></div>
-    </button>
-    <button type="button" onclick="goToStep(2)" class="step-tab" id="tab2">
-      <span class="font-label-sm text-[11px] tracking-widest"><span class="step-num mr-1">02</span> The work</span>
-      <div class="step-underline"></div>
-    </button>
-    <button type="button" onclick="goToStep(3)" class="step-tab" id="tab3">
-      <span class="font-label-sm text-[11px] tracking-widest"><span class="step-num mr-1">03</span> When</span>
-      <div class="step-underline"></div>
-    </button>
-  </div>
-
-  <form id="contactForm" action="https://formspree.io/f/xeeybqvo" method="POST">
-
-    <!-- Step 1: You -->
-    <div class="form-step" id="step1">
-      <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary font-bold mb-8">Tell us who you are.</h2>
-      <div class="space-y-6">
-        <div>
-          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Your Name <span class="text-[#00cfff]">*</span></label>
-          <input class="field-input" placeholder="Cameron Self" type="text" name="name" required id="inp_name">
+    <!-- Main Layout -->
+    <main class="relative z-10 max-w-[1280px] mx-auto px-4 md:px-16 pt-32 pb-24 min-h-screen flex flex-col justify-center">
+        
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-16">
+            <a href="index.html" class="hover:text-primary-fixed">Home</a>
+            <span class="text-border-muted">/</span>
+            <span class="text-primary-fixed">Contact</span>
         </div>
-        <div>
-          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Work Email <span class="text-[#00cfff]">*</span></label>
-          <input class="field-input" placeholder="you@studio.com" type="email" name="email" required id="inp_email">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            
+            <!-- Left Column: Typography & Meta (col-span-5) -->
+            <aside class="lg:col-span-5 lg:sticky lg:top-32">
+                <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tight text-white mb-10">
+                    Let's make <br>
+                    something <br>
+                    <span class="stencil-text acid-glow">acidic.</span>
+                </h1>
+                
+                <p class="text-on-surface-variant font-body text-base leading-relaxed mb-12 max-w-md">
+                    Fill out the brief questionnaire to help us understand your vision. The more details you provide, the sharper our initial proposal will be.
+                </p>
+
+                <!-- Direct Contact Metadata -->
+                <div class="border-t border-[#262626] pt-8 flex flex-col gap-4 font-label text-label-sm uppercase tracking-widest">
+                    <div class="flex justify-between text-on-surface-variant">
+                        <span>Email</span>
+                        <a href="mailto:hello@acidic.studio" class="text-white hover:text-primary-fixed transition-colors">hello@acidic.studio</a>
+                    </div>
+                    <div class="flex justify-between text-on-surface-variant">
+                        <span>Phone</span>
+                        <a href="tel:+1234567890" class="text-white hover:text-primary-fixed transition-colors">+1 (234) 567-890</a>
+                    </div>
+                    <div class="flex justify-between text-on-surface-variant">
+                        <span>Location</span>
+                        <span class="text-white">Remote / Global</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Column: The 3-Phase Form (col-span-7) -->
+            <div class="lg:col-span-7 bg-[#0e0e0e]/60 border border-[#262626] p-8 md:p-12 relative">
+                
+                <!-- Top Accent Line -->
+                <div class="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-[#8bfe00] to-transparent opacity-60"></div>
+
+                <!-- Horizontal Step Tracker -->
+                <div class="flex items-center justify-between mb-12 border-b border-[#262626] pb-6">
+                    <div id="step-indicator-1" class="step-indicator flex items-center gap-3 font-label text-label-sm uppercase tracking-widest transition-colors duration-300">
+                        <span class="step-circle w-7 h-7 flex items-center justify-center border rounded-none text-[10px] transition-all">01</span>
+                        <span class="hidden md:inline">You</span>
+                    </div>
+                    <div class="flex-1 h-[1px] bg-[#262626] mx-2"></div>
+                    <div id="step-indicator-2" class="step-indicator flex items-center gap-3 font-label text-label-sm uppercase tracking-widest transition-colors duration-300 text-[#becbae]/40">
+                        <span class="step-circle w-7 h-7 flex items-center justify-center border border-[#262626] rounded-none text-[10px] transition-all">02</span>
+                        <span class="hidden md:inline">The Work</span>
+                    </div>
+                    <div class="flex-1 h-[1px] bg-[#262626] mx-2"></div>
+                    <div id="step-indicator-3" class="step-indicator flex items-center gap-3 font-label text-label-sm uppercase tracking-widest transition-colors duration-300 text-[#becbae]/40">
+                        <span class="step-circle w-7 h-7 flex items-center justify-center border border-[#262626] rounded-none text-[10px] transition-all">03</span>
+                        <span class="hidden md:inline">When</span>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="min-h-[300px]" action="https://formspree.io/f/xeeybqvo" method="POST">
+                    
+                    <!-- PHASE 1: YOU -->
+                    <div class="form-step active" data-step="1">
+                        <h2 class="font-display text-3xl font-bold uppercase mb-10 text-white tracking-tight">Tell us who you are.</h2>
+                        
+                        <div class="flex flex-col gap-10">
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Your Name *</label>
+                                <input type="text" name="name" required class="minimal-input" placeholder="Cameron Self">
+                            </div>
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Work Email *</label>
+                                <input type="email" name="email" required class="minimal-input" placeholder="you@studio.com">
+                            </div>
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Company (Optional)</label>
+                                <input type="text" name="company" class="minimal-input" placeholder="Brand or agency">
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end mt-12">
+                            <button type="button" onclick="nextStep()" class="btn-tag btn-tag-fill">
+                                Continue
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PHASE 2: THE WORK -->
+                    <div class="form-step" data-step="2">
+                        <h2 class="font-display text-3xl font-bold uppercase mb-10 text-white tracking-tight">What do you need?</h2>
+                        
+                        <div class="flex flex-col gap-10">
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Service Required *</label>
+                                <select name="service" required class="minimal-input">
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="ad_videos">Ad Videos</option>
+                                    <option value="short_form">Short-form Content</option>
+                                    <option value="video_editing">Video Editing</option>
+                                    <option value="full_production">Full Production</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Estimated Budget</label>
+                                <select name="budget" class="minimal-input">
+                                    <option value="" disabled selected>Select range...</option>
+                                    <option value="5k-10k">$5,000 - $10,000</option>
+                                    <option value="10k-25k">$10,000 - $25,000</option>
+                                    <option value="25k+">$25,000+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Project Details</label>
+                                <textarea name="details" rows="3" class="minimal-input resize-none" placeholder="Briefly describe your vision, goals, and deliverables..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between mt-12">
+                            <button type="button" onclick="prevStep()" class="btn-tag btn-tag-outline">
+                                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                                Back
+                            </button>
+                            <button type="button" onclick="nextStep()" class="btn-tag btn-tag-fill">
+                                Continue
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PHASE 3: WHEN -->
+                    <div class="form-step" data-step="3">
+                        <h2 class="font-display text-3xl font-bold uppercase mb-10 text-white tracking-tight">When do you need it?</h2>
+                        
+                        <div class="flex flex-col gap-10">
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Timeline *</label>
+                                <select name="timeline" required class="minimal-input">
+                                    <option value="" disabled selected>Select urgency...</option>
+                                    <option value="asap">ASAP (Rush Job)</option>
+                                    <option value="1-3m">1-3 Months</option>
+                                    <option value="3-6m">3-6 Months</option>
+                                    <option value="flexible">Flexible / Planning ahead</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Preferred Start Date</label>
+                                <input type="date" name="start_date" class="minimal-input" style="color-scheme: dark;">
+                            </div>
+                            <div class="p-4 border-l-2 border-[#8bfe00] bg-[#8bfe00]/5">
+                                <div class="flex items-center gap-2 font-label text-label-sm uppercase tracking-widest text-primary-fixed mb-2">
+                                    <span class="material-symbols-outlined text-[16px]">info</span>
+                                    Final Check
+                                </div>
+                                <p class="text-on-surface-variant text-sm leading-relaxed">
+                                    Ensure your details are correct. Submitting this form will send a direct brief to our producers. We typically respond within 24-48 hours.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p id="contact-error" class="hidden mt-6 text-red-400 text-sm">Something went wrong sending your brief — please try again, or email us directly at <a href="mailto:hello@acidic.studio" class="underline">hello@acidic.studio</a>.</p>
+
+                        <div class="flex justify-between mt-12">
+                            <button type="button" onclick="prevStep()" class="btn-tag btn-tag-outline">
+                                <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                                Back
+                            </button>
+                            <button type="submit" id="contact-submit" class="btn-tag btn-tag-fill">
+                                <span id="contact-submit-label">Submit Brief</span>
+                                <span class="material-symbols-outlined text-[16px]">send</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
-        <div>
-          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Company (Optional)</label>
-          <input class="field-input" placeholder="Brand or agency" type="text" name="company" id="inp_company">
-        </div>
-      </div>
-      <div class="flex items-center justify-between mt-10">
-        <span class="font-label-sm text-[10px] text-[#6b6b6b] uppercase tracking-widest">← Reply within 24 hrs →</span>
-        <button type="button" onclick="nextStep(1)" class="btn-tag btn-tag-fill"><span class="btn-tag-dot"></span>Continue</button>
-      </div>
-    </div>
+    </main>
 
-    <!-- Step 2: The work -->
-    <div class="form-step hidden" id="step2">
-      <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary font-bold mb-8">Tell us about the work.</h2>
-      <div class="space-y-6">
-        <div>
-          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">What are you building? <span class="text-[#00cfff]">*</span></label>
-          <textarea class="field-input" placeholder="A few lines about the project, scope, and goals" rows="5" name="message" required id="inp_message"></textarea>
-        </div>
-        <div>
-          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Budget Range</label>
-          <select class="field-input" name="budget">
-            <option value="">Select a range…</option>
-            <option>Under $10K</option>
-            <option>$10K – $50K</option>
-            <option>$50K – $150K</option>
-            <option>$150K+</option>
-          </select>
-        </div>
-      </div>
-      <div class="flex items-center justify-between mt-10">
-        <button type="button" onclick="prevStep(2)" class="font-label-sm text-[11px] uppercase tracking-widest text-[#6b6b6b] hover:text-primary transition-colors">← Back</button>
-        <button type="button" onclick="nextStep(2)" class="btn-tag btn-tag-fill"><span class="btn-tag-dot"></span>Continue</button>
-      </div>
-    </div>
+    <div id="footer-placeholder"></div>
 
-    <!-- Step 3: When -->
-    <div class="form-step hidden" id="step3">
-      <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary font-bold mb-8">When can you start?</h2>
-      <div class="space-y-6">
-        <div>
-          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Ideal Start Date</label>
-          <input class="field-input" placeholder="e.g. ASAP, Q3 2025, flexible…" type="text" name="start_date">
-        </div>
-        <div>
-          <label class="block font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Anything else?</label>
-          <textarea class="field-input" placeholder="Deadlines, constraints, or anything we should know" rows="4" name="notes"></textarea>
-        </div>
-      </div>
-      <div class="flex items-center justify-between mt-10">
-        <button type="button" onclick="prevStep(3)" class="font-label-sm text-[11px] uppercase tracking-widest text-[#6b6b6b] hover:text-primary transition-colors">← Back</button>
-        <button type="submit" class="btn-tag btn-tag-fill" id="submitBtn"><span class="btn-tag-dot"></span><span id="btnText">Send Transmission</span></button>
-      </div>
-      <p id="successMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-primary-fixed mt-4">✓ Message sent — we'll reply within 24 hours.</p>
-      <p id="errorMsg" class="hidden font-label-sm text-[11px] uppercase tracking-widest text-red-400 mt-4">Something went wrong — try emailing us directly.</p>
-    </div>
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
 
-  </form>
-</div>
-</div>
+        function updateUI() {
+            // Hide/Show Steps
+            document.querySelectorAll('.form-step').forEach(el => {
+                el.classList.remove('active');
+                if (parseInt(el.dataset.step) === currentStep) {
+                    el.classList.add('active');
+                }
+            });
 
-</div>
-</section>
+            // Update Indicators
+            for (let i = 1; i <= totalSteps; i++) {
+                const indicator = document.getElementById(`step-indicator-${i}`);
+                const circle = indicator.querySelector('.step-circle');
+                
+                if (i < currentStep) {
+                    // Completed
+                    indicator.classList.remove('text-[#becbae]/40');
+                    indicator.classList.add('text-primary-fixed');
+                    circle.style.borderColor = '#8bfe00';
+                    circle.style.color = '#8bfe00';
+                    circle.style.backgroundColor = 'rgba(139,254,0,0.1)';
+                } else if (i === currentStep) {
+                    // Active
+                    indicator.classList.remove('text-[#becbae]/40');
+                    indicator.classList.add('text-white');
+                    circle.style.borderColor = '#8bfe00';
+                    circle.style.color = '#8bfe00';
+                    circle.style.boxShadow = '0 0 10px rgba(139,254,0,0.4)';
+                } else {
+                    // Pending
+                    indicator.classList.add('text-[#becbae]/40');
+                    indicator.classList.remove('text-white', 'text-primary-fixed');
+                    circle.style.borderColor = '#262626';
+                    circle.style.color = '';
+                    circle.style.backgroundColor = 'transparent';
+                    circle.style.boxShadow = 'none';
+                }
+            }
+        }
 
-</main>
+        function nextStep() {
+            const activeStep = document.querySelector('.form-step.active');
+            const requiredInputs = activeStep.querySelectorAll('[required]');
+            let isValid = true;
 
-<!-- Footer -->
-<footer class="bg-black border-t border-[#262626] w-full py-16 md:py-20">
-<div class="max-w-[1280px] mx-auto px-4 md:px-16">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-<!-- Brand -->
-<div class="lg:col-span-1">
-<img src="assets/images/acidic-header-logo-cropped.png" alt="Acidic Studios" class="h-10 w-auto mb-6 opacity-90">
-<p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed max-w-[220px]">Digital alchemy for brands that refuse to blend in.</p>
-</div>
-<!-- Navigation -->
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Navigation</h4>
-<ul class="space-y-3">
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="index.html">Home</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="services.html">Services</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="blog.html">Blog</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="team.html">Team</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="careers.html">Careers</a></li>
-</ul>
-</div>
-<!-- Services -->
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Services</h4>
-<ul class="space-y-3">
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-video-production.html">AI Video</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-agents.html">AI Agents</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="websites.html">Websites</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="branding.html">Branding</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="video-editing.html">Video Editing</a></li>
-</ul>
-</div>
-<!-- Connect -->
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Connect</h4>
-<div class="flex flex-col gap-3">
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">photo_camera</span> Instagram
-</a>
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">thumb_up</span> Facebook
-</a>
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">hub</span> LinkedIn
-</a>
-</div>
-</div>
-</div>
-<div class="pt-8 border-t border-[#262626] flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-label-sm text-[11px] text-[#9a9a9a]/50 uppercase tracking-[0.2em]">©2024 Acidic Studios. All rights reserved.</p>
-<div class="flex gap-6">
-<a href="privacy-policy.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Privacy Policy</a>
-<a href="contact.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Contact</a>
-</div>
-</div>
-</div>
-</footer>
+            requiredInputs.forEach(input => {
+                if (!input.value) {
+                    isValid = false;
+                    input.style.borderBottomColor = '#ff0000'; // Error red
+                    input.addEventListener('input', function() {
+                        this.style.borderBottomColor = '#8bfe00'; // Reset to acid on type
+                    }, { once: true });
+                }
+            });
 
-<style>
-  .step-tab { display:flex; flex-direction:column; padding: 0 20px 12px 0; cursor:pointer; background:none; border:none; text-align:left; }
-  .step-tab .step-num { color:#6b6b6b; }
-  .step-tab .step-underline { height:2px; background:#262626; margin-top:8px; width:100%; }
-  .step-tab.active span { color:#fff; }
-  .step-tab.active .step-num { color:#00cfff; }
-  .step-tab.active .step-underline { background:#00cfff; }
-  .step-tab.done .step-num { color:#8bfe00; }
-  .step-tab.done .step-underline { background:#8bfe00; }
-</style>
-<script>
-  function goToStep(n) {
-    [1,2,3].forEach(i => {
-      document.getElementById('step'+i).classList.toggle('hidden', i !== n);
-      const tab = document.getElementById('tab'+i);
-      tab.classList.remove('active','done');
-      if (i === n) tab.classList.add('active');
-      else if (i < n) tab.classList.add('done');
-    });
-  }
-  function nextStep(current) {
-    // basic validation for step 1
-    if (current === 1) {
-      const name = document.getElementById('inp_name');
-      const email = document.getElementById('inp_email');
-      if (!name.value.trim() || !email.value.trim()) { name.reportValidity(); email.reportValidity(); return; }
-    }
-    if (current === 2) {
-      const msg = document.getElementById('inp_message');
-      if (!msg.value.trim()) { msg.reportValidity(); return; }
-    }
-    goToStep(current + 1);
-  }
-  function prevStep(current) { goToStep(current - 1); }
+            if (!isValid) return;
 
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    const success = document.getElementById('successMsg');
-    const error = document.getElementById('errorMsg');
-    btnText.textContent = 'Sending...';
-    btn.disabled = true;
-    try {
-      const res = await fetch(this.action, { method:'POST', body: new FormData(this), headers:{'Accept':'application/json'} });
-      if (res.ok) { this.reset(); goToStep(1); success.classList.remove('hidden'); error.classList.add('hidden'); btnText.textContent = 'Sent'; }
-      else throw new Error();
-    } catch { error.classList.remove('hidden'); success.classList.add('hidden'); btnText.textContent = 'Send Transmission'; btn.disabled = false; }
-  });
-</script>
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+            }
+        }
 
-</body></html>
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        }
+
+        // Handle Form Submission
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('contact-submit');
+            const label = document.getElementById('contact-submit-label');
+            const errorMsg = document.getElementById('contact-error');
+            errorMsg.classList.add('hidden');
+            submitBtn.disabled = true;
+            label.textContent = 'Sending...';
+
+            try {
+                const res = await fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this),
+                    headers: { Accept: 'application/json' }
+                });
+                if (res.ok) {
+                    label.textContent = 'Brief Submitted';
+                    submitBtn.style.backgroundColor = '#000';
+                    submitBtn.style.color = '#8bfe00';
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (err) {
+                errorMsg.classList.remove('hidden');
+                submitBtn.disabled = false;
+                label.textContent = 'Submit Brief';
+            }
+        });
+
+        // Init
+        updateUI();
+    </script>
+</body>
+</html>

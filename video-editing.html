@@ -14,55 +14,6 @@
 <script id="tailwind-config">
 tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-bright":"#3a3939","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","surface-dim":"#131313","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","on-primary-fixed-variant":"#285000","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","on-primary-container":"#3b7100","surface-container":"#201f1f","secondary-container":"#454747","secondary":"#c6c6c7","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","error":"#ffb4ab","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat","sans-serif"],"body-lg":["Inter"],"label-sm":["JetBrains Mono"],"headline-lg":["Montserrat","sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
-<style>
-body{background-color:#000000;color:#e5e2e1;overflow-x:hidden}
-.stencil-text{-webkit-text-stroke:1.5px #8bfe00;color:transparent}
-.acid-glow{text-shadow:0 0 15px rgba(139,254,0,0.6)}
-@keyframes pulse-green{0%{transform:scale(0.95);box-shadow:0 0 0 0 rgba(139,254,0,0.7)}70%{transform:scale(1);box-shadow:0 0 0 6px rgba(139,254,0,0)}100%{transform:scale(0.95);box-shadow:0 0 0 0 rgba(139,254,0,0)}}
-.rec-pulse{animation:pulse-green 2s infinite}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#000000}::-webkit-scrollbar-thumb{background:#262626}::-webkit-scrollbar-thumb:hover{background:#8bfe00}
-.condensed-header{transform:scaleY(1.15);transform-origin:top left;display:inline-block;margin-bottom:0.12em}
-.btn-tag{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 28px 17px 22px;font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);transition:background-color .2s ease,color .2s ease,box-shadow .2s ease}
-.btn-tag-fill{background-color:#8bfe00;color:#0d2000}
-.btn-tag-fill:hover{background-color:#000000;color:#8bfe00;box-shadow:inset 0 0 0 1px #8bfe00,0 0 20px rgba(139,254,0,0.35)}
-.btn-tag-outline{background-color:rgba(0,0,0,0.4);color:#ffffff;box-shadow:inset 0 0 0 1px #3f4a34}
-.btn-tag-outline:hover{color:#8bfe00;box-shadow:inset 0 0 0 1px #8bfe00,0 0 20px rgba(139,254,0,0.2)}
-.btn-tag-dot{width:6px;height:6px;border-radius:999px;background-color:currentColor;flex-shrink:0}
-.btn-tag-index{opacity:0.5;font-weight:400}
-.icon-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid #262626;color:#becbae;transition:border-color .2s ease,color .2s ease,box-shadow .2s ease}
-.icon-btn:hover{border-color:rgba(139,254,0,0.4);color:#8bfe00;box-shadow:0 0 12px rgba(139,254,0,0.15)}
-.service-card{display:block;background:#000000;border:1px solid #262626;padding:2rem;text-decoration:none;transition:border-color .2s,box-shadow .2s,transform .3s ease}
-.service-card:hover{border-color:#8bfe00;box-shadow:0 0 20px rgba(139,254,0,0.1);transform:translateY(-4px)}
-.spec-card{background:#000000;border:1px solid #262626;padding:2rem;transition:border-color .2s,box-shadow .2s,transform .3s ease}
-.spec-card:hover{border-color:#8bfe00;box-shadow:0 0 20px rgba(139,254,0,0.1);transform:translateY(-4px)}
-.feature-card{background:#000000;border:1px solid #262626;padding:1.5rem;transition:border-color .3s,box-shadow .3s,transform .3s ease}
-.feature-card:hover{border-color:rgba(139,254,0,0.4);box-shadow:0 0 15px rgba(139,254,0,0.08);transform:translateY(-2px)}
-.step-line{position:relative;padding-left:2rem}
-.step-line::before{content:'';position:absolute;left:0;top:8px;bottom:-8px;width:1px;background:linear-gradient(to bottom,#8bfe00,#262626)}
-.step-line:last-child::before{height:8px}
-.step-dot{position:absolute;left:-4px;top:6px;width:9px;height:9px;border-radius:50%;background:#8bfe00;box-shadow:0 0 8px rgba(139,254,0,0.5)}
-.faq-chevron{transition:transform .2s ease}
-.faq-open .faq-chevron{transform:rotate(180deg)}
-.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.faq-open .faq-answer{max-height:300px}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.marquee-container{overflow:hidden;white-space:nowrap;position:relative}
-.marquee-content{display:inline-block;animation:marquee 30s linear infinite}
-.showcase-card{position:relative;background:#000000;border:1px solid #262626;overflow:hidden;transition:border-color .3s ease,box-shadow .3s ease}
-.showcase-card:hover{border-color:#8bfe00;box-shadow:0 0 30px rgba(139,254,0,0.15)}
-.showcase-card .showcase-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.3) 50%,transparent 100%);opacity:0;transition:opacity .3s ease}
-.showcase-card:hover .showcase-overlay{opacity:1}
-.showcase-card .showcase-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;transform:translateY(20px);opacity:0;transition:transform .3s ease,opacity .3s ease}
-.showcase-card:hover .showcase-content{transform:translateY(0);opacity:1}
-.pricing-card{position:relative;background:#000000;border:1px solid #262626;padding:2.5rem;transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease}
-.pricing-card:hover{border-color:#8bfe00;box-shadow:0 0 30px rgba(139,254,0,0.1)}
-.pricing-card.popular{border-color:#8bfe00}
-.pricing-card.popular::before{content:"MOST POPULAR";position:absolute;top:0;right:0;background:#8bfe00;color:#0d2000;font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:0.15em;padding:6px 14px;clip-path:polygon(8px 0,100% 0,100% 100%,0 100%,0 8px)}
-.testimonial-card{background:#000000;border:1px solid #262626;padding:2rem;transition:border-color .3s ease}
-.testimonial-card:hover{border-color:rgba(139,254,0,0.3)}
-.tool-tag{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#becbae;border:1px solid #262626;padding:8px 14px;transition:all .2s ease}
-.tool-tag:hover{border-color:#8bfe00;color:#8bfe00;box-shadow:0 0 12px rgba(139,254,0,0.15)}
-</style>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
 <div id="navbar-placeholder"></div>
@@ -93,7 +44,7 @@ body{background-color:#000000;color:#e5e2e1;overflow-x:hidden}
           Post-production for existing footage — ad videos, UGC, short-form, long-form, and full YouTube automation pipelines. Every frame engineered to convert.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a class="btn-tag btn-tag-fill" href="contact.html"><span class="btn-tag-index">A/</span>Start a Project</a>
+          <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
           <a class="btn-tag btn-tag-outline" href="#work"><span class="btn-tag-dot"></span>View Our Work</a>
         </div>
       </div>
@@ -694,7 +645,7 @@ body{background-color:#000000;color:#e5e2e1;overflow-x:hidden}
     </h2>
     <p class="font-body-md text-on-surface-variant max-w-lg mx-auto mb-10">Tell us about the project. We'll come back with a scope, timeline, and price within 48 hours.</p>
     <div class="flex flex-wrap gap-4 justify-center">
-      <a class="btn-tag btn-tag-fill" href="contact.html"><span class="btn-tag-index">A/</span>Start a Project</a>
+      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
       <a class="btn-tag btn-tag-outline" href="book-a-call.html"><span class="btn-tag-dot"></span>Book a Call</a>
     </div>
   </div>
@@ -702,58 +653,7 @@ body{background-color:#000000;color:#e5e2e1;overflow-x:hidden}
 
 </main>
 
-<!-- Footer -->
-<footer class="bg-black border-t border-[#262626] w-full py-16 md:py-20">
-<div class="max-w-[1280px] mx-auto px-4 md:px-16">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-<div class="lg:col-span-1">
-<img src="assets/images/acidic-header-logo-cropped.png" alt="Acidic Studios" class="h-10 w-auto mb-6 opacity-90">
-<p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed max-w-[220px]">Digital alchemy for brands that refuse to blend in.</p>
-</div>
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Navigation</h4>
-<ul class="space-y-3">
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="index.html">Home</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="services.html">Services</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="blog.html">Blog</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="team.html">Team</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="careers.html">Careers</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Services</h4>
-<ul class="space-y-3">
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-video-production.html">AI Video</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="ai-agents.html">AI Agents</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="websites.html">Websites</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="branding.html">Branding</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="video-editing.html">Video Editing</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Connect</h4>
-<div class="flex flex-col gap-3">
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">photo_camera</span> Instagram
-</a>
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">thumb_up</span> Facebook
-</a>
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">hub</span> LinkedIn
-</a>
-</div>
-</div>
-</div>
-<div class="pt-8 border-t border-[#262626] flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-label-sm text-[11px] text-[#9a9a9a]/50 uppercase tracking-[0.2em]">2024 Acidic Studios. All rights reserved.</p>
-<div class="flex gap-6">
-<a href="privacy-policy.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Privacy Policy</a>
-<a href="contact.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Contact</a>
-</div>
-</div>
-</div>
-</footer>
+<div id="footer-placeholder"></div>
 
 </body>
 </html>

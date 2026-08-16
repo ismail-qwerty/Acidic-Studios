@@ -13,17 +13,6 @@
 <script id="tailwind-config">
 tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#201f1f","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat", "sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
-<style>
-  #postContent p { margin-bottom: 1.75em; }
-  #postContent h2 { font-family: "Montserrat", "sans-serif; font-size: 32px; color: #ffffff; text-transform: uppercase; letter-spacing: -0.01em; margin: 2em 0 0.75em; }
-  #postContent h3 { font-family: "JetBrains Mono", monospace; font-size: 14px; color: #8bfe00; text-transform: uppercase; letter-spacing: 0.08em; margin: 1.75em 0 0.75em; }
-  #postContent a { color: #8bfe00; text-decoration: underline; text-underline-offset: 3px; }
-  #postContent ul, #postContent ol { margin: 0 0 1.75em 1.25em; }
-  #postContent li { margin-bottom: 0.5em; }
-  #postContent blockquote { border-left: 2px solid #8bfe00; padding-left: 1.5em; margin: 2em 0; color: #becbae; font-style: italic; }
-  #postContent img { width: 100%; border: 1px solid #262626; margin: 2em 0; }
-  #postContent code { font-family: "JetBrains Mono", monospace; font-size: 0.9em; color: #8bfe00; background: rgba(139,254,0,0.08); padding: 2px 6px; }
-</style>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
 <div id="navbar-placeholder"></div>
@@ -80,17 +69,7 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 
 </main>
 
-<footer class="bg-surface-lowest border-t border-border-muted w-full py-16 md:py-24">
-<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-<div class="lg:col-span-1"><div class="font-headline-lg text-[32px] text-primary tracking-tighter flex items-center gap-3 mb-8"><img alt="Acidic Studios" class="w-10 h-10 border border-border-muted rounded-full" src="assets/images/Acidic studios header logo.png">ACIDIC</div></div>
-<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Navigation</h4><ul class="space-y-4"><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="case-studies.html">Work</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="services.html">Services</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="agency.html">Agency</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="blog.html">Blog</a></li></ul></div>
-<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Technical</h4><ul class="space-y-4"><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="careers.html">Careers</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="faqs.html">FAQs</a></li><li><a class="text-on-surface-variant hover:text-primary-fixed transition-colors uppercase text-[12px] tracking-widest" href="privacy-policy.html">Legal Protocols</a></li></ul></div>
-<div><h4 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-6">Connect</h4><div class="flex gap-3"><a href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Instagram"><span class="material-symbols-outlined text-[16px]">photo_camera</span></a><a href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="Facebook"><span class="material-symbols-outlined text-[16px]">thumb_up</span></a><a href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer" class="icon-btn rounded-full" aria-label="LinkedIn"><span class="material-symbols-outlined text-[16px]">hub</span></a></div><p class="font-body text-sm text-on-surface-variant mt-4"><a class="hover:text-primary-fixed transition-colors" href="mailto:team@acidicstudios.com">team@acidicstudios.com</a></p></div>
-</div>
-<div class="pt-8 border-t border-border-muted flex flex-col md:flex-row justify-between items-center gap-4"><p class="font-label-sm text-[10px] text-on-surface-variant/40 uppercase tracking-[0.2em]">©2024 ACIDIC STUDIOS. ALL RIGHTS RESERVED. DIGITAL ALCHEMY IN PROGRESS.</p><div class="flex gap-6"><span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">V.4.2.0_STABLE</span><span class="text-[10px] text-primary-fixed/40 uppercase tracking-widest">LATENCY: 0.02MS</span></div></div>
-</div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script>
 const sb = supabase.createClient('https://npunrjejzvbjsxpsouuq.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wdW5yamVqenZianN4cHNvdXVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0Njg4NzEsImV4cCI6MjEwMDA0NDg3MX0.bFUZRI5se1mSD1bMwmh-kFN70gNk6gI-Ov3ysbFxCfc');
