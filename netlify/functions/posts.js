@@ -9,8 +9,11 @@
 // before this function ever runs, and hands us the decoded user on
 // `context.clientContext.user` — a client cannot forge this.
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+// Trim defensively — a stray space or newline from copy-pasting into the
+// Netlify env var UI is the single most common cause of this function
+// failing with an opaque "fetch failed".
+const SUPABASE_URL = (process.env.SUPABASE_URL || '').trim().replace(/\/+$/, '');
+const SERVICE_KEY = (process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
 
 function json(statusCode, data) {
   return {
@@ -23,6 +26,12 @@ function json(statusCode, data) {
 exports.handler = async (event, context) => {
   if (!SUPABASE_URL || !SERVICE_KEY) {
     return json(500, { error: 'Server is missing SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY env vars.' });
+  }
+
+  try {
+    new URL(SUPABASE_URL);
+  } catch {
+    return json(500, { error: `SUPABASE_URL env var isn't a valid URL: "${SUPABASE_URL}". It should look like https://xxxx.supabase.co with no quotes, spaces, or trailing slash.` });
   }
 
   // Reads are allowed without auth (the public blog needs them), but this
@@ -104,6 +113,10 @@ exports.handler = async (event, context) => {
 
     return json(405, { error: 'Method not allowed.' });
   } catch (err) {
-    return json(500, { error: err.message });
+    // err.message from a failed outbound fetch is just "fetch failed" —
+    // the useful reason (DNS failure, TLS error, refused connection, etc.)
+    // lives on err.cause. Surface both so this doesn't need a log dive.
+    const detail = err.cause ? `${err.message}: ${err.cause.message || err.cause}` : err.message;
+    return json(500, { error: detail });
   }
 };
