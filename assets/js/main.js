@@ -235,61 +235,186 @@
   const p = depth > 0 ? '../'.repeat(depth) : '';
 
   const footerHTML = `
-<footer class="bg-black border-t border-[#262626] w-full py-16 md:py-20">
-<div class="max-w-[1280px] mx-auto px-4 md:px-16">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-<div class="lg:col-span-1">
-<img src="${p}assets/images/acidic-header-logo-cropped.png" alt="Acidic Studios" class="h-10 w-auto mb-6 opacity-90">
-<p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed max-w-[220px]">Digital alchemy for brands that refuse to blend in.</p>
-</div>
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Navigation</h4>
-<ul class="space-y-3">
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}index.html">Home</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}services.html">Services</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}blog.html">Blog</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}team.html">Team</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}careers.html">Careers</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Services</h4>
-<ul class="space-y-3">
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}ai-video-production.html">AI Video</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}ai-agents.html">AI Agents</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}websites.html">Websites</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}branding.html">Branding</a></li>
-<li><a class="font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="${p}video-editing.html">Video Editing</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-label-sm text-[11px] text-primary-fixed uppercase tracking-widest mb-5">Connect</h4>
-<div class="flex flex-col gap-3">
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">photo_camera</span> Instagram
-</a>
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">thumb_up</span> Facebook
-</a>
-<a class="flex items-center gap-2 font-label-sm text-[12px] text-[#9a9a9a] hover:text-primary-fixed transition-colors uppercase tracking-widest" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">hub</span> LinkedIn
-</a>
-</div>
-</div>
-</div>
-<div class="pt-8 border-t border-[#262626] flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-label-sm text-[11px] text-[#9a9a9a]/50 uppercase tracking-[0.2em]">2024 Acidic Studios. All rights reserved.</p>
-<div class="flex gap-6">
-<a href="${p}privacy-policy.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Privacy Policy</a>
-<a href="${p}contact.html" class="font-label-sm text-[11px] text-[#9a9a9a]/50 hover:text-primary-fixed transition-colors uppercase tracking-widest">Contact</a>
-</div>
-</div>
+<footer class="relative bg-black w-full px-3 sm:px-6 md:px-10 py-8 md:py-14">
+<div class="relative max-w-[1280px] mx-auto rounded-[36px] sm:rounded-[56px] md:rounded-[72px] bg-primary-fixed overflow-hidden">
+  <div class="relative z-10 px-6 sm:px-12 md:px-16 pt-12 md:pt-16">
+
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-10 pb-10">
+
+      <div class="col-span-2 md:col-span-4">
+        <h3 class="font-headline-lg text-on-primary-fixed text-[22px] sm:text-[26px] uppercase leading-tight mb-4">Sharper Brands.<br>Louder Work.</h3>
+        <p class="font-label-sm text-[10px] font-bold text-on-primary-fixed uppercase tracking-widest">© 2024 Acidic Studios — Digital Alchemy Lab</p>
+      </div>
+
+      <div class="md:col-span-2">
+        <h4 class="font-label-sm text-[11px] text-on-primary-fixed uppercase tracking-widest mb-5 font-bold">Navigation</h4>
+        <ul class="space-y-3">
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}index.html">Home</a></li>
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}services.html">Services</a></li>
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}blog.html">Blog</a></li>
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}team.html">Team</a></li>
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}careers.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <h4 class="font-label-sm text-[11px] text-on-primary-fixed uppercase tracking-widest mb-5 font-bold">Support</h4>
+        <ul class="space-y-3">
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}contact.html">Contact Us</a></li>
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}faqs.html">FAQs</a></li>
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}book-a-call.html">Book a Call</a></li>
+          <li><a class="font-label-sm text-[12px] font-bold text-on-primary-fixed hover:text-black transition-colors uppercase tracking-widest" href="${p}privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-2 md:col-span-4">
+        <h4 class="font-label-sm text-[11px] text-on-primary-fixed uppercase tracking-widest mb-5 font-bold">Get the latest from Acidic.</h4>
+        <form id="footerNewsletter" action="https://formspree.io/f/xeeybqvo" method="POST" class="flex flex-col sm:flex-row gap-3 mb-2">
+          <input type="email" name="email" required placeholder="Email Address" class="flex-1 min-w-0 text-[13px] px-4 py-3 font-body-md border-0 focus:outline-none" style="background:#0d2000;color:#8bfe00;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)">
+          <button type="submit" id="newsletterBtn" class="btn-tag shrink-0" style="background:#0d2000;color:#8bfe00">
+            <span id="newsletterLabel">Subscribe</span>
+          </button>
+        </form>
+        <p id="newsletterMsg" class="hidden font-label-sm text-[11px] text-on-primary-fixed/80 uppercase tracking-widest mb-6"></p>
+        <h4 class="font-label-sm text-[11px] text-on-primary-fixed uppercase tracking-widest mb-4 font-bold mt-6">Follow Us</h4>
+        <div class="flex gap-2">
+          <a class="footer-icon-btn" href="https://www.instagram.com/acidic._.studios/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="material-symbols-outlined text-base">photo_camera</span></a>
+          <a class="footer-icon-btn" href="https://www.facebook.com/profile.php?id=61581056850793" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span class="material-symbols-outlined text-base">thumb_up</span></a>
+          <a class="footer-icon-btn" href="https://www.linkedin.com/company/acidic-studios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span class="material-symbols-outlined text-base">hub</span></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Giant wordmark -->
+    <div class="pointer-events-none select-none -mt-2 md:-mt-4" aria-hidden="true">
+      <span class="block font-headline-xl text-on-primary-fixed font-black leading-none tracking-tight text-center md:text-left" style="font-size:clamp(64px,15vw,190px)">ACIDIC</span>
+    </div>
+  </div>
 </div>
 </footer>`;
 
   const tmp = document.createElement('div');
   tmp.innerHTML = footerHTML;
   placeholder.replaceWith(...tmp.childNodes);
+
+  const newsletterForm = document.getElementById('footerNewsletter');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn = document.getElementById('newsletterBtn');
+      const label = document.getElementById('newsletterLabel');
+      const msg = document.getElementById('newsletterMsg');
+      btn.disabled = true; label.textContent = 'Sending...';
+      msg.classList.add('hidden');
+      try {
+        const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { Accept: 'application/json' } });
+        if (res.ok) {
+          this.reset();
+          msg.textContent = "You're on the list — welcome.";
+          msg.classList.remove('hidden');
+        } else {
+          throw new Error('failed');
+        }
+      } catch (err) {
+        msg.textContent = 'Something went wrong — try again or email hello@acidic.studio directly.';
+        msg.classList.remove('hidden');
+      }
+      btn.disabled = false; label.textContent = 'Subscribe';
+    });
+  }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+
+// ── Scroll-reveal + count-up stats + hero entrance ──────────────────────────
+// Runs on every page automatically (targets the shared card/component classes
+// already used site-wide), no per-page markup needed. Respects prefers-reduced-motion.
+(function () {
+  // Two rAFs, not one: the browser needs to actually paint the .reveal
+  // (opacity:0) state at least once before we flip to .in-view, otherwise —
+  // for anything already sitting in the viewport at load, which is most of
+  // what you see above the fold without scrolling — the browser can coalesce
+  // both class changes into a single style recalc and skip the transition
+  // entirely, so the element just pops in with no visible animation at all.
+  function nextPaint(cb) {
+    requestAnimationFrame(function () { requestAnimationFrame(cb); });
+  }
+
+  function run() {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    // Hero entrance: fade + rise on every page load, no scrolling required —
+    // this is the one animation guaranteed visible immediately.
+    var hero = document.querySelector('main > section:first-of-type');
+    if (hero) {
+      hero.classList.add('reveal', 'reveal-hero');
+      nextPaint(function () { hero.classList.add('in-view'); });
+    }
+
+    // Reveal-on-scroll for cards & repeating components further down the page.
+    if ('IntersectionObserver' in window) {
+      var revealSelector = [
+        '.feature-card', '.spec-card', '.service-card', '.testimonial-card',
+        '.pricing-card', '.showcase-card', '.post-card', '.step-line'
+      ].join(', ');
+      var revealEls = document.querySelectorAll(revealSelector);
+      revealEls.forEach(function (el) { el.classList.add('reveal'); });
+
+      var revealIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var target = entry.target;
+            revealIO.unobserve(target);
+            nextPaint(function () { target.classList.add('in-view'); });
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      revealEls.forEach(function (el) { revealIO.observe(el); });
+    }
+
+    // Count-up for the big stat numbers used in stats-strip sections
+    // (font-headline-lg + text-primary-fixed + block + leading-none is the
+    // consistent signature of that component across every page).
+    if (!('IntersectionObserver' in window)) return;
+    var statEls = document.querySelectorAll('.font-headline-lg.text-primary-fixed.block.leading-none');
+    statEls.forEach(function (el) {
+      var raw = el.textContent.trim();
+      var match = raw.match(/^([\d]+(?:\.\d+)?)(.*)$/);
+      if (!match) return; // non-numeric-leading value (e.g. "Any API") — leave as-is
+      var target = parseFloat(match[1]);
+      if (!target) return; // "0" stays "0" — nothing to animate
+      var decimals = (match[1].split('.')[1] || '').length;
+      var suffix = match[2];
+
+      el.textContent = (decimals ? (0).toFixed(decimals) : '0') + suffix;
+      var done = false;
+      var statIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !done) {
+            done = true;
+            statIO.unobserve(entry.target);
+            var start = null;
+            var duration = 1100;
+            function frame(ts) {
+              if (start === null) start = ts;
+              var progress = Math.min((ts - start) / duration, 1);
+              var eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+              var current = target * eased;
+              el.textContent = (decimals ? current.toFixed(decimals) : Math.round(current)) + suffix;
+              if (progress < 1) requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
+          }
+        });
+      }, { threshold: 0.4 });
+      statIO.observe(el);
+    });
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', run);

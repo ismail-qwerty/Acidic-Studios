@@ -101,6 +101,12 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 .icon-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #262626; color: #becbae; transition: border-color .2s ease, color .2s ease, box-shadow .2s ease; }
 .icon-btn:hover { border-color: rgba(139,254,0,0.4); color: #8bfe00; box-shadow: 0 0 12px rgba(139,254,0,0.15); }
 
+/* ── Footer icon button (on green background) ── */
+.footer-icon-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(13,32,0,0.3); color: #0d2000; transition: background-color .2s ease, color .2s ease; }
+.footer-icon-btn:hover { background-color: #0d2000; color: #8bfe00; border-color: #0d2000; }
+
+#footerNewsletter input::placeholder { color: rgba(139,254,0,0.5); }
+
 /* ── Navbar ── */
 .nav-shell { background-color: rgba(0,0,0,0.15); transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease; }
 .nav-shell.nav-solid { background-color: rgba(0,0,0,0.85); border-color: rgba(139,254,0,0.3); box-shadow: 0 4px 30px rgba(139,254,0,0.1); }
@@ -348,3 +354,28 @@ select.minimal-input { appearance: none; background-image: url("data:image/svg+x
 .form-step.active { display: block; }
 @keyframes fadeSlide { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
 input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(74%) sepia(86%) saturate(2240%) hue-rotate(46deg) brightness(102%) contrast(105%); cursor: pointer; }
+
+/* ── Site-wide motion ── */
+html { scroll-behavior: smooth; }
+
+/* Scroll-reveal: main.js adds .reveal to cards/components as it finds them,
+   then .in-view once they cross into the viewport. No markup changes needed
+   on any page — this is purely additive and degrades to "just visible" if
+   JS doesn't run (elements never get .reveal, so they're never hidden). */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.16,.8,.24,1), transform .7s cubic-bezier(.16,.8,.24,1); }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+/* Hero: lighter lift, slightly quicker — this is the first thing anyone sees
+   on any page load, so it should read as an entrance, not a slow drift. */
+.reveal-hero { transform: translateY(14px); transition-duration: .8s; }
+.reveal-hero.in-view { transform: translateY(0); }
+.reveal:nth-child(2)  { transition-delay: .06s; }
+.reveal:nth-child(3)  { transition-delay: .12s; }
+.reveal:nth-child(4)  { transition-delay: .18s; }
+.reveal:nth-child(5)  { transition-delay: .24s; }
+.reveal:nth-child(6)  { transition-delay: .30s; }
+.reveal:nth-child(n+7){ transition-delay: .36s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal.in-view { opacity: 1; transform: none; transition: none; }
+}

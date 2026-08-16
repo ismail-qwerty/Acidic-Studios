@@ -169,7 +169,6 @@ Clip-path chamfered corners: `polygon(14px 0, 100% 0, 100% calc(100% - 14px), ca
 | Explore | `.btn-explore` | Smaller, green tint bg, green border, chamfered |
 
 Button elements:
-- `.btn-tag-index` — `A/` prefix, 50% opacity
 - `.btn-tag-dot` — 6px circle bullet
 
 ### Cards
