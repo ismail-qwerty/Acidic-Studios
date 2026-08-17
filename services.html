@@ -159,14 +159,14 @@
 <main class="relative">
 
 <!-- Hero -->
-<section class="relative pt-40 pb-20 md:pt-48 md:pb-24 overflow-hidden">
+<section class="relative pt-40 pb-16 md:pt-48 md:pb-20 overflow-hidden">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
   <div class="absolute -top-1/4 right-0 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(139,254,0,0.1),transparent_65%)] z-0"></div>
 
   <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
     <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-8 inline-block border-l-2 border-primary-fixed pl-4">Our Services</span>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-14">
       <div class="lg:col-span-8">
         <h1 class="font-headline-xl text-[56px] sm:text-[80px] md:text-[104px] text-primary uppercase tracking-tight leading-[0.88] mb-2">
           <span class="condensed-header">PICK YOUR</span><br>
@@ -179,6 +179,15 @@
         </p>
       </div>
     </div>
+
+    <!-- Discipline index — functions as an actual jump-nav, not decoration -->
+    <nav aria-label="Jump to discipline" class="flex flex-wrap gap-2 mb-10">
+      <a href="#d01" class="font-label-sm text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed border border-border-muted hover:border-primary-fixed px-4 py-2.5 transition-colors">01 / Video Production</a>
+      <a href="#d02" class="font-label-sm text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed border border-border-muted hover:border-primary-fixed px-4 py-2.5 transition-colors">02 / AI Agents</a>
+      <a href="#d03" class="font-label-sm text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed border border-border-muted hover:border-primary-fixed px-4 py-2.5 transition-colors">03 / Web Dev</a>
+      <a href="#d04" class="font-label-sm text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed border border-border-muted hover:border-primary-fixed px-4 py-2.5 transition-colors">04 / Branding</a>
+      <a href="#d05" class="font-label-sm text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed border border-border-muted hover:border-primary-fixed px-4 py-2.5 transition-colors">05 / Video Editing</a>
+    </nav>
 
     <!-- Stats strip -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-muted border border-border-muted">
@@ -202,155 +211,201 @@
   </div>
 </section>
 
-<!-- Discipline rows -->
+<!-- Discipline rows — each pairs the pitch with a real spec sheet, not a
+     decorative icon floating in an empty box. -->
 <section class="relative max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
   <div class="flex flex-col gap-6 md:gap-8">
 
     <!-- 01 — AI Video Production -->
-    <a href="ai-video-production.html" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-all duration-300 overflow-hidden">
-      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
-        <span class="absolute -top-4 -left-2 font-headline-xl text-[140px] md:text-[180px] leading-none select-none pointer-events-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.1); color:transparent;">01</span>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] group-hover:border-[#8bfe00] group-hover:text-[#8bfe00] transition-colors">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M15 8l5-3v14l-5-3M4 6h9a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg>
-            </div>
-            <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Discipline 01</span>
-          </div>
-          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">AI Video Production</h2>
-          <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-6 max-w-lg">Cinematic films, ads, and social content generated and finished in-house — at a fraction of traditional production cost, without the traditional production timeline.</p>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">AI Short Films</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">AI Advertisement</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">AI Short Videos</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">AI UGC Content</span>
-          </div>
-          <span class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+    <div id="d01" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-colors duration-300 scroll-mt-28">
+      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-headline-lg text-primary-fixed text-[22px] leading-none">01</span>
+          <span class="h-px flex-1 bg-border-muted"></span>
+          <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Discipline</span>
         </div>
+        <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">AI Video Production</h2>
+        <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-8 max-w-lg">Cinematic films, ads, and social content generated and finished in-house — at a fraction of traditional production cost, without the traditional production timeline.</p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <a href="ai-short-films.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">AI Short Films</a>
+          <a href="ai-advertisement.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">AI Advertisement</a>
+          <a href="ai-short-videos.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">AI Short Videos</a>
+          <a href="ai-ugc-content.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">AI UGC Content</a>
+        </div>
+        <a href="ai-video-production.html" class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
       </div>
-      <div class="lg:col-span-5 relative min-h-[220px] bg-[#0e0e0e] border-l border-[#262626] order-1 lg:order-2 flex items-center justify-center">
-        <span class="material-symbols-outlined text-primary-fixed/25 group-hover:text-primary-fixed/50 transition-colors" style="font-size:96px;">movie</span>
+      <div class="lg:col-span-5 relative p-8 md:p-10 bg-[#0e0e0e] border-t lg:border-t-0 lg:border-l border-[#262626] flex flex-col justify-center">
+        <span class="font-label-sm text-[10px] text-primary-fixed/70 uppercase tracking-widest mb-5 block">Spec Sheet</span>
+        <dl class="flex flex-col gap-4">
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Output</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">4K, 24–60fps</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Turnaround</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">5–10 business days</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Best For</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Brands needing volume, fast</dd>
+          </div>
+        </dl>
       </div>
-    </a>
+    </div>
 
     <!-- 02 — AI Agents -->
-    <a href="ai-agents.html" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-all duration-300 overflow-hidden">
-      <div class="lg:col-span-5 relative min-h-[220px] bg-[#0e0e0e] border-r border-[#262626] order-1 flex items-center justify-center">
-        <span class="material-symbols-outlined text-primary-fixed/25 group-hover:text-primary-fixed/50 transition-colors" style="font-size:96px;">smart_toy</span>
+    <div id="d02" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-colors duration-300 scroll-mt-28">
+      <div class="lg:col-span-5 relative p-8 md:p-10 bg-[#0e0e0e] border-b lg:border-b-0 lg:border-r border-[#262626] flex flex-col justify-center order-2 lg:order-1">
+        <span class="font-label-sm text-[10px] text-primary-fixed/70 uppercase tracking-widest mb-5 block">Spec Sheet</span>
+        <dl class="flex flex-col gap-4">
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Channels</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Voice, chat, workflow</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Turnaround</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">2–3 weeks</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Best For</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Teams drowning in inbound</dd>
+          </div>
+        </dl>
       </div>
-      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center order-2">
-        <span class="absolute -top-4 -right-2 font-headline-xl text-[140px] md:text-[180px] leading-none select-none pointer-events-none text-right" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.1); color:transparent;">02</span>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] group-hover:border-[#8bfe00] group-hover:text-[#8bfe00] transition-colors">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4Zm-6 8h12l1 10H5L6 10Zm4 4h4"/></svg>
-            </div>
-            <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Discipline 02</span>
-          </div>
-          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">AI Agents</h2>
-          <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-6 max-w-lg">Autonomous agents that talk, qualify, book, and follow up — built for your exact workflow, connected to your exact tools.</p>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">AI Chatbots</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Voice / Caller Agents</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">AI Automation</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Custom Agents</span>
-          </div>
-          <span class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center order-1 lg:order-2">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-headline-lg text-primary-fixed text-[22px] leading-none">02</span>
+          <span class="h-px flex-1 bg-border-muted"></span>
+          <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Discipline</span>
         </div>
+        <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">AI Agents</h2>
+        <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-8 max-w-lg">Autonomous agents that talk, qualify, book, and follow up — built for your exact workflow, connected to your exact tools.</p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <a href="ai-chatbots.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">AI Chatbots</a>
+          <a href="ai-caller-voice-agents.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">Voice / Caller Agents</a>
+          <a href="ai-automation.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">AI Automation</a>
+          <a href="custom-ai-agents.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">Custom Agents</a>
+        </div>
+        <a href="ai-agents.html" class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
       </div>
-    </a>
+    </div>
 
     <!-- 03 — Website Dev / Design -->
-    <a href="websites.html" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-all duration-300 overflow-hidden">
-      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
-        <span class="absolute -top-4 -left-2 font-headline-xl text-[140px] md:text-[180px] leading-none select-none pointer-events-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.1); color:transparent;">03</span>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] group-hover:border-[#8bfe00] group-hover:text-[#8bfe00] transition-colors">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Discipline 03</span>
-          </div>
-          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">Website Dev / Design</h2>
-          <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-6 max-w-lg">Design-led websites built to load fast, rank, and convert — brand, copy, and a modern front end, engineered end to end.</p>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Landing Pages</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">E-commerce Builds</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Headless CMS</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">SEO & Performance</span>
-          </div>
-          <span class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+    <div id="d03" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-colors duration-300 scroll-mt-28">
+      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-headline-lg text-primary-fixed text-[22px] leading-none">03</span>
+          <span class="h-px flex-1 bg-border-muted"></span>
+          <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Discipline</span>
         </div>
+        <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">Website Dev / Design</h2>
+        <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-8 max-w-lg">Design-led websites built to load fast, rank, and convert — brand, copy, and a modern front end, engineered end to end.</p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Landing Pages</span>
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">E-commerce Builds</span>
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Headless CMS</span>
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">SEO & Performance</span>
+        </div>
+        <a href="websites.html" class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
       </div>
-      <div class="lg:col-span-5 relative min-h-[220px] bg-[#0e0e0e] border-l border-[#262626] order-1 lg:order-2 flex items-center justify-center">
-        <span class="material-symbols-outlined text-primary-fixed/25 group-hover:text-primary-fixed/50 transition-colors" style="font-size:96px;">language</span>
+      <div class="lg:col-span-5 relative p-8 md:p-10 bg-[#0e0e0e] border-t lg:border-t-0 lg:border-l border-[#262626] flex flex-col justify-center">
+        <span class="font-label-sm text-[10px] text-primary-fixed/70 uppercase tracking-widest mb-5 block">Spec Sheet</span>
+        <dl class="flex flex-col gap-4">
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Stack</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Headless, static, or CMS</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Turnaround</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">3–6 weeks</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Best For</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Sites that undersell the brand</dd>
+          </div>
+        </dl>
       </div>
-    </a>
+    </div>
 
     <!-- 04 — Branding -->
-    <a href="branding.html" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-all duration-300 overflow-hidden">
-      <div class="lg:col-span-5 relative min-h-[220px] bg-[#0e0e0e] border-r border-[#262626] order-1 flex flex-col items-center justify-center gap-6">
-        <span class="material-symbols-outlined text-primary-fixed/25 group-hover:text-primary-fixed/50 transition-colors" style="font-size:96px;">palette</span>
-        <div class="flex gap-2">
-          <span class="w-6 h-6 border border-border-muted" style="background:#8bfe00"></span>
-          <span class="w-6 h-6 border border-border-muted bg-black"></span>
-          <span class="w-6 h-6 border border-border-muted bg-white"></span>
-          <span class="w-6 h-6 border border-border-muted" style="background:#262626"></span>
-        </div>
-      </div>
-      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center order-2">
-        <span class="absolute -top-4 -right-2 font-headline-xl text-[140px] md:text-[180px] leading-none select-none pointer-events-none text-right" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.1); color:transparent;">04</span>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] group-hover:border-[#8bfe00] group-hover:text-[#8bfe00] transition-colors">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-            </div>
-            <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Discipline 04</span>
+    <div id="d04" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-colors duration-300 scroll-mt-28">
+      <div class="lg:col-span-5 relative p-8 md:p-10 bg-[#0e0e0e] border-b lg:border-b-0 lg:border-r border-[#262626] flex flex-col justify-center order-2 lg:order-1">
+        <span class="font-label-sm text-[10px] text-primary-fixed/70 uppercase tracking-widest mb-5 block">Spec Sheet</span>
+        <dl class="flex flex-col gap-4">
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Delivers</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Full identity system</dd>
           </div>
-          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">Branding</h2>
-          <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-6 max-w-lg">Identity systems built to last — logo, type, color, motion, and the full brand language that makes everything else coherent.</p>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Identity Systems</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Logo & Type</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Brand Guidelines</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Motion Identity</span>
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Turnaround</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">3–5 weeks</dd>
           </div>
-          <span class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
-        </div>
+          <div class="flex items-baseline justify-between gap-4">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Best For</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">First-time market launches</dd>
+          </div>
+        </dl>
       </div>
-    </a>
+      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center order-1 lg:order-2">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-headline-lg text-primary-fixed text-[22px] leading-none">04</span>
+          <span class="h-px flex-1 bg-border-muted"></span>
+          <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Discipline</span>
+        </div>
+        <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">Branding</h2>
+        <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-8 max-w-lg">Identity systems built to last — logo, type, color, motion, and the full brand language that makes everything else coherent.</p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Identity Systems</span>
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Logo & Type</span>
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Brand Guidelines</span>
+          <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Motion Identity</span>
+        </div>
+        <a href="branding.html" class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+      </div>
+    </div>
 
     <!-- 05 — Video Editing -->
-    <a href="video-editing.html" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-all duration-300 overflow-hidden">
-      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center order-2 lg:order-1">
-        <span class="absolute -top-4 -left-2 font-headline-xl text-[140px] md:text-[180px] leading-none select-none pointer-events-none" style="-webkit-text-stroke: 1.5px rgba(139,254,0,0.1); color:transparent;">05</span>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-[34px] h-[34px] flex items-center justify-center border border-[#262626] text-[#9a9a9a] group-hover:border-[#8bfe00] group-hover:text-[#8bfe00] transition-colors">
-              <span class="material-symbols-outlined text-[18px]">cut</span>
-            </div>
-            <span class="font-label-sm text-[11px] text-primary-fixed/70 uppercase tracking-widest">Discipline 05</span>
-          </div>
-          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">Video Editing</h2>
-          <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-6 max-w-lg">Post-production for existing footage — ads, UGC, short-form, long-form, and full YouTube automation pipelines.</p>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Ad Videos</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">UGC Videos</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">Short & Long-form</span>
-            <span class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] border border-[#262626] px-3 py-2">YouTube Automation</span>
-          </div>
-          <span class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></span>
+    <div id="d05" class="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 bg-[#0a0a0a] border border-[#262626] hover:border-[#8bfe00] transition-colors duration-300 scroll-mt-28">
+      <div class="lg:col-span-7 relative p-8 md:p-12 flex flex-col justify-center">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="font-headline-lg text-primary-fixed text-[22px] leading-none">05</span>
+          <span class="h-px flex-1 bg-border-muted"></span>
+          <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest">Discipline</span>
         </div>
+        <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase mb-4 leading-tight">Video Editing</h2>
+        <p class="font-body-md text-[14px] md:text-[15px] text-[#9a9a9a] leading-relaxed mb-8 max-w-lg">Post-production for existing footage — ads, UGC, short-form, long-form, and full YouTube automation pipelines.</p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <a href="ad-videos.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">Ad Videos</a>
+          <a href="ugc-videos.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">UGC Videos</a>
+          <a href="short-form-videos.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">Short & Long-form</a>
+          <a href="youtube-automation.html" class="font-label-sm text-[10px] uppercase tracking-widest text-[#becbae] hover:text-primary-fixed border border-[#262626] hover:border-primary-fixed px-3 py-2 transition-colors">YouTube Automation</a>
+        </div>
+        <a href="video-editing.html" class="btn-explore w-fit">Explore Discipline <span class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
       </div>
-      <div class="lg:col-span-5 relative min-h-[220px] bg-[#0e0e0e] border-l border-[#262626] order-1 lg:order-2 flex items-center justify-center">
-        <span class="material-symbols-outlined text-primary-fixed/25 group-hover:text-primary-fixed/50 transition-colors" style="font-size:96px;">content_cut</span>
+      <div class="lg:col-span-5 relative p-8 md:p-10 bg-[#0e0e0e] border-t lg:border-t-0 lg:border-l border-[#262626] flex flex-col justify-center">
+        <span class="font-label-sm text-[10px] text-primary-fixed/70 uppercase tracking-widest mb-5 block">Spec Sheet</span>
+        <dl class="flex flex-col gap-4">
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Input</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Any raw footage</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 pb-4 border-b border-[#1c1c1c]">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Turnaround</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">3–7 business days</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4">
+            <dt class="font-label-sm text-[10px] text-[#7d7d78] uppercase tracking-widest">Best For</dt>
+            <dd class="font-body-md text-[13px] text-white text-right">Creators who film more than post</dd>
+          </div>
+        </dl>
       </div>
-    </a>
+    </div>
 
   </div>
 </section>
 
-<!-- Cross-discipline capabilities -->
+<!-- Cross-discipline capabilities — a dense index, not a grid of identical
+     icon cards. -->
 <section class="relative py-16 md:py-24 border-y border-border-muted bg-surface-deep overflow-hidden">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:32px_32px] opacity-10 z-0"></div>
   <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
@@ -358,47 +413,69 @@
       <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">§ 02 — Cross-Discipline</span>
       <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">Skills That Back</span> <span class="text-primary-fixed">Every Project</span></h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">psychology</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">Prompt Engineering</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Custom model pipelines tuned per project.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 border-t border-l border-border-muted">
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">01</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">Prompt Engineering</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Custom model pipelines tuned per project.</p></div>
       </div>
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">animation</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">Motion Design</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">2D/3D motion for brand and product.</p>
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">02</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">Motion Design</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">2D/3D motion for brand and product.</p></div>
       </div>
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">edit_note</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">Copy & Scripts</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Words that carry the concept through.</p>
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">03</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">Copy & Scripts</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Words that carry the concept through.</p></div>
       </div>
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">travel_explore</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">Technical SEO</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Sites built to be found, not just seen.</p>
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">04</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">Technical SEO</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Sites built to be found, not just seen.</p></div>
       </div>
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">view_in_ar</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">3D & CGI</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Photoreal renders and product hero shots.</p>
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">05</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">3D & CGI</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Photoreal renders and product hero shots.</p></div>
       </div>
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">record_voice_over</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">Voice Cloning</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Consistent VO across every asset.</p>
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">06</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">Voice Cloning</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Consistent VO across every asset.</p></div>
       </div>
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">webhook</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">Automation & APIs</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Systems that connect and self-run.</p>
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">07</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">Automation & APIs</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Systems that connect and self-run.</p></div>
       </div>
-      <div class="feature-card">
-        <span class="material-symbols-outlined text-primary-fixed text-2xl mb-4 block">monitoring</span>
-        <h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-2">Analytics & CRO</h3>
-        <p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Measured, tested, and optimized.</p>
+      <div class="flex items-start gap-5 p-6 border-r border-b border-border-muted">
+        <span class="font-headline-lg text-primary-fixed/50 text-[20px] leading-none shrink-0">08</span>
+        <div><h3 class="font-label-sm text-[12px] text-white uppercase tracking-widest mb-1.5">Analytics & CRO</h3><p class="font-body-md text-[13px] text-[#9a9a9a] leading-relaxed">Measured, tested, and optimized.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Engagement models — real pricing structure, not left to a hidden FAQ line -->
+<section class="relative max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+  <div class="mb-10 md:mb-12 max-w-2xl">
+    <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">§ 03 — Engagement</span>
+    <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none"><span class="condensed-header">How We</span> <span class="text-primary-fixed">Price It</span></h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="spec-card">
+      <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest mb-4 block">Fixed Scope</span>
+      <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-4">Single Deliverable</h3>
+      <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-6">One project, one number, agreed before work starts. Best for a single film, a website build, or a brand identity — anything with a clear finish line.</p>
+      <ul class="flex flex-col gap-2.5">
+        <li class="flex items-center gap-2.5 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest"><span class="w-1 h-1 rounded-full bg-primary-fixed shrink-0"></span>Quoted after discovery call</li>
+        <li class="flex items-center gap-2.5 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest"><span class="w-1 h-1 rounded-full bg-primary-fixed shrink-0"></span>One revision round included</li>
+        <li class="flex items-center gap-2.5 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest"><span class="w-1 h-1 rounded-full bg-primary-fixed shrink-0"></span>Full ownership on final payment</li>
+      </ul>
+    </div>
+    <div class="spec-card">
+      <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest mb-4 block">Retainer</span>
+      <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-4">Ongoing Production</h3>
+      <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-6">A standing monthly capacity across one or more disciplines. Best for brands publishing continuously — content pipelines, agent maintenance, ongoing site iteration.</p>
+      <ul class="flex flex-col gap-2.5">
+        <li class="flex items-center gap-2.5 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest"><span class="w-1 h-1 rounded-full bg-primary-fixed shrink-0"></span>Fixed monthly rate, cancel anytime</li>
+        <li class="flex items-center gap-2.5 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest"><span class="w-1 h-1 rounded-full bg-primary-fixed shrink-0"></span>Priority turnaround on requests</li>
+        <li class="flex items-center gap-2.5 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest"><span class="w-1 h-1 rounded-full bg-primary-fixed shrink-0"></span>Direct line to the team, no tickets</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -407,7 +484,7 @@
 <section class="relative max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
     <div class="lg:col-span-4">
-      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">§ 03 — The Method</span>
+      <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">§ 04 — The Method</span>
       <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none mb-6"><span class="condensed-header">How We</span><br><span class="text-primary-fixed condensed-header">Work</span></h2>
       <p class="font-body-md text-on-surface-variant/70 max-w-sm">Same four-stage loop, regardless of discipline. Fast, transparent, and built to catch problems before they're expensive.</p>
     </div>
@@ -445,7 +522,7 @@
   <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
       <div class="lg:col-span-4">
-        <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">§ 04 — FAQ</span>
+        <span class="text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest mb-4 inline-block border-l-2 border-primary-fixed pl-4">§ 05 — FAQ</span>
         <h2 class="font-headline-lg text-primary uppercase tracking-tight text-[32px] sm:text-[44px] leading-none mb-6"><span class="condensed-header">Common</span><br><span class="text-primary-fixed condensed-header">Questions</span></h2>
         <p class="font-body-md text-on-surface-variant/70 max-w-sm">Still unsure? <a href="contact.html" class="text-primary-fixed hover:underline">Talk to us directly</a> — no forms, no gatekeeping.</p>
       </div>
@@ -458,16 +535,6 @@
           </button>
           <div class="faq-answer px-6">
             <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Most projects blend two or three. Tell us the goal, not the service name — we'll map it to the right mix on the first call.</p>
-          </div>
-        </div>
-
-        <div class="faq-item border border-border-muted bg-black/40">
-          <button class="faq-toggle w-full flex items-center justify-between gap-4 p-6 text-left" onclick="this.closest('.faq-item').classList.toggle('faq-open')">
-            <span class="font-headline-lg text-[17px] md:text-[19px] text-primary uppercase">How is pricing structured?</span>
-            <span class="material-symbols-outlined faq-chevron text-primary-fixed flex-shrink-0">expand_more</span>
-          </button>
-          <div class="faq-answer px-6">
-            <p class="font-body-md text-[14px] text-on-surface-variant/70 leading-relaxed pb-6 max-w-2xl">Fixed-scope for single deliverables, retainer for ongoing production. You'll always get a number before work starts — never an open tab.</p>
           </div>
         </div>
 
