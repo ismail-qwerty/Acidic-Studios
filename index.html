@@ -166,9 +166,9 @@
 
 <main class="relative">
 <!-- ══ Hero ═══════════════════════════════════════════════════════════ -->
-<section class="hx" data-hero-custom>
+<section class="hx" data-hero-custom id="hxHero">
 
-  <div class="hx-bg"><img src="assets/images/bg.jfif" alt="" aria-hidden="true"></div>
+  <canvas class="hx-canvas" id="hxCanvas"></canvas>
   <div class="hx-scrim"></div>
   <div class="hx-grain"></div>
 
@@ -176,59 +176,185 @@
   <span class="hx-bracket bl"></span><span class="hx-bracket br"></span>
 
   <div class="hx-inner px-margin-mobile md:px-margin-desktop pt-32 pb-28 md:pt-36 md:pb-32">
+    <div class="hx-tilt" id="hxTilt">
 
-    <div class="hx-status hx-in" style="--d:.05s">
-      <span class="hx-rec"><i></i>Rec</span>
-      <span class="hx-chip" id="hxTimecode">00:00:00:00</span>
-      <span class="hx-chip hx-chip-dim">4K &middot; 24FPS</span>
-    </div>
+      <div class="hx-status hx-in" style="--d:.05s">
+        <span class="hx-rec"><i></i>Rec</span>
+        <span class="hx-chip" id="hxTimecode">00:00:00:00</span>
+        <span class="hx-chip hx-chip-dim">Digital Alchemy Lab</span>
+      </div>
 
-    <h1 class="hx-title">
-      <span class="hx-line"><span class="hx-word" style="--d:.18s">We Turn</span></span>
-      <span class="hx-line"><span class="hx-word hx-accent" style="--d:.30s">Imagination<i class="hx-sweep"></i></span></span>
-      <span class="hx-line"><span class="hx-word" style="--d:.42s">Into Reality</span></span>
-    </h1>
+      <h1 class="hx-title">
+        <span class="hx-line" style="transform:translateZ(28px)"><span class="hx-word" style="--d:.18s">We Turn</span></span>
+        <span class="hx-line" style="transform:translateZ(60px)"><span class="hx-word hx-accent" style="--d:.30s">Imagination<i class="hx-sweep"></i></span></span>
+        <span class="hx-line" style="transform:translateZ(28px)"><span class="hx-word" style="--d:.42s">Into Reality</span></span>
+      </h1>
 
-    <p class="hx-lede hx-in" style="--d:.62s">
-      A production laboratory fusing AI video generation, hyper-real animation, and cinematic storytelling &mdash; for brands that refuse to blend in.
-    </p>
+      <p class="hx-lede hx-in" style="--d:.62s">
+        A production laboratory fusing AI video generation, hyper-real animation, and cinematic storytelling &mdash; for brands that refuse to blend in.
+      </p>
 
-    <div class="hx-cta hx-in" style="--d:.74s">
-      <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
-      <a class="btn-tag btn-tag-outline" href="services.html"><span class="btn-tag-dot"></span>Explore Services</a>
-    </div>
+      <div class="hx-cta hx-in" style="--d:.74s">
+        <a class="btn-tag btn-tag-fill" href="contact.html">Start a Project</a>
+        <a class="btn-tag btn-tag-outline" href="services.html"><span class="btn-tag-dot"></span>Explore Services</a>
+      </div>
 
-    <div class="hx-stats hx-in" style="--d:.86s">
-      <div class="hx-stat"><b>200<em>+</em></b><span>Projects Delivered</span></div>
-      <div class="hx-stat"><b>40<em>M+</em></b><span>Views Generated</span></div>
-      <div class="hx-stat"><b>24<em>H</em></b><span>Avg. Response</span></div>
+      <div class="hx-stats hx-in" style="--d:.86s">
+        <div class="hx-stat"><b>200<em>+</em></b><span>Projects Delivered</span></div>
+        <div class="hx-stat"><b>40<em>M+</em></b><span>Views Generated</span></div>
+        <div class="hx-stat"><b>24<em>H</em></b><span>Avg. Response</span></div>
+      </div>
+
     </div>
   </div>
 
   <a class="hx-scroll" href="#work" aria-label="Scroll to services"><span>Scroll</span><i></i></a>
 </section>
 
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
 <script>
 (function () {
-  // Running timecode — reads as a video-suite readout rather than decoration.
-  // Text-only update inside a fixed-width tabular-nums chip, so it repaints a
-  // few pixels and never reflows the page.
-  var tc = document.getElementById('hxTimecode');
-  if (!tc) return;
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var f = 0;
-  var pad = function (n) { return String(n).padStart(2, '0'); };
-  setInterval(function () {
-    if (document.hidden) return;
-    f++;
-    var frames = f % 24,
-        total  = Math.floor(f / 24),
-        s = total % 60,
-        m = Math.floor(total / 60) % 60,
-        h = Math.floor(total / 3600) % 24;
-    tc.textContent = pad(h) + ':' + pad(m) + ':' + pad(s) + ':' + pad(frames);
-  }, 1000 / 24);
+  // ── Running timecode ─────────────────────────────────────────────────
+  var tc = document.getElementById('hxTimecode');
+  if (tc && !reduced) {
+    var f = 0;
+    var pad = function (n) { return String(n).padStart(2, '0'); };
+    setInterval(function () {
+      if (document.hidden) return;
+      f++;
+      var frames = f % 24, total = Math.floor(f / 24),
+          s = total % 60, m = Math.floor(total / 60) % 60, h = Math.floor(total / 3600) % 24;
+      tc.textContent = pad(h) + ':' + pad(m) + ':' + pad(s) + ':' + pad(frames);
+    }, 1000 / 24);
+  }
+
+  // ── 3D wireframe background + pointer tilt ───────────────────────────
+  // Skipped entirely for reduced-motion — no WebGL context is even created,
+  // so those users never pay for it. The plain grain/scrim look still reads
+  // fine as a static hero.
+  if (reduced) return;
+
+  var canvas = document.getElementById('hxCanvas');
+  var tilt   = document.getElementById('hxTilt');
+  var hero   = document.getElementById('hxHero');
+  if (!canvas || !hero) return;
+
+  // Fewer particles + a capped pixel ratio on small/low-power screens —
+  // the previous hero got called out as laggy, so this build stays modest
+  // by default rather than matching desktop fidelity everywhere.
+  var lite = window.matchMedia('(max-width: 767px)').matches;
+
+  var target = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
+  var onPointer = function (e) {
+    target.x = (e.clientX / window.innerWidth) * 2 - 1;
+    target.y = (e.clientY / window.innerHeight) * 2 - 1;
+  };
+  if (!lite) window.addEventListener('pointermove', onPointer, { passive: true });
+
+  var raf = null, running = false, scene3d = null;
+
+  function initScene(THREE) {
+    var accent = new THREE.Color('#8bfe00');
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setClearColor(0x000000, 0);
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(46, 1, 0.1, 120);
+    camera.position.set(0, 0, 8.6);
+
+    var group = new THREE.Group();
+    scene.add(group);
+
+    var geo = new THREE.IcosahedronGeometry(2.3, 1);
+
+    group.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: 0x070707, transparent: true, opacity: .9 })));
+    group.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo, 1), new THREE.LineBasicMaterial({ color: accent, transparent: true, opacity: .5 })));
+    group.add(new THREE.Points(geo, new THREE.PointsMaterial({ color: accent, size: .05, transparent: true, opacity: .85 })));
+
+    var ring = new THREE.LineLoop(new THREE.RingGeometry(3.6, 3.6, 128), new THREE.LineBasicMaterial({ color: accent, transparent: true, opacity: .2 }));
+    ring.rotation.x = Math.PI * 0.42;
+    group.add(ring);
+
+    var dust = null;
+    var N = lite ? 260 : 800, spread = 9;
+    var pos = new Float32Array(N * 3);
+    for (var i = 0; i < N; i++) {
+      var r = 4.5 + Math.random() * spread, t = Math.random() * Math.PI * 2, p = Math.acos(2 * Math.random() - 1);
+      pos[i * 3] = r * Math.sin(p) * Math.cos(t);
+      pos[i * 3 + 1] = r * Math.sin(p) * Math.sin(t) * .5;
+      pos[i * 3 + 2] = r * Math.cos(p);
+    }
+    var g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    dust = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xffffff, size: .026, transparent: true, opacity: .35 }));
+    scene.add(dust);
+
+    function onResize() {
+      var w = canvas.clientWidth || window.innerWidth, h = canvas.clientHeight || window.innerHeight;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, lite ? 1.5 : 2));
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', onResize);
+    onResize();
+
+    var t0 = performance.now();
+    function loop() {
+      if (!running) return;
+      raf = requestAnimationFrame(loop);
+      if (document.hidden) return;
+      var t = (performance.now() - t0) / 1000;
+
+      cur.x += (target.x - cur.x) * 0.05;
+      cur.y += (target.y - cur.y) * 0.05;
+
+      group.rotation.y = t * 0.13 + cur.x * 0.5;
+      group.rotation.x = Math.sin(t * 0.22) * 0.16 - cur.y * 0.32;
+      group.position.y = Math.sin(t * 0.5) * 0.14;
+      ring.rotation.z = -t * 0.1;
+      dust.rotation.y = t * 0.02;
+
+      if (tilt && !lite) {
+        tilt.style.transform = 'rotateY(' + (-cur.x * 4).toFixed(2) + 'deg) rotateX(' + (cur.y * 3).toFixed(2) + 'deg)';
+      }
+      renderer.render(scene, camera);
+    }
+
+    scene3d = {
+      dispose: function () {
+        scene.traverse(function (o) {
+          if (o.geometry) o.geometry.dispose();
+          if (o.material) o.material.dispose();
+        });
+        renderer.dispose();
+        window.removeEventListener('resize', onResize);
+      },
+      start: function () { if (running) return; running = true; loop(); },
+      stop: function () { running = false; if (raf) cancelAnimationFrame(raf); }
+    };
+    scene3d.start();
+  }
+
+  function waitForThree(tries) {
+    if (window.THREE && canvas) { initScene(window.THREE); return; }
+    if ((tries || 0) < 200) requestAnimationFrame(function () { waitForThree((tries || 0) + 1); });
+  }
+  waitForThree();
+
+  // Pause the render loop entirely once the hero scrolls out of view —
+  // the source design this was adapted from ran the WebGL loop forever
+  // regardless of scroll position; that's wasted GPU/battery on a page
+  // where the hero is usually seen once and then scrolled past.
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!scene3d) return;
+        if (entry.isIntersecting) scene3d.start(); else scene3d.stop();
+      });
+    }, { threshold: 0 }).observe(hero);
+  }
 })();
 </script>
 
