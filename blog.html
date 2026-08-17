@@ -2,6 +2,16 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Blog — ACIDIC STUDIOS</title>
+<meta name="description" content="Field notes on AI video production, AI agents, and brand systems from the Acidic Studios lab — experiments, breakdowns, and behind-the-scenes dispatches.">
+<link rel="canonical" href="https://acidicstudios.netlify.app/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Acidic Studios">
+<meta property="og:title" content="Blog — ACIDIC STUDIOS">
+<meta property="og:description" content="Field notes on AI video production, AI agents, and brand systems from the Acidic Studios lab.">
+<meta property="og:url" content="https://acidicstudios.netlify.app/blog.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — ACIDIC STUDIOS">
+<meta name="twitter:description" content="Field notes on AI video production, AI agents, and brand systems from the Acidic Studios lab.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -13,48 +23,67 @@
 <script id="tailwind-config">
 tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#201f1f","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat", "sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
-
+<style>
+  .blog-card { display: block; background: #0e0e0e; border: 1px solid #232323; border-radius: 24px; overflow: hidden; text-decoration: none; transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
+  .blog-card:hover { border-color: rgba(139,254,0,0.45); transform: translateY(-3px); box-shadow: 0 20px 40px -24px rgba(0,0,0,0.6); }
+  .blog-media { position: relative; overflow: hidden; background: #000; }
+  .blog-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+  .blog-card:hover .blog-media img { transform: scale(1.04); }
+  .cat-pill { font-family:'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; border: 1px solid #2a2a2a; color: #becbae; background: #0e0e0e; white-space: nowrap; cursor: pointer; transition: all .2s ease; }
+  .cat-pill:hover { border-color: rgba(139,254,0,0.4); color: #e5e2e1; }
+  .cat-pill.active { background: #8bfe00; border-color: #8bfe00; color: #0d2000; font-weight: 700; }
+  .cat-scroll { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+  .cat-scroll::-webkit-scrollbar { display: none; }
+</style>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
 <div id="navbar-placeholder"></div>
 <main class="relative">
-<section class="relative pt-40 pb-20 md:pt-48 md:pb-28 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+<section class="relative pt-36 pb-14 md:pt-48 md:pb-16 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
-  <div class="relative z-10 flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest mb-8 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
+  <div class="relative z-10 flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest mb-6 md:mb-8 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
     <div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
     TRANSMISSION_LOG // BLOG_V1
   </div>
-  <h1 class="relative z-10 font-headline-xl text-[64px] sm:text-[88px] md:text-headline-xl text-primary uppercase tracking-tight leading-[0.85] mb-8">
+  <h1 class="relative z-10 font-headline-xl text-[52px] sm:text-[72px] md:text-headline-xl text-primary uppercase tracking-tight leading-[0.85] mb-6 md:mb-8">
     <span class="condensed-header">Signal</span><br>
     <span class="stencil-text condensed-header">Dispatch</span>
   </h1>
   <p class="relative z-10 font-body-lg text-body-lg text-on-surface-variant max-w-2xl border-l-2 border-primary-fixed pl-6">Thoughts, experiments, and field notes from the lab.</p>
 </section>
 
-<section class="py-16 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop pb-32">
-  <div id="feedStatus" class="hidden mb-12 border border-border-muted bg-surface-container-lowest/50 px-8 py-10 text-center"></div>
-  <div id="featuredPost" class="mb-12">
-    <div class="border border-border-muted grid md:grid-cols-2 gap-0 animate-pulse">
-      <div class="h-64 md:h-auto bg-surface-container-lowest"></div>
-      <div class="p-8 md:p-12 flex flex-col justify-center gap-4">
-        <div class="h-3 w-24 bg-surface-container-lowest"></div>
-        <div class="h-8 w-3/4 bg-surface-container-lowest"></div>
-        <div class="h-4 w-full bg-surface-container-lowest"></div>
-        <div class="h-4 w-2/3 bg-surface-container-lowest"></div>
+<!-- Category filter -->
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+  <div id="catFilter" class="cat-scroll mb-8 md:mb-10 hidden"></div>
+</section>
+
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop pb-24 md:pb-32">
+  <div id="feedStatus" class="hidden mb-12 border border-border-muted bg-surface-container-lowest/50 rounded-2xl px-6 sm:px-8 py-10 text-center"></div>
+  <div id="featuredPost" class="mb-10 md:mb-12">
+    <div class="rounded-3xl border border-border-muted grid md:grid-cols-2 gap-0 overflow-hidden animate-pulse">
+      <div class="h-56 sm:h-64 md:h-auto bg-surface-container-lowest"></div>
+      <div class="p-6 sm:p-8 md:p-12 flex flex-col justify-center gap-4">
+        <div class="h-3 w-24 bg-surface-container-lowest rounded"></div>
+        <div class="h-8 w-3/4 bg-surface-container-lowest rounded"></div>
+        <div class="h-4 w-full bg-surface-container-lowest rounded"></div>
+        <div class="h-4 w-2/3 bg-surface-container-lowest rounded"></div>
       </div>
     </div>
   </div>
-  <div id="postsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="border border-border-muted animate-pulse"><div class="h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest"></div><div class="h-5 w-5/6 bg-surface-container-lowest"></div><div class="h-4 w-full bg-surface-container-lowest"></div></div></div>
-    <div class="border border-border-muted animate-pulse"><div class="h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest"></div><div class="h-5 w-5/6 bg-surface-container-lowest"></div><div class="h-4 w-full bg-surface-container-lowest"></div></div></div>
-    <div class="border border-border-muted animate-pulse hidden lg:block"><div class="h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest"></div><div class="h-5 w-5/6 bg-surface-container-lowest"></div><div class="h-4 w-full bg-surface-container-lowest"></div></div></div>
+  <div id="postsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+    <div class="rounded-2xl border border-border-muted animate-pulse overflow-hidden"><div class="h-44 sm:h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
+    <div class="rounded-2xl border border-border-muted animate-pulse overflow-hidden hidden sm:block"><div class="h-44 sm:h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
+    <div class="rounded-2xl border border-border-muted animate-pulse overflow-hidden hidden lg:block"><div class="h-44 sm:h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
   </div>
 </section>
 </main>
 <div id="footer-placeholder"></div>
 <script>
-const SB_URL = 'https://npunrjejzvbjsxpsouuq.supabase.co';
-const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wdW5yamVqenZianN4cHNvdXVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0Njg4NzEsImV4cCI6MjEwMDA0NDg3MX0.bFUZRI5se1mSD1bMwmh-kFN70gNk6gI-Ov3ysbFxCfc';
+const SB_URL = 'https://joeoakmtmlmuktitfawh.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZW9ha210bWxtdWt0aXRmYXdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0NzE1NDQsImV4cCI6MjEwMDA0NzU0NH0.gBaitQdIOjzWFrubisVI8YffTJd6APzvcAYVgW1fPk4';
+
+let allPosts = [];
+let activeCategory = 'All';
 
 function esc(str){
   const d = document.createElement('div');
@@ -67,8 +96,15 @@ function fmtDate(iso){
   if(isNaN(d)) return '';
   return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 }
-function fallbackMedia(h){
-  return `<div class="specimen-media relative w-full ${h}"></div>`;
+// Real <img> with onerror so a broken/expired image URL falls back to the
+// chemical-grid placeholder instead of silently rendering nothing (which is
+// what a CSS background-image does on a failed load).
+function media(src, alt, extraClass){
+  const safeAlt = esc(alt || '');
+  if (!src) return `<div class="specimen-media absolute inset-0"></div>`;
+  return `
+    <img src="${esc(src)}" alt="${safeAlt}" loading="lazy" decoding="async" class="${extraClass || ''}"
+         onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'specimen-media absolute inset-0'}))">`;
 }
 function showStatus(html){
   const el = document.getElementById('feedStatus');
@@ -76,17 +112,80 @@ function showStatus(html){
   el.classList.remove('hidden');
   document.getElementById('featuredPost').innerHTML = '';
   document.getElementById('postsGrid').innerHTML = '';
+  document.getElementById('catFilter').classList.add('hidden');
+}
+
+function renderCategories(posts){
+  const cats = Array.from(new Set(posts.map(p => p.category).filter(Boolean)));
+  const el = document.getElementById('catFilter');
+  if (!cats.length) { el.classList.add('hidden'); return; }
+  el.classList.remove('hidden');
+  el.innerHTML = ['All', ...cats].map(c =>
+    `<button class="cat-pill${c === activeCategory ? ' active' : ''}" data-cat="${esc(c)}">${esc(c)}</button>`
+  ).join('');
+  el.querySelectorAll('.cat-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.cat;
+      el.querySelectorAll('.cat-pill').forEach(b => b.classList.toggle('active', b === btn));
+      renderPosts();
+    });
+  });
+}
+
+function renderPosts(){
+  const filtered = activeCategory === 'All' ? allPosts : allPosts.filter(p => p.category === activeCategory);
+
+  if (!filtered.length) {
+    document.getElementById('featuredPost').innerHTML = '';
+    document.getElementById('postsGrid').innerHTML = `<p class="col-span-full font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest text-center py-16">No dispatches in "${esc(activeCategory)}" yet.</p>`;
+    return;
+  }
+
+  const [featured, ...rest] = filtered;
+
+  document.getElementById('featuredPost').innerHTML = `
+    <a href="blog-post.html?slug=${encodeURIComponent(featured.slug)}" class="blog-card group block md:grid md:grid-cols-2 gap-0 rounded-3xl">
+      <div class="blog-media relative h-56 sm:h-64 md:h-auto">
+        ${media(featured.image, featured.title, 'absolute inset-0 group-hover:scale-[1.04]')}
+        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent pointer-events-none"></div>
+        <span class="absolute top-5 left-5 font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest border border-primary-fixed/40 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">Latest</span>
+      </div>
+      <div class="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+        <div class="flex items-center gap-3 mb-4">
+          ${featured.category ? `<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">${esc(featured.category)}</span><span class="w-1 h-1 rounded-full bg-border-muted"></span>` : ''}
+          <span class="font-label-sm text-[10px] text-on-surface-variant/60 uppercase tracking-widest">${fmtDate(featured.created_at)}</span>
+        </div>
+        <h2 class="font-headline-lg text-[26px] sm:text-[28px] md:text-[36px] text-primary uppercase tracking-tight leading-tight mb-4">${esc(featured.title)}</h2>
+        ${featured.description ? `<p class="font-body-md text-on-surface-variant/80 text-[14px] mb-8 line-clamp-3">${esc(featured.description)}</p>` : ''}
+        <span class="btn-explore self-start">Read Full Story<span aria-hidden="true">→</span></span>
+      </div>
+    </a>`;
+
+  document.getElementById('postsGrid').innerHTML = rest.map(p => `
+    <a href="blog-post.html?slug=${encodeURIComponent(p.slug)}" class="blog-card group">
+      <div class="blog-media relative h-44 sm:h-48">
+        ${media(p.image, p.title, 'absolute inset-0 group-hover:scale-[1.04]')}
+        ${p.category ? `<span class="absolute top-4 left-4 font-label-sm text-[9px] text-primary-fixed uppercase tracking-widest border border-primary-fixed/40 bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">${esc(p.category)}</span>` : ''}
+      </div>
+      <div class="p-5 sm:p-6">
+        <span class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest mb-3 block">${fmtDate(p.created_at)}</span>
+        <h3 class="font-headline-lg-mobile text-[19px] sm:text-[20px] text-primary uppercase tracking-tight leading-tight mb-3">${esc(p.title)}</h3>
+        ${p.description ? `<p class="font-body-md text-on-surface-variant/80 text-[13px] mb-5 line-clamp-2">${esc(p.description)}</p>` : ''}
+        <span class="inline-flex items-center gap-1.5 font-label-sm text-primary-fixed text-[10px] uppercase tracking-widest">
+          Read Article <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>`).join('');
 }
 
 (async()=>{
-  let data;
   try {
     const res = await fetch(
       `${SB_URL}/rest/v1/posts?select=*&order=created_at.desc`,
       { headers: { 'apikey': SB_KEY, 'Authorization': `Bearer ${SB_KEY}` } }
     );
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-    data = await res.json();
+    allPosts = await res.json();
   } catch(e) {
     console.error('[Blog] fetch error:', e);
     showStatus(`
@@ -96,53 +195,15 @@ function showStatus(html){
     `);
     return;
   }
-  if(!data || !data.length){
+  if(!allPosts || !allPosts.length){
     showStatus(`
       <span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest mb-3 block">§ Archive Empty</span>
       <p class="font-body-md text-on-surface-variant text-[14px]">No transmissions logged yet — check back soon.</p>
     `);
     return;
   }
-
-  const [featured, ...rest] = data;
-
-  document.getElementById('featuredPost').innerHTML = `
-    <a href="blog-post.html?slug=${encodeURIComponent(featured.slug)}" class="post-card group block md:grid md:grid-cols-2 gap-0">
-      <div class="relative h-64 md:h-auto overflow-hidden">
-        ${featured.image
-          ? `<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.03]" style="background-image:url('${esc(featured.image)}')"></div>
-             <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>`
-          : fallbackMedia('h-full')}
-        <span class="absolute top-5 left-5 font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest border border-primary-fixed/40 bg-black/60 backdrop-blur-sm px-3 py-1.5">Latest</span>
-      </div>
-      <div class="p-8 md:p-12 flex flex-col justify-center">
-        <div class="flex items-center gap-3 mb-4">
-          ${featured.category ? `<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">${esc(featured.category)}</span><span class="w-1 h-1 rounded-full bg-border-muted"></span>` : ''}
-          <span class="font-label-sm text-[10px] text-on-surface-variant/60 uppercase tracking-widest">${fmtDate(featured.created_at)}</span>
-        </div>
-        <h2 class="font-headline-lg text-[28px] md:text-[36px] text-primary uppercase tracking-tight leading-tight mb-4">${esc(featured.title)}</h2>
-        ${featured.description ? `<p class="font-body-md text-on-surface-variant/80 text-[14px] mb-8 line-clamp-3">${esc(featured.description)}</p>` : ''}
-        <span class="btn-explore self-start">Read Full Story<span aria-hidden="true">→</span></span>
-      </div>
-    </a>`;
-
-  document.getElementById('postsGrid').innerHTML = rest.map(p => `
-    <a href="blog-post.html?slug=${encodeURIComponent(p.slug)}" class="post-card group">
-      <div class="relative h-48 overflow-hidden">
-        ${p.image
-          ? `<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.03]" style="background-image:url('${esc(p.image)}')"></div>`
-          : fallbackMedia('h-full')}
-        ${p.category ? `<span class="absolute top-4 left-4 font-label-sm text-[9px] text-primary-fixed uppercase tracking-widest border border-primary-fixed/40 bg-black/60 backdrop-blur-sm px-2.5 py-1">${esc(p.category)}</span>` : ''}
-      </div>
-      <div class="p-6">
-        <span class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest mb-3 block">${fmtDate(p.created_at)}</span>
-        <h3 class="font-headline-lg-mobile text-[20px] text-primary uppercase tracking-tight leading-tight mb-3">${esc(p.title)}</h3>
-        ${p.description ? `<p class="font-body-md text-on-surface-variant/80 text-[13px] mb-5 line-clamp-2">${esc(p.description)}</p>` : ''}
-        <span class="inline-flex items-center gap-1.5 font-label-sm text-primary-fixed text-[10px] uppercase tracking-widest">
-          Read Article <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
-        </span>
-      </div>
-    </a>`).join('');
+  renderCategories(allPosts);
+  renderPosts();
 })();
 </script>
 <script src="assets/js/main.js"></script>

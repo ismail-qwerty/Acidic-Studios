@@ -2,6 +2,17 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Dispatch — ACIDIC STUDIOS</title>
+<meta id="metaDescription" name="description" content="Field notes on AI video production, AI agents, and brand systems from the Acidic Studios lab.">
+<link id="metaCanonical" rel="canonical" href="https://acidicstudios.netlify.app/blog-post.html">
+<meta id="ogType" property="og:type" content="article">
+<meta property="og:site_name" content="Acidic Studios">
+<meta id="ogTitle" property="og:title" content="Dispatch — ACIDIC STUDIOS">
+<meta id="ogDescription" property="og:description" content="Field notes from the Acidic Studios lab.">
+<meta id="ogUrl" property="og:url" content="https://acidicstudios.netlify.app/blog-post.html">
+<meta id="ogImage" property="og:image" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta id="twitterTitle" name="twitter:title" content="Dispatch — ACIDIC STUDIOS">
+<meta id="twitterDescription" name="twitter:description" content="Field notes from the Acidic Studios lab.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -13,6 +24,20 @@
 <script id="tailwind-config">
 tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#201f1f","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat", "sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
+<style>
+  .blog-card { display: block; background: #0e0e0e; border: 1px solid #232323; border-radius: 20px; overflow: hidden; text-decoration: none; transition: border-color .25s ease, transform .25s ease; }
+  .blog-card:hover { border-color: rgba(139,254,0,0.45); transform: translateY(-3px); }
+  .blog-media { position: relative; overflow: hidden; background: #000; }
+  .blog-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #postContent h2 { font-family:'Montserrat',sans-serif; text-transform:uppercase; color:#fff; font-size:1.5rem; margin:2.5rem 0 1rem; letter-spacing:-0.01em; }
+  #postContent h3 { font-family:'Montserrat',sans-serif; text-transform:uppercase; color:#fff; font-size:1.15rem; margin:2rem 0 0.75rem; }
+  #postContent p { margin-bottom: 1.25rem; }
+  #postContent a { color:#8bfe00; text-decoration:underline; text-underline-offset:3px; }
+  #postContent img { border-radius: 16px; margin: 2rem 0; width:100%; }
+  #postContent ul, #postContent ol { margin: 0 0 1.25rem 1.25rem; }
+  #postContent li { margin-bottom: 0.5rem; }
+  #postContent blockquote { border-left: 2px solid #8bfe00; padding-left: 1.25rem; margin: 2rem 0; color: #e5e2e1; font-style: italic; }
+</style>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
 <div id="navbar-placeholder"></div>
@@ -20,8 +45,10 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 <main class="relative">
 
 <!-- Header / meta -->
-<section class="relative pt-40 pb-16 md:pt-48 px-margin-mobile md:px-margin-desktop max-w-[860px] mx-auto">
+<section class="relative pt-32 pb-14 md:pt-48 px-margin-mobile md:px-margin-desktop max-w-[860px] mx-auto">
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)] bg-[size:48px_48px] opacity-10 z-0 pointer-events-none"></div>
+
+  <div id="breadcrumb" class="relative z-10 flex items-center gap-2 font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest mb-8"></div>
 
   <a href="blog.html" class="relative z-10 inline-flex items-center gap-2 font-label-sm text-[11px] text-on-surface-variant hover:text-primary-fixed uppercase tracking-widest transition-colors mb-10">
     <span class="material-symbols-outlined text-[16px]">arrow_back</span> All Dispatches
@@ -34,7 +61,7 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 
 <!-- Hero image -->
 <section id="postHeroWrap" class="max-w-[1100px] mx-auto px-margin-mobile md:px-margin-desktop mb-16 hidden">
-  <div id="postHero" class="w-full h-[260px] md:h-[460px] bg-cover bg-center border border-border-muted"></div>
+  <div id="postHero" class="relative w-full h-[220px] sm:h-[320px] md:h-[460px] rounded-3xl overflow-hidden border border-border-muted"></div>
 </section>
 
 <!-- Body -->
@@ -64,7 +91,7 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 <!-- More dispatches -->
 <section class="py-16 md:py-24 border-t border-border-muted max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
   <h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-10">More Dispatches</h3>
-  <div id="morePosts" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+  <div id="morePosts" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6"></div>
 </section>
 
 </main>
@@ -72,10 +99,20 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 <div id="footer-placeholder"></div>
 
 <script>
-const sb = supabase.createClient('https://npunrjejzvbjsxpsouuq.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wdW5yamVqenZianN4cHNvdXVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0Njg4NzEsImV4cCI6MjEwMDA0NDg3MX0.bFUZRI5se1mSD1bMwmh-kFN70gNk6gI-Ov3ysbFxCfc');
+const sb = supabase.createClient('https://joeoakmtmlmuktitfawh.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvZW9ha210bWxtdWt0aXRmYXdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ0NzE1NDQsImV4cCI6MjEwMDA0NzU0NH0.gBaitQdIOjzWFrubisVI8YffTJd6APzvcAYVgW1fPk4');
 
 function escapeHtml(str){
   return (str||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+// Real <img> with onerror fallback — a broken/expired image URL swaps to the
+// chemical-grid placeholder instead of rendering nothing.
+function media(src, alt, extraClass){
+  const safeAlt = escapeHtml(alt || '');
+  if (!src) return `<div class="specimen-media absolute inset-0"></div>`;
+  return `
+    <img src="${escapeHtml(src)}" alt="${safeAlt}" loading="lazy" decoding="async" class="${extraClass || ''}"
+         onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'specimen-media absolute inset-0'}))">`;
 }
 
 function renderContent(raw){
@@ -91,6 +128,17 @@ function formatDate(d){
   try {
     return new Date(d).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   } catch(e){ return ''; }
+}
+
+function readingTime(html){
+  const text = (html || '').replace(/<[^>]+>/g, ' ');
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+function setMeta(id, attr, value){
+  const el = document.getElementById(id);
+  if (el) el.setAttribute(attr, value);
 }
 
 (async()=>{
@@ -110,23 +158,40 @@ function formatDate(d){
     document.getElementById('notFound').classList.remove('hidden');
   } else {
     document.title = `${post.title} — ACIDIC STUDIOS`;
+    const desc = post.description || `${post.title} — a dispatch from the Acidic Studios lab.`;
+    const url = window.location.href;
+    setMeta('metaDescription', 'content', desc);
+    setMeta('metaCanonical', 'href', url);
+    setMeta('ogTitle', 'content', `${post.title} — ACIDIC STUDIOS`);
+    setMeta('ogDescription', 'content', desc);
+    setMeta('ogUrl', 'content', url);
+    if (post.image) setMeta('ogImage', 'content', post.image);
+    setMeta('twitterTitle', 'content', `${post.title} — ACIDIC STUDIOS`);
+    setMeta('twitterDescription', 'content', desc);
+
+    document.getElementById('breadcrumb').innerHTML = `
+      <a href="blog.html" class="hover:text-primary-fixed transition-colors">Blog</a>
+      <span class="text-border-muted">/</span>
+      <span class="text-primary-fixed">${post.category ? escapeHtml(post.category) : 'Dispatch'}</span>
+    `;
 
     document.getElementById('postMeta').innerHTML = `
       <div class="flex items-center gap-2 text-red-500 font-label-sm text-label-sm uppercase tracking-widest mb-8 drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]">
         <div class="w-2.5 h-2.5 rounded-full bg-red-500 rec-pulse"></div>
         TRANSMISSION_LOG // ${post.category ? escapeHtml(post.category).toUpperCase() : 'GENERAL'}
       </div>
-      <h1 class="font-headline-lg text-primary uppercase tracking-tight leading-[1.05] mb-6 text-[36px] sm:text-[48px] md:text-[60px]">${escapeHtml(post.title)}</h1>
+      <h1 class="font-headline-lg text-primary uppercase tracking-tight leading-[1.05] mb-6 text-[32px] sm:text-[48px] md:text-[60px]">${escapeHtml(post.title)}</h1>
       ${post.description ? `<p class="font-body-lg text-body-lg text-on-surface-variant/80 mb-8 max-w-2xl">${escapeHtml(post.description)}</p>` : ''}
       <div class="flex flex-wrap items-center gap-4 font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest border-t border-border-muted pt-6">
         ${post.created_at ? `<span>${formatDate(post.created_at)}</span>` : ''}
         ${post.category ? `<span class="text-primary-fixed">${escapeHtml(post.category)}</span>` : ''}
         ${post.author ? `<span>By ${escapeHtml(post.author)}</span>` : ''}
+        <span>${readingTime(post.content)} min read</span>
       </div>
     `;
 
     if(post.image){
-      document.getElementById('postHero').style.backgroundImage = `url('${post.image}')`;
+      document.getElementById('postHero').innerHTML = media(post.image, post.title, 'absolute inset-0');
       document.getElementById('postHeroWrap').classList.remove('hidden');
     }
 
@@ -150,11 +215,11 @@ function formatDate(d){
   const { data: more } = await sb.from('posts').select('*').neq('slug', slug).order('created_at', {ascending:false}).limit(3);
   const grid = document.getElementById('morePosts');
   if(!more || !more.length){
-    grid.innerHTML = '<p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest col-span-3">No other dispatches yet.</p>';
+    grid.innerHTML = '<p class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-widest col-span-full">No other dispatches yet.</p>';
   } else {
     grid.innerHTML = more.map(p => `
-      <a href="blog-post.html?slug=${p.slug}" class="post-card">
-        ${p.image ? `<div class="h-48 bg-cover bg-center" style="background-image:url('${p.image}')"></div>` : '<div class="h-48 bg-surface-deep"></div>'}
+      <a href="blog-post.html?slug=${encodeURIComponent(p.slug)}" class="blog-card group">
+        <div class="blog-media relative h-44 sm:h-48">${media(p.image, p.title, 'absolute inset-0')}</div>
         <div class="p-6">
           ${p.category ? `<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest mb-3 block">${escapeHtml(p.category)}</span>` : ''}
           <h3 class="font-headline-lg-mobile text-[20px] text-primary uppercase tracking-tight leading-tight mb-3">${escapeHtml(p.title)}</h3>

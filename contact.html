@@ -33,7 +33,7 @@
             <span class="text-primary-fixed">Contact</span>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
             
             <!-- Left Column: Typography & Meta (col-span-5) -->
             <aside class="lg:col-span-5 lg:sticky lg:top-32">
@@ -65,26 +65,26 @@
             </aside>
 
             <!-- Right Column: The 3-Phase Form (col-span-7) -->
-            <div class="lg:col-span-7 bg-[#0e0e0e]/60 border border-[#262626] p-8 md:p-12 relative">
-                
-                <!-- Top Accent Line -->
-                <div class="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-[#8bfe00] to-transparent opacity-60"></div>
+            <div class="lg:col-span-7 rounded-[28px] sm:rounded-[36px] bg-[#0e0e0e] border border-[#262626] p-6 sm:p-8 md:p-12 relative shadow-[0_30px_80px_-40px_rgba(0,0,0,0.6)]">
+
+                <!-- Top Accent Glow -->
+                <div class="absolute -top-px left-10 right-10 h-[2px] bg-gradient-to-r from-transparent via-[#8bfe00] to-transparent opacity-70 rounded-full"></div>
 
                 <!-- Horizontal Step Tracker -->
-                <div class="flex items-center justify-between mb-12 border-b border-[#262626] pb-6">
-                    <div id="step-indicator-1" class="step-indicator flex items-center gap-3 font-label text-label-sm uppercase tracking-widest transition-colors duration-300">
-                        <span class="step-circle w-7 h-7 flex items-center justify-center border rounded-none text-[10px] transition-all">01</span>
-                        <span class="hidden md:inline">You</span>
+                <div class="flex items-center justify-between mb-10 md:mb-12 pb-6 border-b border-[#1f1f1f]">
+                    <div id="step-indicator-1" class="step-indicator flex items-center gap-2.5 font-label text-label-sm uppercase tracking-widest transition-colors duration-300">
+                        <span class="step-circle w-8 h-8 shrink-0 flex items-center justify-center rounded-full border text-[10px] transition-all">01</span>
+                        <span class="hidden sm:inline">You</span>
                     </div>
                     <div class="flex-1 h-[1px] bg-[#262626] mx-2"></div>
-                    <div id="step-indicator-2" class="step-indicator flex items-center gap-3 font-label text-label-sm uppercase tracking-widest transition-colors duration-300 text-[#becbae]/40">
-                        <span class="step-circle w-7 h-7 flex items-center justify-center border border-[#262626] rounded-none text-[10px] transition-all">02</span>
-                        <span class="hidden md:inline">The Work</span>
+                    <div id="step-indicator-2" class="step-indicator flex items-center gap-2.5 font-label text-label-sm uppercase tracking-widest transition-colors duration-300 text-[#becbae]/40">
+                        <span class="step-circle w-8 h-8 shrink-0 flex items-center justify-center rounded-full border border-[#262626] text-[10px] transition-all">02</span>
+                        <span class="hidden sm:inline">The Work</span>
                     </div>
                     <div class="flex-1 h-[1px] bg-[#262626] mx-2"></div>
-                    <div id="step-indicator-3" class="step-indicator flex items-center gap-3 font-label text-label-sm uppercase tracking-widest transition-colors duration-300 text-[#becbae]/40">
-                        <span class="step-circle w-7 h-7 flex items-center justify-center border border-[#262626] rounded-none text-[10px] transition-all">03</span>
-                        <span class="hidden md:inline">When</span>
+                    <div id="step-indicator-3" class="step-indicator flex items-center gap-2.5 font-label text-label-sm uppercase tracking-widest transition-colors duration-300 text-[#becbae]/40">
+                        <span class="step-circle w-8 h-8 shrink-0 flex items-center justify-center rounded-full border border-[#262626] text-[10px] transition-all">03</span>
+                        <span class="hidden sm:inline">When</span>
                     </div>
                 </div>
 
@@ -178,12 +178,12 @@
                                 <label class="block font-label text-label-sm uppercase tracking-widest text-on-surface-variant mb-3">Preferred Start Date</label>
                                 <input type="date" name="start_date" class="minimal-input" style="color-scheme: dark;">
                             </div>
-                            <div class="p-4 border-l-2 border-[#8bfe00] bg-[#8bfe00]/5">
-                                <div class="flex items-center gap-2 font-label text-label-sm uppercase tracking-widest text-primary-fixed mb-2">
+                            <div class="rounded-2xl p-5 sm:p-6" style="background:#8bfe00">
+                                <div class="flex items-center gap-2 font-label text-label-sm uppercase tracking-widest mb-2" style="color:#0d2000">
                                     <span class="material-symbols-outlined text-[16px]">info</span>
                                     Final Check
                                 </div>
-                                <p class="text-on-surface-variant text-sm leading-relaxed">
+                                <p class="text-sm leading-relaxed" style="color:#0d2000cc">
                                     Ensure your details are correct. Submitting this form will send a direct brief to our producers. We typically respond within 24-48 hours.
                                 </p>
                             </div>
