@@ -80,54 +80,60 @@
     </div>
     <div class="flex items-center gap-3">
       <a class="nav-btn-tag hidden sm:inline-flex" href="${p}contact.html">Start a Project</a>
-      <button id="menuBtn" class="flex h-11 w-11 items-center justify-center text-white hover:text-[#8bfe00] transition-colors lg:hidden" aria-label="Toggle menu">
-        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+      <button id="menuBtn" class="flex h-10 w-10 items-center justify-center rounded-full text-white hover:text-[#8bfe00] hover:bg-white/5 transition-colors lg:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="material-symbols-outlined text-[22px]" id="menuIcon">menu</span>
       </button>
     </div>
   </div>
 </nav>
 
 <div id="mobileMenu">
-  <button class="nav-close-btn" id="mobileCloseBtn">&#x2715;</button>
-  <div class="mobile-menu-inner">
-  <a href="${p}index.html">Home</a>
-  <details class="mobile-services">
-    <summary>Services</summary>
-    <div class="mobile-sub-group">
-      <span class="mobile-sub-heading">AI Video Production</span>
-      <a class="mobile-sub-link" href="${p}ai-video-production.html">Overview</a>
-      <a class="mobile-sub-link" href="${p}ai-short-films.html">AI Short Films</a>
-      <a class="mobile-sub-link" href="${p}ai-advertisement.html">AI Advertisement</a>
-      <a class="mobile-sub-link" href="${p}ai-short-videos.html">AI Short Videos</a>
-      <a class="mobile-sub-link" href="${p}ai-ugc-content.html">AI UGC Content</a>
+  <div class="mobile-menu-scrim" id="mobileMenuScrim"></div>
+  <div class="mobile-menu-panel">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-title"><span class="w-1.5 h-1.5 rounded-full bg-[#8bfe00] pulse-dot-green inline-block mr-2"></span>Menu</span>
+      <button class="nav-close-btn" id="mobileCloseBtn" aria-label="Close menu"><span class="material-symbols-outlined text-[18px]">close</span></button>
     </div>
-    <div class="mobile-sub-group">
-      <span class="mobile-sub-heading">AI Agents</span>
-      <a class="mobile-sub-link" href="${p}ai-agents.html">Overview</a>
-      <a class="mobile-sub-link" href="${p}ai-chatbots.html">AI Chatbots</a>
-      <a class="mobile-sub-link" href="${p}ai-caller-voice-agents.html">AI Caller / Voice Agents</a>
-      <a class="mobile-sub-link" href="${p}ai-automation.html">AI Automation</a>
-      <a class="mobile-sub-link" href="${p}custom-ai-agents.html">Custom AI Agents</a>
+    <div class="mobile-menu-inner">
+      <a class="mobile-link" href="${p}index.html"><span class="material-symbols-outlined item-icon">home</span>Home</a>
+      <details class="mobile-services">
+        <summary><span class="material-symbols-outlined item-icon">apps</span>Services</summary>
+        <div class="mobile-sub-group">
+          <span class="mobile-sub-heading">AI Video Production</span>
+          <a class="mobile-sub-link" href="${p}ai-video-production.html">Overview</a>
+          <a class="mobile-sub-link" href="${p}ai-short-films.html">AI Short Films</a>
+          <a class="mobile-sub-link" href="${p}ai-advertisement.html">AI Advertisement</a>
+          <a class="mobile-sub-link" href="${p}ai-short-videos.html">AI Short Videos</a>
+          <a class="mobile-sub-link" href="${p}ai-ugc-content.html">AI UGC Content</a>
+        </div>
+        <div class="mobile-sub-group">
+          <span class="mobile-sub-heading">AI Agents</span>
+          <a class="mobile-sub-link" href="${p}ai-agents.html">Overview</a>
+          <a class="mobile-sub-link" href="${p}ai-chatbots.html">AI Chatbots</a>
+          <a class="mobile-sub-link" href="${p}ai-caller-voice-agents.html">AI Caller / Voice Agents</a>
+          <a class="mobile-sub-link" href="${p}ai-automation.html">AI Automation</a>
+          <a class="mobile-sub-link" href="${p}custom-ai-agents.html">Custom AI Agents</a>
+        </div>
+        <div class="mobile-sub-group">
+          <a class="mobile-sub-link" href="${p}websites.html">Website Dev / Design</a>
+          <a class="mobile-sub-link" href="${p}branding.html">Branding</a>
+        </div>
+        <div class="mobile-sub-group">
+          <span class="mobile-sub-heading">Video Editing</span>
+          <a class="mobile-sub-link" href="${p}video-editing.html">Overview</a>
+          <a class="mobile-sub-link" href="${p}ad-videos.html">Ad Videos</a>
+          <a class="mobile-sub-link" href="${p}ugc-videos.html">UGC Videos</a>
+          <a class="mobile-sub-link" href="${p}short-form-videos.html">Short-form Videos</a>
+          <a class="mobile-sub-link" href="${p}long-form-videos.html">Long-form Videos</a>
+          <a class="mobile-sub-link" href="${p}youtube-automation.html">YouTube Automation</a>
+        </div>
+      </details>
+      <a class="mobile-link" href="${p}blog.html"><span class="material-symbols-outlined item-icon">rss_feed</span>Blog</a>
+      <a class="mobile-link" href="${p}team.html"><span class="material-symbols-outlined item-icon">groups</span>Team</a>
+      <a class="mobile-link" href="${p}careers.html"><span class="material-symbols-outlined item-icon">work</span>Careers</a>
+      <a class="mobile-link" href="${p}contact.html"><span class="material-symbols-outlined item-icon">mail</span>Contact</a>
+      <a href="${p}contact.html" class="nav-btn-tag justify-center mt-3">Start a Project</a>
     </div>
-    <div class="mobile-sub-group">
-      <a class="mobile-sub-link" href="${p}websites.html">Website Dev / Design</a>
-      <a class="mobile-sub-link" href="${p}branding.html">Branding</a>
-    </div>
-    <div class="mobile-sub-group">
-      <span class="mobile-sub-heading">Video Editing</span>
-      <a class="mobile-sub-link" href="${p}video-editing.html">Overview</a>
-      <a class="mobile-sub-link" href="${p}ad-videos.html">Ad Videos</a>
-      <a class="mobile-sub-link" href="${p}ugc-videos.html">UGC Videos</a>
-      <a class="mobile-sub-link" href="${p}short-form-videos.html">Short-form Videos</a>
-      <a class="mobile-sub-link" href="${p}long-form-videos.html">Long-form Videos</a>
-      <a class="mobile-sub-link" href="${p}youtube-automation.html">YouTube Automation</a>
-    </div>
-  </details>
-  <a href="${p}blog.html">Blog</a>
-  <a href="${p}team.html">Team</a>
-  <a href="${p}careers.html">Careers</a>
-  <a href="${p}contact.html">Contact</a>
-  <a href="${p}contact.html" class="nav-btn-tag mt-4">Start a Project</a>
   </div>
 </div>`;
 
@@ -194,19 +200,29 @@
   const mobileMenu = document.getElementById('mobileMenu');
   const menuIcon   = document.getElementById('menuIcon');
   const closeBtn   = document.getElementById('mobileCloseBtn');
+  const menuScrim  = document.getElementById('mobileMenuScrim');
 
   function closeMenu() {
     mobileMenu.classList.remove('open');
     if (menuIcon) menuIcon.textContent = 'menu';
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
   window.closeMenu = closeMenu;
 
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if (menuScrim) menuScrim.addEventListener('click', closeMenu);
+  // Tapping a real link inside the panel should close it too (in case the
+  // destination page load is slow enough that the panel would otherwise
+  // still be visible during the transition).
+  mobileMenu.querySelectorAll('a[href]').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
   if (menuBtn) {
     menuBtn.addEventListener('click', function () {
       var isOpen = mobileMenu.classList.toggle('open');
       if (menuIcon) menuIcon.textContent = isOpen ? 'close' : 'menu';
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
   }
