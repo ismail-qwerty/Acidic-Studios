@@ -24,11 +24,24 @@
 tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#353534","surface-container-high":"#2a2a2a","surface-container-low":"#1c1b1b","on-surface":"#e5e2e1","surface-deep":"#121212","primary-fixed":"#8bfe00","on-primary":"#1a3700","on-primary-fixed":"#0d2000","on-background":"#e5e2e1","primary-fixed-dim":"#7adf00","background":"#131313","primary-container":"#8bfe00","on-surface-variant":"#becbae","border-muted":"#262626","acid-glow":"#8CFF00CC","outline-variant":"#3f4a34","surface-container":"#201f1f","surface":"#131313","surface-container-lowest":"#0e0e0e","primary":"#ffffff","surface-tint":"#7adf00"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"stack-sm":"8px","gutter":"24px","stack-md":"16px","margin-mobile":"16px","margin-desktop":"64px","stack-lg":"32px"},"fontFamily":{"body-md":["Inter"],"headline-xl":["Montserrat", "sans-serif"]},"fontSize":{"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-xl":["112px",{"lineHeight":"0.9","letterSpacing":"-0.02em","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1","letterSpacing":"0.1em","fontWeight":"500"}],"headline-lg":["80px",{"lineHeight":"0.9","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-lg-mobile":["64px",{"lineHeight":"0.9","fontWeight":"400"}]}}}}
 </script>
 <style>
-  .blog-card { display: block; background: #0e0e0e; border: 1px solid #232323; border-radius: 24px; overflow: hidden; text-decoration: none; transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
-  .blog-card:hover { border-color: rgba(139,254,0,0.45); transform: translateY(-3px); box-shadow: 0 20px 40px -24px rgba(0,0,0,0.6); }
-  .blog-media { position: relative; overflow: hidden; background: #000; }
+  /* Vertical/portrait cards — image dominates, content sits below it,
+     3 across on desktop. Deliberately tall, not a short horizontal banner. */
+  .blog-card { display: flex; flex-direction: column; background: #0e0e0e; border: 1px solid #232323; border-radius: 24px; overflow: hidden; text-decoration: none; transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; height: 100%; }
+  .blog-card:hover { border-color: rgba(139,254,0,0.45); transform: translateY(-4px); box-shadow: 0 24px 44px -24px rgba(0,0,0,0.65); }
+  .blog-media { position: relative; overflow: hidden; background: #000; aspect-ratio: 3 / 4; flex-shrink: 0; }
   .blog-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-  .blog-card:hover .blog-media img { transform: scale(1.04); }
+  .blog-card:hover .blog-media img { transform: scale(1.05); }
+  .blog-card-body { flex: 1; display: flex; flex-direction: column; }
+
+  /* Featured post — full-bleed cinematic block, distinct from the grid cards */
+  .featured-card { display: block; position: relative; border-radius: 28px; overflow: hidden; text-decoration: none; border: 1px solid #232323; transition: border-color .25s ease; height: 280px; }
+  @media (min-width: 640px) { .featured-card { height: 360px; } }
+  @media (min-width: 768px) { .featured-card { height: 460px; } }
+  .featured-card:hover { border-color: rgba(139,254,0,0.45); }
+  .featured-media { position: absolute; inset: 0; background: #000; }
+  .featured-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+  .featured-card:hover .featured-media img { transform: scale(1.04); }
+
   .cat-pill { font-family:'JetBrains Mono',monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; border: 1px solid #2a2a2a; color: #becbae; background: #0e0e0e; white-space: nowrap; cursor: pointer; transition: all .2s ease; }
   .cat-pill:hover { border-color: rgba(139,254,0,0.4); color: #e5e2e1; }
   .cat-pill.active { background: #8bfe00; border-color: #8bfe00; color: #0d2000; font-weight: 700; }
@@ -60,20 +73,12 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#3
 <section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop pb-24 md:pb-32">
   <div id="feedStatus" class="hidden mb-12 border border-border-muted bg-surface-container-lowest/50 rounded-2xl px-6 sm:px-8 py-10 text-center"></div>
   <div id="featuredPost" class="mb-10 md:mb-12">
-    <div class="rounded-3xl border border-border-muted grid md:grid-cols-2 gap-0 overflow-hidden animate-pulse">
-      <div class="h-56 sm:h-64 md:h-auto bg-surface-container-lowest"></div>
-      <div class="p-6 sm:p-8 md:p-12 flex flex-col justify-center gap-4">
-        <div class="h-3 w-24 bg-surface-container-lowest rounded"></div>
-        <div class="h-8 w-3/4 bg-surface-container-lowest rounded"></div>
-        <div class="h-4 w-full bg-surface-container-lowest rounded"></div>
-        <div class="h-4 w-2/3 bg-surface-container-lowest rounded"></div>
-      </div>
-    </div>
+    <div class="rounded-[28px] border border-border-muted h-[280px] sm:h-[360px] md:h-[460px] bg-surface-container-lowest animate-pulse"></div>
   </div>
   <div id="postsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-    <div class="rounded-2xl border border-border-muted animate-pulse overflow-hidden"><div class="h-44 sm:h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
-    <div class="rounded-2xl border border-border-muted animate-pulse overflow-hidden hidden sm:block"><div class="h-44 sm:h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
-    <div class="rounded-2xl border border-border-muted animate-pulse overflow-hidden hidden lg:block"><div class="h-44 sm:h-48 bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
+    <div class="rounded-[24px] border border-border-muted animate-pulse overflow-hidden flex flex-col"><div class="aspect-[3/4] bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
+    <div class="rounded-[24px] border border-border-muted animate-pulse overflow-hidden flex-col hidden sm:flex"><div class="aspect-[3/4] bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
+    <div class="rounded-[24px] border border-border-muted animate-pulse overflow-hidden flex-col hidden lg:flex"><div class="aspect-[3/4] bg-surface-container-lowest"></div><div class="p-6 flex flex-col gap-3"><div class="h-3 w-16 bg-surface-container-lowest rounded"></div><div class="h-5 w-5/6 bg-surface-container-lowest rounded"></div><div class="h-4 w-full bg-surface-container-lowest rounded"></div></div></div>
   </div>
 </section>
 </main>
@@ -143,35 +148,38 @@ function renderPosts(){
 
   const [featured, ...rest] = filtered;
 
+  // Featured — one full-bleed cinematic block, title overlaid on the image,
+  // deliberately distinct from the grid cards below it.
   document.getElementById('featuredPost').innerHTML = `
-    <a href="blog-post.html?slug=${encodeURIComponent(featured.slug)}" class="blog-card group block md:grid md:grid-cols-2 gap-0 rounded-3xl">
-      <div class="blog-media relative h-56 sm:h-64 md:h-auto">
-        ${media(featured.image, featured.title, 'absolute inset-0 group-hover:scale-[1.04]')}
-        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent pointer-events-none"></div>
-        <span class="absolute top-5 left-5 font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest border border-primary-fixed/40 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">Latest</span>
-      </div>
-      <div class="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+    <a href="blog-post.html?slug=${encodeURIComponent(featured.slug)}" class="featured-card group">
+      <div class="featured-media">${media(featured.image, featured.title, 'group-hover:scale-[1.04]')}</div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent pointer-events-none"></div>
+      <span class="absolute top-6 left-6 font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest border border-primary-fixed/40 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">Latest</span>
+      <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 md:p-12">
         <div class="flex items-center gap-3 mb-4">
-          ${featured.category ? `<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">${esc(featured.category)}</span><span class="w-1 h-1 rounded-full bg-border-muted"></span>` : ''}
-          <span class="font-label-sm text-[10px] text-on-surface-variant/60 uppercase tracking-widest">${fmtDate(featured.created_at)}</span>
+          ${featured.category ? `<span class="font-label-sm text-[10px] text-primary-fixed uppercase tracking-widest">${esc(featured.category)}</span><span class="w-1 h-1 rounded-full bg-white/30"></span>` : ''}
+          <span class="font-label-sm text-[10px] text-white/60 uppercase tracking-widest">${fmtDate(featured.created_at)}</span>
         </div>
-        <h2 class="font-headline-lg text-[26px] sm:text-[28px] md:text-[36px] text-primary uppercase tracking-tight leading-tight mb-4">${esc(featured.title)}</h2>
-        ${featured.description ? `<p class="font-body-md text-on-surface-variant/80 text-[14px] mb-8 line-clamp-3">${esc(featured.description)}</p>` : ''}
+        <h2 class="font-headline-lg text-[26px] sm:text-[32px] md:text-[44px] text-white uppercase tracking-tight leading-[1.02] mb-4 max-w-2xl">${esc(featured.title)}</h2>
+        ${featured.description ? `<p class="font-body-md text-white/75 text-[14px] mb-6 max-w-xl line-clamp-2 hidden sm:block">${esc(featured.description)}</p>` : ''}
         <span class="btn-explore self-start">Read Full Story<span aria-hidden="true">→</span></span>
       </div>
     </a>`;
 
+  // Grid — portrait/vertical cards, three across on desktop. Image
+  // dominates the card (aspect-[3/4] via .blog-media), content sits in a
+  // fixed body block below it so cards line up evenly.
   document.getElementById('postsGrid').innerHTML = rest.map(p => `
     <a href="blog-post.html?slug=${encodeURIComponent(p.slug)}" class="blog-card group">
-      <div class="blog-media relative h-44 sm:h-48">
-        ${media(p.image, p.title, 'absolute inset-0 group-hover:scale-[1.04]')}
+      <div class="blog-media">
+        ${media(p.image, p.title, 'absolute inset-0 group-hover:scale-[1.05]')}
         ${p.category ? `<span class="absolute top-4 left-4 font-label-sm text-[9px] text-primary-fixed uppercase tracking-widest border border-primary-fixed/40 bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">${esc(p.category)}</span>` : ''}
       </div>
-      <div class="p-5 sm:p-6">
+      <div class="blog-card-body p-6">
         <span class="font-label-sm text-[10px] text-on-surface-variant/50 uppercase tracking-widest mb-3 block">${fmtDate(p.created_at)}</span>
-        <h3 class="font-headline-lg-mobile text-[19px] sm:text-[20px] text-primary uppercase tracking-tight leading-tight mb-3">${esc(p.title)}</h3>
-        ${p.description ? `<p class="font-body-md text-on-surface-variant/80 text-[13px] mb-5 line-clamp-2">${esc(p.description)}</p>` : ''}
-        <span class="inline-flex items-center gap-1.5 font-label-sm text-primary-fixed text-[10px] uppercase tracking-widest">
+        <h3 class="font-headline-lg-mobile text-[21px] text-primary uppercase tracking-tight leading-tight mb-3">${esc(p.title)}</h3>
+        ${p.description ? `<p class="font-body-md text-on-surface-variant/80 text-[13px] mb-5 line-clamp-3">${esc(p.description)}</p>` : ''}
+        <span class="inline-flex items-center gap-1.5 font-label-sm text-primary-fixed text-[10px] uppercase tracking-widest mt-auto">
           Read Article <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
         </span>
       </div>
