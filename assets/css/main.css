@@ -235,38 +235,56 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; width: 100
 /* Current-page indication inside the dropdown */
 .dropdown-item.active > a, .sub-item.active { color: #8bfe00; }
 
-/* ── Mobile menu ── */
-#mobileMenu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(0,0,0,0.99);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding-top: 6rem;
+/* ── Mobile menu: compact anchored panel, top-right of the hamburger ── */
+#mobileMenu { display: none; position: fixed; inset: 0; z-index: 200; }
+#mobileMenu.open { display: block; }
+
+#mobileMenu .mobile-menu-scrim { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); opacity: 0; transition: opacity .2s ease; }
+#mobileMenu.open .mobile-menu-scrim { opacity: 1; }
+
+#mobileMenu .mobile-menu-panel {
+    position: absolute;
+    top: calc(4.75rem + env(safe-area-inset-top));
+    right: 12px;
+    width: min(87vw, 320px);
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    background: #0a0a0a;
+    border: 1px solid #262626;
+    border-radius: 20px;
+    box-shadow: 0 24px 60px -16px rgba(0,0,0,0.7);
+    padding: 10px;
+    transform-origin: top right;
+    transform: translateY(-8px) scale(0.96);
+    opacity: 0;
+    transition: transform .22s ease, opacity .18s ease;
 }
-#mobileMenu.open { display: flex; }
-#mobileMenu { overflow-y: auto; }
-#mobileMenu .mobile-menu-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; padding-bottom: 3rem; width: 100%; }
-#mobileMenu a { font-family: 'VintagePropagandistRegular', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: #ffffff; letter-spacing: 0.05em; transition: color .2s; text-decoration: none; }
-#mobileMenu a:hover { color: #8bfe00; }
-#mobileMenu .close-btn, #mobileMenu .nav-close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #ffffff; cursor: pointer; font-size: 2rem; }
+#mobileMenu.open .mobile-menu-panel { transform: translateY(0) scale(1); opacity: 1; }
+
+#mobileMenu .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 6px 10px 12px; margin-bottom: 6px; border-bottom: 1px solid #1c1c1c; }
+#mobileMenu .mobile-menu-title { display: flex; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #becbae; }
+#mobileMenu .nav-close-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: none; border: none; color: #becbae; cursor: pointer; transition: background-color .15s, color .15s; }
+#mobileMenu .nav-close-btn:hover { background: #1a1a1a; color: #ffffff; }
+
+#mobileMenu .mobile-menu-inner { display: flex; flex-direction: column; gap: 2px; width: 100%; }
+#mobileMenu a.mobile-link, #mobileMenu .mobile-services summary {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #e5e2e1; text-decoration: none; padding: 11px 10px; border-radius: 10px;
+    transition: background-color .15s ease, color .15s ease;
+}
+#mobileMenu a.mobile-link:hover, #mobileMenu .mobile-services summary:hover { background: #151515; color: #8bfe00; }
+#mobileMenu a.mobile-link .item-icon, #mobileMenu .mobile-services summary .item-icon { font-size: 17px; color: #8bfe00; opacity: 0.8; }
 
 /* Mobile "Services" disclosure — reachable without hover on touch/tablet */
-#mobileMenu .mobile-services { width: 100%; text-align: center; }
-#mobileMenu .mobile-services summary { font-family: 'VintagePropagandistRegular', sans-serif; font-size: 2.5rem; text-transform: uppercase; color: #ffffff; letter-spacing: 0.05em; cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 10px; }
+#mobileMenu .mobile-services summary { cursor: pointer; list-style: none; justify-content: space-between; }
 #mobileMenu .mobile-services summary::-webkit-details-marker { display: none; }
-#mobileMenu .mobile-services summary::after { content: "expand_more"; font-family: "Material Symbols Outlined"; font-size: 1.5rem; transition: transform .2s ease; }
+#mobileMenu .mobile-services summary::after { content: "expand_more"; font-family: "Material Symbols Outlined"; font-size: 16px; color: #666; margin-left: auto; transition: transform .2s ease; }
 #mobileMenu .mobile-services[open] summary::after { transform: rotate(180deg); }
-#mobileMenu .mobile-services summary:hover { color: #8bfe00; }
-#mobileMenu .mobile-sub-group { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 20px; }
-#mobileMenu .mobile-sub-heading { font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #8bfe00; opacity: 0.7; }
-#mobileMenu a.mobile-sub-link { font-family: "JetBrains Mono", monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #becbae; }
-#mobileMenu a.mobile-sub-link:hover { color: #8bfe00; }
+#mobileMenu .mobile-sub-group { display: flex; flex-direction: column; gap: 1px; margin: 2px 0 6px 26px; padding-left: 12px; border-left: 1px solid #1c1c1c; }
+#mobileMenu .mobile-sub-heading { display: block; font-family: "JetBrains Mono", monospace; font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #666; margin: 8px 0 2px; padding: 0 8px; }
+#mobileMenu a.mobile-sub-link { display: block; font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; color: #a8a8a2; text-decoration: none; padding: 7px 8px; border-radius: 8px; transition: background-color .15s, color .15s; }
+#mobileMenu a.mobile-sub-link:hover { color: #8bfe00; background: #141414; }
 
 /* ── Service / spec / feature cards ── */
 .service-card { display: block; background: #000000; border: 1px solid #262626; padding: 2rem; text-decoration: none; transition: border-color .2s, box-shadow .2s, transform .3s ease; }
