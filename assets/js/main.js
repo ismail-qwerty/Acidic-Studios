@@ -17,7 +17,7 @@
     <a class="flex items-center group" href="${p}index.html">
       <img src="${p}assets/images/acidic-header-logo-cropped.png" alt="Acidic Studios" style="height:46px;width:auto;max-height:46px;min-width:calc(46px * 1.85 + 4px);display:block;object-fit:contain;">
     </a>
-    <div class="hidden lg:flex items-center gap-7" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#becbae;">
+    <div class="hidden lg:flex items-center gap-7" style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#ffffff;">
       <a class="nav-link hover:text-[#8bfe00] transition-colors" href="${p}index.html">Home</a>
       <div class="nav-dropdown">
         <a class="nav-link hover:text-[#8bfe00] transition-colors flex items-center gap-1" href="${p}services.html">Services <span class="material-symbols-outlined nav-chevron-toggle" style="font-size:14px" role="button" tabindex="0" aria-label="Toggle services menu">keyboard_arrow_down</span></a>
