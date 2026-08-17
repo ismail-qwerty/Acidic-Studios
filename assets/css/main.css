@@ -345,14 +345,15 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; }
 
 /* ── Contact page: multi-step brief form ── */
 .grid-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px); background-size: 64px 64px; opacity: 0.08; pointer-events: none; z-index: 0; }
-.minimal-input { background-color: #0a0a0a; border: 1px solid #262626; border-radius: 0; color: #ffffff; padding: 14px 16px; width: 100%; font-family: 'Inter', sans-serif; font-size: 16px; transition: all 0.3s ease; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); }
-.minimal-input:focus { outline: none; border-color: #8bfe00; box-shadow: 0 0 14px -4px rgba(139,254,0,0.35); }
-.minimal-input::placeholder { color: #353534; transition: color 0.3s; }
+.minimal-input { background-color: #161616; border: 1px solid #2a2a2a; border-radius: 14px; color: #ffffff; padding: 15px 18px; width: 100%; font-family: 'Inter', sans-serif; font-size: 15px; transition: all 0.25s ease; }
+.minimal-input:hover { border-color: #3a3a3a; }
+.minimal-input:focus { outline: none; border-color: #8bfe00; background-color: #181f0a; box-shadow: 0 0 0 4px rgba(139,254,0,0.08); }
+.minimal-input::placeholder { color: #55554f; transition: color 0.3s; }
 .minimal-input:focus::placeholder { color: #becbae; }
-select.minimal-input { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238bfe00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 0 center; background-size: 1.25rem; }
+select.minimal-input { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238bfe00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 16px center; background-size: 1.1rem; padding-right: 44px; }
 .form-step { display: none; animation: fadeSlide 0.5s ease; }
 .form-step.active { display: block; }
-@keyframes fadeSlide { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(74%) sepia(86%) saturate(2240%) hue-rotate(46deg) brightness(102%) contrast(105%); cursor: pointer; }
 
 /* ── Site-wide motion ── */
