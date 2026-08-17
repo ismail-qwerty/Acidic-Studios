@@ -367,8 +367,10 @@
 
     // Hero entrance: fade + rise on every page load, no scrolling required —
     // this is the one animation guaranteed visible immediately.
+    // Pages with [data-hero-custom] choreograph their own hero entrance in
+    // CSS — running this generic fade on top would double-animate it.
     var hero = document.querySelector('main > section:first-of-type');
-    if (hero) {
+    if (hero && !hero.hasAttribute('data-hero-custom')) {
       hero.classList.add('reveal', 'reveal-hero');
       nextPaint(function () { hero.classList.add('in-view'); });
     }

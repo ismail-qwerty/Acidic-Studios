@@ -375,6 +375,110 @@ select.minimal-input { appearance: none; background-image: url("data:image/svg+x
 @keyframes fadeSlide { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(74%) sepia(86%) saturate(2240%) hue-rotate(46deg) brightness(102%) contrast(105%); cursor: pointer; }
 
+/* ══════════════════════════════════════════════════════════════════════
+   HERO — cinematic viewport (index.html)
+   Everything is namespaced .hx-* so it can't collide with the rest of the
+   site. Entrances use CSS *animations* (not transitions) so they always
+   run on load — transitions on already-visible elements can get coalesced
+   into a single style recalc and skipped entirely.
+   ══════════════════════════════════════════════════════════════════════ */
+.hx { position: relative; display: flex; align-items: center; overflow: hidden; background: #000; min-height: 92vh; min-height: 92svh; --mx: 72%; --my: 38%; }
+
+/* Layer 1 — slowly drifting background plate (Ken Burns) */
+.hx-bg { position: absolute; inset: 0; z-index: 0; }
+.hx-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .5; transform: scale(1.08); animation: hxDrift 28s ease-in-out infinite alternate; will-change: transform; }
+@keyframes hxDrift { from { transform: scale(1.08) translate3d(0,0,0); } to { transform: scale(1.2) translate3d(-2.5%,-2%,0); } }
+
+/* Layer 2 — scrims keep the headline readable over any image */
+.hx-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(100deg, #000 0%, rgba(0,0,0,.95) 30%, rgba(0,0,0,.6) 58%, rgba(0,0,0,.3) 100%),
+    linear-gradient(to top, #000 0%, transparent 32%, transparent 68%, rgba(0,0,0,.8) 100%);
+}
+@media (max-width: 1023px) { .hx-scrim { background: linear-gradient(to top, #000 8%, rgba(0,0,0,.82) 45%, rgba(0,0,0,.7) 100%); } }
+
+/* Layer 3 — acid spotlight that tracks the cursor */
+.hx-spot { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(440px circle at var(--mx) var(--my), rgba(139,254,0,.14), transparent 66%); }
+
+/* Layer 4 — filmic grain + scanlines */
+.hx-grain { position: absolute; inset: -50%; z-index: 3; pointer-events: none; opacity: .15; animation: hxGrain .7s steps(4) infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@keyframes hxGrain { 0%{transform:translate(0,0)} 25%{transform:translate(-2%,1.5%)} 50%{transform:translate(1.5%,-2%)} 75%{transform:translate(-1.5%,-1.5%)} 100%{transform:translate(0,0)} }
+.hx-scan { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: .22; background: repeating-linear-gradient(to bottom, rgba(255,255,255,.04) 0 1px, transparent 1px 3px); }
+
+/* Viewfinder crop marks */
+.hx-bracket { position: absolute; width: 22px; height: 22px; z-index: 5; border: 1px solid rgba(139,254,0,.45); opacity: 0; animation: hxFade .9s ease 1.15s forwards; }
+.hx-bracket.tl { top: 104px; left: 16px; border-right: 0; border-bottom: 0; }
+.hx-bracket.tr { top: 104px; right: 16px; border-left: 0; border-bottom: 0; }
+.hx-bracket.bl { bottom: 132px; left: 16px; border-right: 0; border-top: 0; }
+.hx-bracket.br { bottom: 132px; right: 16px; border-left: 0; border-top: 0; }
+@media (min-width: 768px) { .hx-bracket { width: 30px; height: 30px; }
+  .hx-bracket.tl, .hx-bracket.tr { top: 116px; } .hx-bracket.bl, .hx-bracket.br { bottom: 156px; }
+  .hx-bracket.tl, .hx-bracket.bl { left: 34px; } .hx-bracket.tr, .hx-bracket.br { right: 34px; } }
+@keyframes hxFade { to { opacity: 1; } }
+
+/* Generic staggered entrance — drive the delay with style="--d:.3s" */
+.hx-in { opacity: 0; transform: translateY(18px); animation: hxIn .85s cubic-bezier(.16,1,.3,1) var(--d,0s) forwards; }
+@keyframes hxIn { to { opacity: 1; transform: none; } }
+
+/* Status bar: REC + running timecode */
+.hx-status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 26px; }
+.hx-rec, .hx-chip { display: inline-flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; padding: 7px 12px; border-radius: 999px; border: 1px solid #262626; background: rgba(0,0,0,.5); backdrop-filter: blur(6px); }
+.hx-rec { color: #ff4d4d; border-color: rgba(255,77,77,.35); }
+.hx-rec i { width: 6px; height: 6px; border-radius: 50%; background: #ff4d4d; animation: pulse-red 2s infinite; }
+.hx-chip { color: #8bfe00; border-color: rgba(139,254,0,.3); font-variant-numeric: tabular-nums; }
+.hx-chip-dim { color: #becbae; border-color: #262626; }
+
+/* Kinetic headline — each line masks its word, which rises into place */
+.hx-title { font-family: 'Montserrat', sans-serif; font-weight: 900; text-transform: uppercase; color: #fff; letter-spacing: -.02em; line-height: .88; margin-bottom: 24px; font-size: clamp(40px, 8.4vw, 86px); }
+.hx-line { display: block; overflow: hidden; padding-bottom: .06em; }
+.hx-word { display: inline-block; position: relative; transform: translateY(115%); animation: hxRise 1s cubic-bezier(.16,1,.3,1) var(--d,0s) forwards; }
+@keyframes hxRise { to { transform: translateY(0); } }
+.hx-accent { -webkit-text-stroke: 1.5px #8bfe00; color: transparent; }
+.hx-sweep { position: absolute; left: 0; bottom: .1em; height: 3px; width: 100%; background: linear-gradient(90deg, transparent, #8bfe00, transparent); transform: scaleX(0); transform-origin: left; animation: hxSweep 1.2s ease 1.15s forwards; }
+@keyframes hxSweep { 0% { transform: scaleX(0); opacity: 1; } 65% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: .45; } }
+
+.hx-lede { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.65; color: #becbae; max-width: 33rem; margin-bottom: 26px; padding-left: 20px; border-left: 2px solid #8bfe00; }
+@media (min-width: 768px) { .hx-lede { font-size: 16.5px; } }
+
+.hx-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+
+/* Stats strip */
+.hx-stats { display: flex; flex-wrap: wrap; gap: 22px 40px; padding-top: 20px; border-top: 1px solid #1d1d1d; max-width: 33rem; }
+.hx-stat b { display: block; font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 5px; }
+.hx-stat b em { color: #8bfe00; font-style: normal; }
+.hx-stat span { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: #7d7d78; }
+
+/* Rotating showreel badge */
+.hx-reel { position: relative; width: 150px; height: 150px; display: grid; place-items: center; text-decoration: none; }
+.hx-reel-ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: hxSpin 20s linear infinite; }
+.hx-reel-ring text { font-family: 'JetBrains Mono', monospace; font-size: 8.4px; font-weight: 700; letter-spacing: .22em; fill: #8bfe00; text-transform: uppercase; }
+@keyframes hxSpin { to { transform: rotate(360deg); } }
+.hx-reel-core { position: relative; width: 74px; height: 74px; border-radius: 50%; display: grid; place-items: center; background: rgba(139,254,0,.08); border: 1px solid rgba(139,254,0,.45); color: #8bfe00; transition: background-color .25s ease, color .25s ease, box-shadow .25s ease; }
+.hx-reel:hover .hx-reel-core { background: #8bfe00; color: #0d2000; box-shadow: 0 0 34px rgba(139,254,0,.4); }
+.hx-reel-core::after { content: ""; position: absolute; inset: -9px; border-radius: 50%; border: 1px solid rgba(139,254,0,.18); animation: hxPing 2.6s ease-out infinite; }
+@keyframes hxPing { 0% { transform: scale(.9); opacity: .9; } 100% { transform: scale(1.35); opacity: 0; } }
+
+/* Bottom film strip — reads as an edit timeline */
+.hx-strip { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; padding: 13px 0; border-top: 1px solid #191919; background: linear-gradient(to top, rgba(0,0,0,.94), rgba(0,0,0,.35)); backdrop-filter: blur(8px); overflow: hidden; opacity: 0; animation: hxFade 1s ease 1.05s forwards; }
+.hx-strip-track { display: flex; gap: 12px; width: max-content; padding-left: 12px; animation: hxSlide 46s linear infinite; }
+.hx-strip:hover .hx-strip-track { animation-play-state: paused; }
+@keyframes hxSlide { to { transform: translateX(-50%); } }
+.hx-frame { position: relative; flex: none; width: 158px; aspect-ratio: 16 / 9; border: 1px solid #232323; border-radius: 9px; overflow: hidden; background: #050505; display: flex; align-items: flex-end; padding: 9px; text-decoration: none; transition: border-color .25s ease, transform .25s ease; }
+.hx-frame:hover { border-color: rgba(139,254,0,.55); transform: translateY(-3px); }
+.hx-frame::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(to right, #1c1c1c 1px, transparent 1px), linear-gradient(to bottom, #1c1c1c 1px, transparent 1px); background-size: 16px 16px; opacity: .55; }
+.hx-frame::after { content: ""; position: absolute; inset: 0; background: var(--tint, radial-gradient(circle at 30% 20%, rgba(139,254,0,.16), transparent 62%)); }
+.hx-frame span { position: relative; z-index: 1; font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #d8d8d4; }
+.hx-frame i { position: absolute; top: 8px; right: 9px; z-index: 1; font-family: 'JetBrains Mono', monospace; font-size: 8px; font-style: normal; letter-spacing: .1em; color: #8bfe00; opacity: .75; }
+@media (min-width: 768px) { .hx-frame { width: 186px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hx-in, .hx-word, .hx-bracket, .hx-strip { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .hx-bg img, .hx-grain, .hx-strip-track, .hx-reel-ring, .hx-reel-core::after, .hx-rec i { animation: none !important; }
+  .hx-sweep { display: none; }
+}
+
 /* ── Site-wide motion ── */
 html { scroll-behavior: smooth; }
 
