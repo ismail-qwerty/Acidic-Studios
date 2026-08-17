@@ -73,6 +73,7 @@ exports.handler = async (event, context) => {
           content: payload.content || '',
           image: payload.image || '',
           category: payload.category || '',
+          featured: !!payload.featured,
         }),
       });
       const data = await res.json();
@@ -93,6 +94,7 @@ exports.handler = async (event, context) => {
           content: payload.content || '',
           image: payload.image || '',
           category: payload.category || '',
+          featured: !!payload.featured,
         }),
       });
       const data = await res.json();

@@ -10,8 +10,12 @@ create table if not exists posts (
   image text default '',
   category text default '',
   author text default '',
+  featured boolean not null default false,
   created_at timestamptz not null default now()
 );
+
+-- Safe to re-run against an existing table created before "featured" existed.
+alter table posts add column if not exists featured boolean not null default false;
 
 -- Public (anon key) can only READ. All writes go through the Netlify
 -- function using the service_role key, which bypasses RLS entirely,

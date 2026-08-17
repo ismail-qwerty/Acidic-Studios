@@ -86,6 +86,11 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#8bf
           <input id="fImage" class="field" placeholder="https://...">
         </div>
       </div>
+      <div class="mb-4 flex items-center gap-3">
+        <input type="checkbox" id="fFeatured" class="w-4 h-4 accent-[#8bfe00] cursor-pointer">
+        <label for="fFeatured" class="lbl text-[11px] text-on-surface-variant uppercase tracking-widest cursor-pointer">Featured on Blog</label>
+        <span class="lbl text-[10px] text-on-surface-variant/50 uppercase tracking-widest">— mark 2+ posts to rotate them as a carousel</span>
+      </div>
       <div class="mb-4">
         <label class="block lbl text-[10px] text-on-surface-variant uppercase tracking-widest mb-2">Description</label>
         <textarea id="fDesc" class="field" rows="2" placeholder="Short description"></textarea>
@@ -157,7 +162,10 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#8bf
       el.innerHTML = data.map(p => `
         <div class="card flex items-center justify-between gap-4">
           <div>
-            <p class="lbl text-[13px] text-primary uppercase tracking-widest">${escapeHtml(p.title)}</p>
+            <p class="lbl text-[13px] text-primary uppercase tracking-widest flex items-center gap-2">
+              ${escapeHtml(p.title)}
+              ${p.featured ? '<span class="lbl text-[9px] text-[#0d2000] bg-[#8bfe00] px-2 py-0.5 rounded-full">★ Featured</span>' : ''}
+            </p>
             <p class="lbl text-[10px] text-on-surface-variant uppercase tracking-widest mt-1">${escapeHtml(p.slug)} · ${escapeHtml(p.category || '—')}</p>
           </div>
           <div class="flex gap-2 shrink-0">
@@ -185,6 +193,7 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#8bf
       content: document.getElementById('fContent').value,
       image: document.getElementById('fImage').value.trim(),
       category: document.getElementById('fCategory').value.trim(),
+      featured: document.getElementById('fFeatured').checked,
     };
     if (!payload.title || !payload.slug) { showToast('Title and slug required', false); return; }
 
@@ -231,12 +240,14 @@ tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#8bf
     document.getElementById('fContent').value = p.content || '';
     document.getElementById('fImage').value = p.image || '';
     document.getElementById('fCategory').value = p.category || '';
+    document.getElementById('fFeatured').checked = !!p.featured;
     document.getElementById('formTitle').textContent = 'Edit Post';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function clearForm() {
     ['editId', 'fTitle', 'fSlug', 'fDesc', 'fContent', 'fImage', 'fCategory'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('fFeatured').checked = false;
     document.getElementById('formTitle').textContent = 'New Post';
   }
 
