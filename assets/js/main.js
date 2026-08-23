@@ -1,3 +1,18 @@
+// ── Favicon injector ────────────────────────────────────────────────────────
+(function () {
+  var link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/x-icon';
+  link.href = (function () {
+    var parts = window.location.pathname.replace(/\\/g, '/').split('/');
+    var rootIdx = parts.lastIndexOf('Acidic Studios');
+    var fileIdx = parts.findIndex(function (s) { return s.includes('.'); });
+    var depth = rootIdx !== -1 ? Math.max(0, fileIdx - rootIdx - 1) : 0;
+    return (depth > 0 ? '../'.repeat(depth) : '') + 'assets/images/favicon.ico';
+  })();
+  document.head.appendChild(link);
+})();
+
 // ── Navbar loader (no fetch — works on file:// protocol) ───────────────────
 (function () {
   function run() {
@@ -259,7 +274,7 @@
 
       <div class="col-span-2 md:col-span-4">
         <h3 class="font-headline-lg text-on-primary-fixed text-[22px] sm:text-[26px] uppercase leading-tight mb-4">Sharper Brands.<br>Louder Work.</h3>
-        <p class="font-label-sm text-[10px] font-bold text-on-primary-fixed uppercase tracking-widest">© 2024 Acidic Studios — Digital Alchemy Lab</p>
+        <p class="font-label-sm text-[10px] font-bold text-on-primary-fixed uppercase tracking-widest">© 2025 Acidic Studios — Digital Alchemy Lab</p>
       </div>
 
       <div class="md:col-span-2">

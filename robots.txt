@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block admin, test, and internal pages
+Disallow: /admin.html
+Disallow: /test.htm
+Disallow: /netlify/
+
+# Block Netlify functions from crawlers
+Disallow: /.netlify/
+
+Sitemap: https://acidic.studio/sitemap.xml

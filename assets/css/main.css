@@ -51,8 +51,23 @@ body { background-color: #000000; color: #ffffff; overflow-x: hidden; width: 100
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
-.marquee-container { overflow: hidden; white-space: nowrap; position: relative; }
-.marquee-content { display: inline-block; animation: marquee 30s linear infinite; }
+.marquee-container { overflow: hidden; white-space: nowrap; }
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+.marquee-set {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 0 32px;
+    flex-shrink: 0;
+}
+.marquee-container:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
 
 @keyframes chemical-flow {
     0%   { background-position: 100% 0; }
