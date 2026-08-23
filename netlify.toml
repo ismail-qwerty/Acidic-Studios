@@ -1,4 +1,5 @@
 [build]
+  command = "npm install && npm run build:css"
   publish = "."
   functions = "netlify/functions"
 
@@ -12,3 +13,15 @@
   for = "/admin.html"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/test.htm"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

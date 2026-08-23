@@ -1,155 +1,90 @@
 <!DOCTYPE html><html class="dark" lang="en" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>ACIDIC STUDIOS - DIGITAL ALCHEMY</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>Acidic Studios | AI Video Production Agency, AI Agents &amp; Automation Studio</title>
+<meta name="description" content="Acidic Studios is an AI creative agency building AI generated video ads, AI agents, automation, branding &amp; conversion-focused web design for brands that refuse to blend in.">
+<meta name="keywords" content="AI video production agency, AI generated video ads, AI short film production, generative video content, AI advertisement production, AI UGC content creator, AI video agency for brands, AI chatbot for business, AI voice agent, AI caller automation, custom AI agent development, AI automation agency, conversational AI for sales, AI lead qualification bot, web design agency, conversion-focused web design, headless website development, brand website design, fast loading website design agency, brand identity design agency, logo design agency, brand guidelines design, motion branding, full brand system design, rebrand agency, video editing agency, short form video editing, UGC video editing, YouTube automation editing, ad video editing service, long form video editor, digital production studio, AI creative agency, AI content production, Acidic Studios">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Acidic Studios">
+<link rel="canonical" href="https://acidicstudios.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Acidic Studios">
+<meta property="og:title" content="Acidic Studios | AI Video Production Agency, AI Agents &amp; Automation Studio">
+<meta property="og:description" content="AI generated video ads, AI agents, automation, branding, and conversion-focused web design — a digital production studio for brands that refuse to blend in.">
+<meta property="og:url" content="https://acidicstudios.com/">
+<meta property="og:image" content="https://acidicstudios.com/assets/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Acidic Studios | AI Video Production Agency, AI Agents &amp; Automation Studio">
+<meta name="twitter:description" content="AI generated video ads, AI agents, automation, branding, and conversion-focused web design — for brands that refuse to blend in.">
+<meta name="twitter:image" content="https://acidicstudios.com/assets/images/og-cover.jpg">
+
+<meta name="theme-color" content="#0a0a0a">
+<link rel="stylesheet" href="assets/css/tailwind-built.css">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css">
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "surface-variant": "#353534",
-                      "surface-bright": "#3a3939",
-                      "on-secondary-fixed-variant": "#454747",
-                      "error-container": "#93000a",
-                      "surface-container-high": "#2a2a2a",
-                      "tertiary": "#ffffff",
-                      "surface-container-low": "#1c1b1b",
-                      "on-surface": "#e5e2e1",
-                      "on-secondary-container": "#b4b5b5",
-                      "surface-deep": "#121212",
-                      "primary-fixed": "#8bfe00",
-                      "secondary-fixed": "#e2e2e2",
-                      "on-primary": "#1a3700",
-                      "surface-dim": "#131313",
-                      "tertiary-fixed-dim": "#c6c6c6",
-                      "on-tertiary": "#2f3131",
-                      "outline": "#89957a",
-                      "on-tertiary-fixed": "#1a1c1c",
-                      "on-primary-fixed": "#0d2000",
-                      "on-secondary-fixed": "#1a1c1c",
-                      "on-background": "#e5e2e1",
-                      "primary-fixed-dim": "#7adf00",
-                      "background": "#131313",
-                      "tertiary-container": "#e3e2e2",
-                      "primary-container": "#8bfe00",
-                      "on-surface-variant": "#becbae",
-                      "on-secondary": "#2f3131",
-                      "on-primary-fixed-variant": "#285000",
-                      "border-muted": "#262626",
-                      "on-tertiary-fixed-variant": "#464747",
-                      "acid-glow": "#8CFF00CC",
-                      "inverse-primary": "#376b00",
-                      "surface-container-highest": "#353534",
-                      "outline-variant": "#3f4a34",
-                      "inverse-on-surface": "#313030",
-                      "on-primary-container": "#3b7100",
-                      "surface-container": "#201f1f",
-                      "secondary-container": "#454747",
-                      "secondary": "#c6c6c7",
-                      "surface": "#131313",
-                      "inverse-surface": "#e5e2e1",
-                      "tertiary-fixed": "#e3e2e2",
-                      "on-error": "#690005",
-                      "on-tertiary-container": "#636465",
-                      "surface-container-lowest": "#0e0e0e",
-                      "on-error-container": "#ffdad6",
-                      "primary": "#ffffff",
-                      "secondary-fixed-dim": "#c6c6c7",
-                      "error": "#ffb4ab",
-                      "surface-tint": "#7adf00"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "stack-sm": "8px",
-                      "gutter": "24px",
-                      "stack-md": "16px",
-                      "margin-mobile": "16px",
-                      "margin-desktop": "64px",
-                      "stack-lg": "32px"
-              },
-              "fontFamily": {
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "headline-xl": [
-                              "Montserrat", "sans-serif"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "label-sm": [
-                              "JetBrains Mono"
-                      ],
-                      "headline-lg": [
-                              "Montserrat", "sans-serif"
-                      ],
-                      "headline-lg-mobile": [
-                              "Montserrat", "sans-serif"
-                      ]
-              },
-              "fontSize": {
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-xl": [
-                              "112px",
-                              {
-                                      "lineHeight": "0.9",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-sm": [
-                              "12px",
-                              {
-                                      "lineHeight": "1",
-                                      "letterSpacing": "0.1em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "headline-lg": [
-                              "80px",
-                              {
-                                      "lineHeight": "0.9",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "64px",
-                              {
-                                      "lineHeight": "0.9",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-      },
-          },
-        }
-      </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://acidicstudios.com/#organization",
+  "name": "Acidic Studios",
+  "alternateName": "Acidic Studios AI Creative Agency",
+  "url": "https://acidicstudios.com/",
+  "logo": "https://acidicstudios.com/assets/images/logo.png",
+  "description": "Acidic Studios is an AI creative agency and digital production studio specializing in AI video production, AI generated video ads, AI agents, automation, branding, web design, and video editing.",
+  "foundingDate": "2021",
+  "sameAs": [
+    "https://www.instagram.com/acidicstudios",
+    "https://www.linkedin.com/company/acidicstudios",
+    "https://twitter.com/acidicstudios"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Video Production" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Agents" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Automation" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design &amp; Development" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video Editing" } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://acidicstudios.com/#website",
+  "url": "https://acidicstudios.com/",
+  "name": "Acidic Studios",
+  "publisher": { "@id": "https://acidicstudios.com/#organization" },
+  "inLanguage": "en-US"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Acidic Studios Services",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "AI Video Production", "url": "https://acidicstudios.com/ai-video-production.html" },
+    { "@type": "ListItem", "position": 2, "name": "AI Agents", "url": "https://acidicstudios.com/ai-agents.html" },
+    { "@type": "ListItem", "position": 3, "name": "Website Dev / Design", "url": "https://acidicstudios.com/websites.html" },
+    { "@type": "ListItem", "position": 4, "name": "Branding", "url": "https://acidicstudios.com/branding.html" },
+    { "@type": "ListItem", "position": 5, "name": "Video Editing", "url": "https://acidicstudios.com/video-editing.html" }
+  ]
+}
+</script>
+
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-black">
 <script>
@@ -190,7 +125,7 @@
       </h1>
 
       <p class="hx-lede hx-in" style="--d:.62s">
-        A production laboratory fusing AI video generation, hyper-real animation, and cinematic storytelling &mdash; for brands that refuse to blend in.
+        Acidic Studios is an AI creative agency and digital production studio fusing AI video production, AI generated video ads, hyper-real animation, and cinematic storytelling &mdash; for brands that refuse to blend in.
       </p>
 
       <div class="hx-cta hx-in" style="--d:.74s">
@@ -360,21 +295,27 @@
 <!-- Trusted By Marquee -->
 <section class="py-8 border-y border-border-muted bg-black overflow-hidden">
 <div class="marquee-container w-full">
-<div class="marquee-content flex items-center gap-12 md:gap-20 px-12">
-<img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="Spotify" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/nike/8bfe00" alt="Nike" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="Tesla" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="Spotify" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/nike/8bfe00" alt="Nike" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
-<img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="Tesla" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+<div class="marquee-track">
+  <div class="marquee-set">
+    <img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="Netflix" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <img src="https://cdn.simpleicons.org/meta/8bfe00" alt="Meta" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <img src="https://cdn.simpleicons.org/google/8bfe00" alt="Google" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <img src="https://cdn.simpleicons.org/apple/8bfe00" alt="Apple" class="h-7 opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="Spotify" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <img src="https://cdn.simpleicons.org/nike/8bfe00" alt="Nike" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="Tesla" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+    <img src="https://cdn.simpleicons.org/youtube/8bfe00" alt="YouTube" class="h-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+  </div>
+  <div class="marquee-set" aria-hidden="true">
+    <img src="https://cdn.simpleicons.org/netflix/8bfe00" alt="" class="h-6 opacity-50">
+    <img src="https://cdn.simpleicons.org/meta/8bfe00" alt="" class="h-6 opacity-50">
+    <img src="https://cdn.simpleicons.org/google/8bfe00" alt="" class="h-6 opacity-50">
+    <img src="https://cdn.simpleicons.org/apple/8bfe00" alt="" class="h-7 opacity-50">
+    <img src="https://cdn.simpleicons.org/spotify/8bfe00" alt="" class="h-6 opacity-50">
+    <img src="https://cdn.simpleicons.org/nike/8bfe00" alt="" class="h-6 opacity-50">
+    <img src="https://cdn.simpleicons.org/tesla/8bfe00" alt="" class="h-6 opacity-50">
+    <img src="https://cdn.simpleicons.org/youtube/8bfe00" alt="" class="h-6 opacity-50">
+  </div>
 </div>
 </div>
 </section>
@@ -398,7 +339,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M15 8l5-3v14l-5-3M4 6h9a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg>
     </div>
     <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">AI Video Production</h3>
-    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Cinematic films, ads, and social content generated and finished in-house — at a fraction of traditional production cost.</p>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Cinematic films, AI generated video ads, and social content generated and finished in-house by an AI video production agency — at a fraction of traditional production cost.</p>
     <div class="flex justify-end">
       <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -414,7 +355,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4Zm-6 8h12l1 10H5L6 10Zm4 4h4"/></svg>
     </div>
     <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">AI Agents</h3>
-    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Autonomous agents that talk, qualify, book, and follow up — chatbots, voice callers, automations, and custom builds.</p>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">An AI chatbot for business, AI voice agent, and AI caller automation that talk, qualify, book, and follow up — conversational AI for sales, custom AI agent development, and full AI automation agency builds.</p>
     <div class="flex justify-end">
       <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -430,7 +371,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4"/></svg>
     </div>
     <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">Website Dev / Design</h3>
-    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Design-led websites built to load fast, rank, and convert — brand, copy, and a modern headless front end, end to end.</p>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">A conversion-focused web design agency building fast loading websites that rank and convert — brand website design, headless website development, copy, and a modern front end, end to end.</p>
     <div class="flex justify-end">
       <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -446,7 +387,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
     </div>
     <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">Branding</h3>
-    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Identity systems built to last — logo, type, color, motion, and the full brand language that makes everything coherent.</p>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">A brand identity design agency and logo design agency building identity systems built to last — brand guidelines design, motion branding, and full brand system design that makes everything coherent. Rebrand agency services included.</p>
     <div class="flex justify-end">
       <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -462,7 +403,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4"><path d="M15 8l5-3v14l-5-3M4 6h9a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/></svg>
     </div>
     <h3 class="font-headline-lg text-[22px] text-primary uppercase mb-3">Video Editing</h3>
-    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">Post-production for existing footage — ads, UGC, short-form, long-form, and YouTube automation pipelines.</p>
+    <p class="font-body-md text-[14px] text-[#9a9a9a] leading-relaxed mb-5 flex-grow">A video editing agency for existing footage — ad video editing service, UGC video editing, short form video editing, long form video editor work, and YouTube automation editing pipelines.</p>
     <div class="flex justify-end">
       <span class="w-11 h-11 flex items-center justify-center bg-[#8bfe00] text-[#0d2000] group-hover:bg-black group-hover:text-[#8bfe00] group-hover:shadow-[inset_0_0_0_1px_#8bfe00,0_0_16px_rgba(139,254,0,0.3)] transition-all duration-200" style="clip-path:polygon(9px 0,100% 0,100% calc(100% - 9px),calc(100% - 9px) 100%,0 100%,0 9px)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -548,7 +489,6 @@
 </section>
 </main>
 <div id="footer-placeholder"></div>
-
 
 
 </body></html>

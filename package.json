@@ -1,0 +1,15 @@
+{
+  "name": "acidic-studios",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site. The only build step is compiling Tailwind ahead of time so no page loads the Tailwind Play CDN at runtime — see tailwind.config.js and build.md for why.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind-built.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind-built.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "tailwindcss": "^3.4.13"
+  }
+}
