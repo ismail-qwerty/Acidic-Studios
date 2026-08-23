@@ -1,3 +1,18 @@
+// ── Favicon injector ────────────────────────────────────────────────────────
+(function () {
+  var link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/x-icon';
+  link.href = (function () {
+    var parts = window.location.pathname.replace(/\\/g, '/').split('/');
+    var rootIdx = parts.lastIndexOf('Acidic Studios');
+    var fileIdx = parts.findIndex(function (s) { return s.includes('.'); });
+    var depth = rootIdx !== -1 ? Math.max(0, fileIdx - rootIdx - 1) : 0;
+    return (depth > 0 ? '../'.repeat(depth) : '') + 'assets/images/favicon.ico';
+  })();
+  document.head.appendChild(link);
+})();
+
 // ── Navbar loader (no fetch — works on file:// protocol) ───────────────────
 (function () {
   function run() {
